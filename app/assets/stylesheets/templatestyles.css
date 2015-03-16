@@ -1,0 +1,261 @@
+html {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 100%;
+	background: url("/assets/Site/brown.jpg") repeat center center fixed;
+}
+
+body {
+	font-family: 'Cabin', Helvetica, Arial, sans-serif;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+}
+
+header {
+	width: 99.6%;
+	height: 8%;
+	color: #ffffff;
+	margin-top: 1%;
+	clear: both;
+	float: left;
+}
+
+#logo {
+	float: left;
+	width: 30%;
+}
+
+#logo img {
+	height: 50px;
+}
+
+#right {
+	float: left;
+	width: 70%;
+	height: 100%;
+}
+
+#welcome {
+	font-family: 'Lobster', Georgia, Times, serif;
+	text-align: right;
+	padding-right: 3%;
+	font-size: 1.1em;
+	text-shadow: 0px 0px 7px #0c580c, 0px 0px 7px #0c580c;
+}
+
+#quickmenu {
+	float: right;
+	margin-top: 1%;
+	padding-right: 2%;
+	display: inline-block;
+}
+
+#quickmenu ul {
+	background-color: #ffffff;
+	text-align: right;
+	border: solid 2px #0c580c;
+	border-radius: 20px;
+	padding-top: 0.5%;
+	padding-bottom: 1%;
+	padding-left: 3%;
+	padding-right: 5%;
+	margin-top: 0px;
+	margin-bottom: 2px;
+	white-space: nowrap;
+}
+
+#quickmenu li {
+	display: inline;
+	list-style: none;
+	padding-left: 0%;
+	padding-right: 3%;
+	color: #0c580c;
+}
+
+#quickmenu a {
+	color: #0c580c;
+	text-decoration: none;
+}
+
+#quickmenu a:hover {
+	color: #ffffff;
+	text-decoration: underline;
+	text-shadow: 0px 0px 5px #0c580c, 0px 0px 5px #0c580c;
+}
+
+nav {
+	width: 99.6%;
+	margin-top: 2%;
+	margin-bottom: 1%;
+	text-align: right;
+	border: solid 2px #0c580c;
+	border-radius: 7px;
+	box-shadow: 0px 0px 10px 2px #000000;
+	clear: both;
+	float: left;
+}
+
+nav ul {
+	font-family: 'Lobster', Georgia, Times, serif;
+	background: url("/assets/Site/opttextures.png") repeat-x;
+	width: 98%;
+	padding: 1%;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	border-top: solid 1px #0c580c;
+	border-radius: 7px;
+	box-shadow: 0px 0px 10px 2px #000000;
+	/*linear-gradient(to bottom, #65d855, #057805);*/
+}
+
+nav li {
+	font-size: 1.2em; 
+	display: inline;
+	list-style-type: none;
+	margin-right: 1%;
+}
+
+nav a {
+	color: #fafafa;
+	text-decoration: none;
+	padding-right: 1%;
+	padding-left: 1%;
+	padding-top: 0.5%;
+	padding-bottom: 0.5%;
+}
+
+nav a:hover {
+	box-shadow: 0px 0px 10px 2px #000000 inset;
+	border: solid 1px #000000;
+	border-radius: 15px;
+}
+
+.active {
+	box-shadow: 0px 0px 10px 2px #000000 inset;
+	border: solid 1px #000000;
+	border-radius: 15px;
+}
+
+#navimg {
+	background: url("/assets/Site/header.jpg");
+	height: 120px;
+	text-align: left;
+	margin-top: 2px;
+}
+
+#main {
+	box-shadow: 0px 0px 10px 2px #000000;
+	border: solid 1px #0c580c;
+	border-radius: 10px;
+	float: left;
+	clear: both;
+	width: 100%;
+}
+
+#content {
+	border: solid 2px #0c580c;
+	border-radius: 10px;
+	width: 97.73%;
+	padding: 1%;
+	background-color: #fafafa;
+	margin: 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Lobster', Georgia, Times, serif;
+}
+
+p {
+	font-family: 'Cabin', Helvetica, Arial, sans-serif;
+}
+
+footer {
+	margin-top: 1%;
+	margin-bottom: 1%;
+	color: #ffffff;
+	float: left;
+	clear: both;
+	width: 96%;
+	padding-right: 2%;
+	padding-left: 2%;
+}
+
+#footerlinks {
+	float: left;
+	width: 70%;
+}
+
+#footerlinks  ul {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+#footerlinks li{
+	display: inline;
+	margin-right: 1%;
+	text-shadow: 0px 0px 5px #0c580c, 0px 0px 5px #0c580c, 0px 0px 5px #0c580c, 0px 0px 5px #0c580c;
+}
+
+#footerlinks  ul a {
+	text-shadow: 0px 0px 5px #0c580c, 0px 0px 5px #0c580c, 0px 0px 5px #0c580c, 0px 0px 5px #0c580c, 0px 0px 5px #0c580c;
+	color: #ffffff;
+	text-decoration: none;
+}
+#footerlinks a:hover {
+	text-decoration: underline;
+	text-shadow: 0px 0px 3px #000000, 0px 0px 3px #000000, 0px 0px 3px #000000, 0px 0px 3px #000000, 0px 0px 3px #000000, 0px 0px 3px #000000;
+}
+
+#updated {
+	float: left;
+	text-align: right;
+	width: 30%;
+	text-shadow: 0px 0px 5px #0c580c, 0px 0px 5px #0c580c, 0px 0px 5px #0c580c, 0px 0px 5px #0c580c;
+}
+
+@media only screen and (max-width: 1000px) {
+	
+	#logo {
+		width: 98%;
+	}
+	
+	#right {
+	 	width: 98%;
+	}
+	
+	nav {
+		width: 100%;
+		font-size: 1.3em;
+		margin-bottom: 2%;
+	}
+	
+	#content {
+		width: 97.4%;
+	}
+	
+	body {
+		width: 97%;
+	}
+	
+	#quicklinks ul {
+		padding-right: 0px;
+		padding-left:0px;
+	}
+	
+	nav ul {
+		width: 97.8%;
+	}
+	
+	#footerlinks {
+	width: 100%;
+}
+
+	#updated {
+		margin-top: 2%;
+		width: 100%;
+		text-align: left;
+	}
+}
