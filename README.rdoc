@@ -1,4 +1,4 @@
-== IN Fashion (Izabella-Niall Fashion)
+== IN Fashion (Izabella-Niall Fashion) ==
 
 This is an e-commerce site developed in the Ruby on Rails framework.
 
