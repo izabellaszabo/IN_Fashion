@@ -1,3 +1,7 @@
+$ git clone git@github.com:izabellaszabo/IN_Fashion.git
+
+Make changes
+
 $ git add -A
 $ git commit -m "Insert a message here"
 $ git push -u origin master
