@@ -1,5 +1,7 @@
-== IN Fashion (Izabella-Niall Fashion) ==
+== IN Fashion (Izabella-Niall Fashion)
 
 This is an e-commerce site developed in the Ruby on Rails framework.
 
 It was developed as our project for the Server Side Development Module.
+
+Living dangerously, changing the README file...
