@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   get 'singup' => 'users#new'
+  get '/about' => 'site#about'
+  get '/contact' => 'site#contact' 
 
   #Sets the path for the main page when they go to the website eg index
-  root 'static_pages#home'
+  root 'site#home'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

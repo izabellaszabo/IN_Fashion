@@ -1,7 +1,3 @@
-<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-<%= csrf_meta_tags %>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +7,9 @@
 
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" type="text/css">
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= csrf_meta_tags %>
 
 </head>
 
@@ -39,70 +38,42 @@
 	
 	<nav>
 		<ul>
-			<li><a href="">Home</a></li> 
-			<li><a href="">Women's</a></li> 
-			<li><a href="">Men's</a></li> 
-			<li><a href="">Sport Wear</a></li>
-			<li><a href="">Accessories</a></li> 			
-			<li><a href="about.html">About</a></li> 
+			<li><%=link_to "Home", './' %></li> 
+			<li><%=link_to "Women's", '' %></li> 
+			<li><%=link_to "Men's", '' %></li> 
+			<li><%=link_to "Sport Wear", '' %></li>
+			<li><%=link_to "Accessories", '' %></li> 			
+			<li><%=link_to "About", '/about' %></li> 
 		</ul>
 
 		<div id="navimg">
-			This is the nav image.
+			
 		</div>
 	</nav>
 	
 	<div id="main">	
 		
 		<div id="content">
-			<h1> This is the content section
-			</h1>
-			<p>
-			Suspendisse a turpis quis quam aliquet maximus. Nam id orci ut ante eleifend vestibulum. 
-			Mauris quis rhoncus dui. Praesent congue egestas posuere. Suspendisse lobortis tempus metus,
-			sed semper mi ornare vel. Proin blandit velit eu rhoncus consectetur. Maecenas vehicula nisl 
-			vitae volutpat mattis. Sed auctor, ligula sit amet hendrerit tempor, turpis tellus faucibus
-			purus, id auctor orci nulla id arcu. Donec in pellentesque tellus.
-			</p>
-			<p>
-			Vivamus imperdiet mauris non eros lobortis, nec suscipit urna ultrices. Nulla vel rutrum sem.
-			Ut vulputate aliquam pretium. Vestibulum augue quam, tempus facilisis erat id, fermentum 
-			eleifend velit. Proin eget nibh turpis. Maecenas lobortis, eros eget maximus venenatis, arcu 
-			nulla tempor urna, eu euismod arcu eros in erat. Nunc tempor orci non lacus ultrices, quis imperdiet
-			erat varius. Mauris mauris odio, maximus quis sapien vel, tincidunt pellentesque sem. Suspendisse
-			nec imperdiet nulla. Aliquam in leo gravida, vulputate erat quis, posuere lectus. Maecenas dapibus
-			consequat magna quis posuere. Etiam nec tristique felis. Ut posuere nisi ligula, non feugiat metus 
-			ultricies non. Donec at maximus ipsum, eu mattis lectus.
-			</p>
-			<p>
-			Integer ultricies efficitur mauris sollicitudin finibus. Mauris nec molestie arcu, ut commodo est.
-			Maecenas ullamcorper pharetra nisi, sed efficitur est dignissim eget. Cras eu ullamcorper tellus. 
-			Nullam orci nunc, feugiat vel libero eget, vulputate interdum ante. Curabitur quam ligula, venenatis
-			in convallis sed, blandit ut ex. Phasellus tempus justo ut rutrum volutpat. Quisque accumsan quis 
-			nulla a sagittis. Curabitur sed ipsum at nisi porttitor tincidunt congue a libero. Phasellus sed 
-			tellus ut libero gravida pretium. Integer magna mauris, posuere at dapibus a, lacinia in erat. Quisque
-			imperdiet mollis sapien sit amet tempus. In a dapibus urna. Sed eget ligula nibh. Sed augue tellus, 
-			mattis at enim ac, ornare tempus orci. Vestibulum eu pharetra lectus.
-			</p>
+			<%= yield %>
 		</div>
 	</div>
 	
 	<footer>
 		<div id="footerlinks">
 			<ul>
-				<li><a href="">Home</a></li> 
+				<li><%=link_to "Home", './' %></li> 
 				<li> | </li>
-				<li><a href="">Women's</a></li> 
+				<li><%=link_to "Women's", '' %></li> 
 				<li> | </li>
-				<li><a href="">Men's</a></li> 
+				<li><%=link_to "Men's", '' %></li> 
 				<li> | </li>
-				<li><a href="">Sport Wear</a></li> 
+				<li><%=link_to "Sport Wear", '' %></li>
 				<li> | </li>
-				<li><a href="">Accessories</a></li> 
+				<li><%=link_to "Accessories", '' %></li> 
 				<li> | </li>
-				<li><a href="about.html">About</a></li> 
+				<li><%=link_to "About", '/about' %></li> 
 				<li> | </li>
-				<li><a href="contact.html">Contact</a></li>
+				<li><%=link_to "Contact", '/contact' %></li> 
 			</ul>
 		</div>
 		
@@ -110,7 +81,6 @@
 			Last Updated 2015 March.
 		</div>
 	</footer>
-	<%= yield %>
 </body>
 </html>
 
