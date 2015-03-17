@@ -1,0 +1,46 @@
+.quote {
+  text-align: center; 
+  color: #0c580c;
+}
+
+#grass {
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto; 
+  width: 70%;
+}
+
+#leftdiv {
+  float: left;
+  width: 47%;
+  padding-right: 1%;
+  padding-left: 2%;
+}
+
+#rightdiv {
+  float: left;
+  width: 47%;
+  padding-left: 1%;
+  padding-right: 2%;
+}
+
+#content {
+  overflow: auto;
+}
+
+@media only screen and (max-width: 1000px) {
+  #grass {
+    width: 100%;
+  }
+  
+  #leftdiv {
+  float: left;
+  width: 97%;
+  }
+  
+  #rightdiv {
+    float: left;
+    width: 97%;
+  }
+  
+}
