@@ -1,10 +1,28 @@
 Rails.application.routes.draw do
+  
+  #ADDED BY NIALL WHAT DOES THIS TO DO
+  resources :products, only:[:index]
+  resource :cart, only:[:show]
+  resources :order_items, only: [:create,:update,:destroy]
+  root to:"products#index"
+  #ADDED BY NIALL WHAT DOES THIS TO DO
+  
+  get 'order_items/create'
+
+  get 'order_items/update'
+
+  get 'order_items/destroy'
+
+  get 'carts/show'
+
+  get 'products/index'
+
   get 'singup' => 'users#new'
   get '/about' => 'site#about'
   get '/contact' => 'site#contact' 
 
   #Sets the path for the main page when they go to the website eg index
-  root 'site#home'
+  #root 'site#home'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
