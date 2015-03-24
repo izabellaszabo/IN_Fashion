@@ -1,2 +1,104 @@
-<h1>Contact Page</h1>
-<p>Going to have a fancy form here.</p>
+<% content_for :header do %>
+  <div id="contactheader">
+    <img src="assets/site/contact.jpg" alt="Message in a Bottle" id="bottle" />
+    <h1 style="text-shadow: 0px 0px 10px #ffffff, 0px 0px 10px #ffffff, 0px 0px 10px #ffffff, 
+      0px 0px 10px #ffffff, 0px 0px 10px #ffffff;">
+      Contact Us
+    </h1>
+  </div>
+<% end %>
+
+<div id="contactcont">
+<div class="col">
+  <h3>Reach Us</h3>
+  <p>
+    We're very approachable and would love to speak with you.
+    Feel free to call, send an email or drop us a message using 
+    the form on the right.
+  </p>
+  <p>
+    Though our online catalog is quite extensive, nothing beats
+    coming into our boutique personally and looking around.
+    New products are always shown in our store before it goes online.
+  </p>
+  <p>
+    <table>
+      <tr class="space">
+        <td>Opening Hours</td>
+      </tr>
+      <tr>
+        <td class="tab">Mon-Thu</td>
+        <td>08:00 - 22:00</td>
+      </tr>
+      <tr>
+        <td class="tab">Fri</td>
+        <td>08:00 - 20:00</td>
+      </tr>
+      <tr>
+        <td class="tab">Sat-Sun</td></td>
+        <td>10:00 - 6:00</td>
+      </tr>
+      </table>
+  </p>
+</div>
+
+<div class="col">
+  <h3>General</h3>
+  <p>
+    IN Fashion Ltd
+  </p>
+  <p>
+    58-62 Percy Passage<br/>
+    Brooklyn Nine-Nine<br/>
+    Geneva
+  </p>
+  <p>
+    <table>
+      <tr>
+        <td class="tab">Tel</td>
+        <td>+32 (0)16 36 00 36</td>
+      </tr>
+      <tr>
+        <td class="tab">Fax</td>
+        <td>+32 (0)16 36 00 39</td>
+      </tr>
+      <tr>
+        <td class="tab">Email</td></td>
+        <td>info@infashion.com</td>
+      </tr>
+      </table>
+  </p>
+</div>
+
+<div class="col" id="lastcol">
+  <h3>Mail Us</h3>
+  <table id="contacttable">
+  <form id="contactform" action="" method="POST">
+    <tr>
+      <td>Name:</td>
+    </tr>
+    <tr class="space">
+      <td><input type="text" name="name" size="25" autofocus required /></td>
+    </tr>
+
+    <tr>
+      <td>Email:</td>
+    </tr>
+    <tr class="space">
+      <td><input type="email" name="email" size="25" required /></td>
+    </tr>
+
+    <tr>
+      <td>Message:</td>
+    </tr>
+    <tr class="space">
+      <td><textarea name="message" rows="7" cols="30"></textarea></td>
+    </tr>
+
+    <tr>
+      <td><input type="submit" value="Send" id="sendbtn" /></td>
+    </tr>
+  </form>
+  </table>
+</div>
+</div>

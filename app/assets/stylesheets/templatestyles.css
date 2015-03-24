@@ -139,28 +139,21 @@ nav a:hover {
 }
 
 #navimg {
-	background: url("/assets/Site/header.jpg");
-	height: 120px;
 	text-align: left;
 	margin-top: 2px;
+	overflow: hidden;
+	padding-bottom: 0px;
 }
 
 #main {
 	box-shadow: 0px 0px 10px 2px #000000;
-	border: solid 1px #0c580c;
-	border-radius: 10px;
-	float: left;
-	clear: both;
-	width: 100%;
-}
-
-#content {
 	border: solid 2px #0c580c;
 	border-radius: 10px;
-	width: 97.73%;
-	padding: 1%;
-	background-color: #fafafa;
+	background-color: #ffffff;
 	margin: 0px;
+	float: left;
+	clear: both;
+	width: 99.8%;
 }
 
 h1, h2, h3, h4, h5, h6 {
