@@ -52,6 +52,7 @@
 	</nav>
 	
 	<div id="main">	
+		<%= yield :content %>
 		<div id="modal" class="popupContainer" style="display:none;">
 			<header class="popupHeader">
 				<div class="header_title">Login</div>
@@ -139,11 +140,7 @@
 			});
 		})
 	</script>
-	
-			<%= yield :content %>
-			
-	</div>
-	
+
 	<footer>
 		<div id="footerlinks">
 			<ul>
@@ -167,16 +164,6 @@
 			&copy; IN Fashion 2015
 		</div>
 	</footer>
-	
-	
-	
-	
-	
-	
-	
-	
-
-<!-- http://www.andwecode.com/create-popup-login-and-signup-form/ -->
 	
 </body>
 </html>
