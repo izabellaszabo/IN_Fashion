@@ -1,0 +1,54 @@
+<% content_for :header do %>
+
+<h1>Header</h1>
+
+<% end %>
+
+<% content_for :content do %>
+
+<div class="twocol">
+<h1>Login</h1>
+<table class="logintable">
+  <form autofill="on">
+    <tr class="space">
+      <td>Username</td>
+      <td><input type="text" name="username" autofocus required /></td>
+    </tr>
+    <tr class="space">
+      <td>Password</td>
+      <td><input type="password" name="password" required /></td>
+    </tr>
+    <tr class="space">
+      <td><input type="checkbox" name="remmeber" value="remember">Remember Me</td>
+    </tr>
+    <tr>
+      <td><input type="Submit" value="Log In" class="sendbtn"></td>
+    </tr>
+  </form>
+</table>
+</div>
+
+<div class="twocol">
+<h1>Sign up</h1>
+<form autofill="off">
+<table class="logintable">
+    <tr class="space">
+      <td>Username</td>
+      <td><input type="text" name="username" autofocus required /></td>
+    <tr>
+    <tr class="space">
+      <td>Password</td>
+      <td><input type="password" name="password" required /></td>
+    <tr>
+      <tr class="space">
+      <td>Repeat Password</td>
+      <td><input type="password" name="password" required /></td>
+    <tr>
+    <tr>
+      <td><input type="Submit" value="Sign Up" class="sendbtn"></td>
+    </tr>
+</table>
+</form>
+</div>
+
+<% end %>

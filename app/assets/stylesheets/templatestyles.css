@@ -209,6 +209,95 @@ footer {
 	text-shadow: 0px 0px 5px #0c580c, 0px 0px 5px #0c580c, 0px 0px 5px #0c580c, 0px 0px 5px #0c580c;
 }
 
+/* Login and SignUp PopUp*/
+#lean_overlay {
+    position: fixed;
+    z-index:100;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background: #000000;
+    display: none;
+}
+
+.popupContainer{
+	position:absolute;
+	width: 28%;
+	height: auto;
+	background: #ffffff;
+	border: solid 1px #ffffff;
+	border-radius: 10px;
+	box-shadow: 0px 0px 15px 2px #000000;
+}
+
+/* Popup Styles*/
+.popupHeader {
+	color: #0c580c;
+	font-family: 'Lobster', Georgia, Times, serif;
+	font-size: 1.5em;
+	padding: 1%;
+	width: 98%;
+	border-bottom: 1px solid #dddddd;
+	margin-bottom: 1%;
+}
+
+.header_title {
+	width: 69%;
+	padding-left: 1%;
+	float: left;
+}
+
+.popupHeader .modal_close {
+	width: 29%;
+	padding-right: 1%;
+	cursor: pointer; 
+	float: left;
+	text-align: right;
+	font-size: 0.8em;
+}
+
+.popupBody {
+	padding-top: 2%;
+	padding-right: 2%;
+	padding-left: 2%;
+	padding-bottom: 1%;
+}
+
+/* User Login Form */
+.forgot_password {
+	color: #000000;
+	text-decoration: none;
+	font-family: 'Lobster', Georgia, Times, serif;
+}
+
+.forgot_password:hover {
+	cursor: pointer;
+}
+
+/* User Register Form */
+.user_register {
+	display: none;
+}
+
+.signup {
+	color: #000000;
+	text-decoration: none;
+	font-family: 'Lobster', Georgia, Times, serif;
+} 
+
+.backbtn {
+	margin-bottom: 2%;
+	margin-top: 2%;
+	margin-left: 1%;
+}
+
+.backbtn a {
+	color: #000000;
+	text-decoration: none;
+	font-family: 'Lobster', Georgia, Times, serif;
+}
+
 @media only screen and (max-width: 1000px) {
 	
 	#logo {
@@ -250,5 +339,9 @@ footer {
 		margin-top: 2%;
 		width: 100%;
 		text-align: left;
+	}
+	
+	.popupContainer {
+		width: 50%;
 	}
 }

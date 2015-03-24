@@ -30,7 +30,7 @@
 					<li> | </li>
 					<li><%=link_to "Checkout", '#' %></li>
 					<li> | </li>
-					<li><%=link_to "Login", 'singup' %></li>
+					<li><a id="modal_trigger" href="#modal">Login</a></li>
 				</ul>
 			</div>
 		</div>
@@ -38,12 +38,12 @@
 	
 	<nav>
 		<ul>
-			<li><%=link_to "Home", './' %></li> 
-			<li><%=link_to "Women's", '' %></li> 
-			<li><%=link_to "Men's", '' %></li> 
-			<li><%=link_to "Sport Wear", '' %></li>
-			<li><%=link_to "Accessories", '' %></li> 			
-			<li><%=link_to "About", '/about' %></li> 
+			<li><%=link_to "Home", 'home' %></li> 
+			<li><%=link_to "Women's", 'womens' %></li> 
+			<li><%=link_to "Men's", 'mens' %></li> 
+			<li><%=link_to "Sport Wear", 'sport' %></li>
+			<li><%=link_to "Accessories", 'accessories' %></li> 			
+			<li><%=link_to "About", 'about' %></li> 
 		</ul>
 
 		<div id="navimg">
@@ -52,36 +52,131 @@
 	</nav>
 	
 	<div id="main">	
-			<%= yield %>
+		<div id="modal" class="popupContainer" style="display:none;">
+			<header class="popupHeader">
+				<div class="header_title">Login</div>
+				<div class="modal_close">Close</div>
+			</header>
+			
+			<section class="popupBody">
+				<!-- User Login -->
+				<div class="user_login">
+					<table class="logintable">
+					  <form autofill="on">
+					    <tr class="space">
+					      <td>Username</td>
+					      <td><input type="text" name="username" autofocus required /></td>
+					    </tr>
+					    <tr class="space">
+					      <td>Password</td>
+					      <td><input type="password" name="password" required /></td>
+					    </tr>
+					    <tr class="space">
+					      <td><input type="checkbox" name="remmeber" value="remember">Remember Me</td>
+					    </tr>
+					    <tr>
+					      <td><input type="Submit" value="Log In" class="sendbtn"></td>
+					    </tr>
+					  </form>
+					</table>
+					
+					<p>
+						Don't have an account yet? <a href="#" id="register_form" class="signup">Sign up!</a>
+					<br />
+						<a href="#" class="forgot_password">Forgot your password?</a>
+					</p>
+
+				</div>
+	
+				<!-- Registration Form -->
+				<div class="user_register">
+					<form autofill="off">
+						<table class="logintable">
+						    <tr class="space">
+						      <td>Username</td>
+						      <td><input type="text" name="username" autofocus required /></td>
+						    <tr>
+						    <tr class="space">
+						      <td>Password</td>
+						      <td><input type="password" name="password" required /></td>
+						    <tr>
+						      <tr class="space">
+						      <td>Repeat Password</td>
+						      <td><input type="password" name="password" required /></td>
+						    <tr>
+						    <tr>
+						      <td><input type="Submit" value="Register" class="sendbtn"></td>
+						    </tr>
+						</table>
+					</form>
+
+							<p class="backbtn">
+								<a href="#">Back</a>
+							</p>
+				</div>
+			</section>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+		$("#modal_trigger").leanModal({top : 200, overlay : 0.6, closeButton: ".modal_close" });
+		$(function(){
+			
+			// Calling Register Form
+			$("#register_form").click(function(){
+				$(".user_login").hide();
+				$(".user_register").show();
+				$(".header_title").text('Register');
+				return false;
+			});
+						
+			// Going back to Login Form
+			$(".backbtn").click(function(){
+				$(".user_register").hide();
+				$(".user_login").show();
+				$(".header_title").text('Login');
+				return false;
+			});
+		})
+	</script>
+	
+			<%= yield :content %>
+			
 	</div>
 	
 	<footer>
 		<div id="footerlinks">
 			<ul>
-				<li><%=link_to "Home", './' %></li> 
+				<li><%=link_to "Home", 'home' %></li> 
 				<li> | </li>
-				<li><%=link_to "Women's", '' %></li> 
+				<li><%=link_to "Women's", 'womens' %></li> 
 				<li> | </li>
-				<li><%=link_to "Men's", '' %></li> 
+				<li><%=link_to "Men's", 'mens' %></li> 
 				<li> | </li>
-				<li><%=link_to "Sport Wear", '' %></li>
+				<li><%=link_to "Sport Wear", 'sport' %></li>
 				<li> | </li>
-				<li><%=link_to "Accessories", '' %></li> 
+				<li><%=link_to "Accessories", 'accessories' %></li> 
 				<li> | </li>
-				<li><%=link_to "About", '/about' %></li> 
+				<li><%=link_to "About", 'about' %></li> 
 				<li> | </li>
-				<li><%=link_to "Contact", '/contact' %></li> 
+				<li><%=link_to "Contact", 'contact' %></li> 
 			</ul>
 		</div>
 		
 		<div id="updated">
-			Last Updated 2015 March.
+			&copy; IN Fashion 2015
 		</div>
 	</footer>
+	
+	
+	
+	
+	
+	
+	
+	
+
+<!-- http://www.andwecode.com/create-popup-login-and-signup-form/ -->
+	
 </body>
 </html>
-
-
-
-
- 

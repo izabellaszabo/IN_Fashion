@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :products, only:[:index]
   resource :cart, only:[:show]
   resources :order_items, only: [:create,:update,:destroy]
-  root to:"products#index"
+  #root to:"products#index"
   #ADDED BY NIALL WHAT DOES THIS TO DO
   
   get 'order_items/create'
@@ -17,9 +17,15 @@ Rails.application.routes.draw do
 
   get 'products/index'
 
-  get 'singup' => 'users#new'
-  get '/about' => 'site#about'
-  get '/contact' => 'site#contact' 
+  get 'signup' => 'users#new'
+  get 'login' => 'users#login'
+  get 'home' => 'site#home'
+  get 'about' => 'site#about'
+  get 'contact' => 'site#contact' 
+  get 'womens' => 'products#womens'
+  get 'mens' => 'products#mens'
+  get 'sport' => 'products#sport'
+  get 'accessories' => 'products#accessories'
 
   #Sets the path for the main page when they go to the website eg index
   #root 'site#home'
@@ -29,7 +35,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'site#home'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

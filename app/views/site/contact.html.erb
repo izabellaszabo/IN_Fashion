@@ -1,12 +1,11 @@
 <% content_for :header do %>
   <div id="contactheader">
     <img src="assets/site/contact.jpg" alt="Message in a Bottle" id="bottle" />
-    <h1 style="text-shadow: 0px 0px 10px #ffffff, 0px 0px 10px #ffffff, 0px 0px 10px #ffffff, 
-      0px 0px 10px #ffffff, 0px 0px 10px #ffffff;">
-      Contact Us
-    </h1>
+    <h1>Contact Us</h1>
   </div>
 <% end %>
+
+<% content_for :content do %>
 
 <div id="contactcont">
 <div class="col">
@@ -19,7 +18,7 @@
   <p>
     Though our online catalog is quite extensive, nothing beats
     coming into our boutique personally and looking around.
-    New products are always shown in our store before it goes online.
+    New products are always shown in our store first before it goes online.
   </p>
   <p>
     <table>
@@ -35,7 +34,7 @@
         <td>08:00 - 20:00</td>
       </tr>
       <tr>
-        <td class="tab">Sat-Sun</td></td>
+        <td class="tab">Sat-Sun</td>
         <td>10:00 - 6:00</td>
       </tr>
       </table>
@@ -63,7 +62,7 @@
         <td>+32 (0)16 36 00 39</td>
       </tr>
       <tr>
-        <td class="tab">Email</td></td>
+        <td class="tab">Email</td>
         <td>info@infashion.com</td>
       </tr>
       </table>
@@ -72,8 +71,8 @@
 
 <div class="col" id="lastcol">
   <h3>Mail Us</h3>
-  <table id="contacttable">
   <form id="contactform" action="" method="POST">
+    <table id="contacttable">
     <tr>
       <td>Name:</td>
     </tr>
@@ -96,9 +95,11 @@
     </tr>
 
     <tr>
-      <td><input type="submit" value="Send" id="sendbtn" /></td>
+      <td><input type="submit" value="Send" class="sendbtn" /></td>
     </tr>
+    </table>
   </form>
-  </table>
 </div>
 </div>
+
+<% end %>

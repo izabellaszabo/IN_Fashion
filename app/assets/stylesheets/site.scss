@@ -4,6 +4,26 @@
 }
 
 /*Home Page*/
+#homecontent {
+  padding: 1%;
+}
+
+#offers {
+  margin-bottom: 1%;
+  width: 100%;
+  height: 100px;
+  background: #0c580c;
+  color: #ffffff;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.offerscol {
+  width: 19%;
+  margin-right: 3%;
+  margin-left: 3%;
+  float: left;
+}
 
 /*About Page*/
 #aboutcont {
@@ -62,9 +82,11 @@
 #contactheader h1 {
   position: absolute;
   width: 95%;
-  top: 4%;
-  left: 5%;
-  font-size: 2em;
+  top: 2%;
+  left: 4%;
+  font-size: 3.5em;
+  color: #ffffff;
+  text-shadow: 0px 0px 10px #0ad7b8, 0px 0px 10px #444444, 0px 0px 10px #0ad7b8, 0px 0px 10px #0ad7b8, 0px 0px 10px #000000;
 }
 
 #bottle {
@@ -102,9 +124,14 @@ textarea {
   resize: none;
   border-color: #0ad7b8;
   border-radius: 5px;
-  outline-color: #0ad7b8;
   font-family: 'Cabin', Helvetica, Arial, sans-serif;
   font-size: 1em;
+}
+
+#contacttable textarea:focus {
+    box-shadow: 0px 0px 5px 1px #0ad7b8;
+    outline: none;
+    padding: 3px;
 }
 
 tr.space > td
@@ -112,23 +139,24 @@ tr.space > td
   padding-bottom: 0.8em;
 }
 
-input {
+#contacttable input {
   border: solid 1px #0ad7b8;
   border-radius: 5px;
-  outline-color: #0ad7b8;
+  outline: none;;
   background: #ffffff;
   font-family: 'Cabin', Helvetica, Arial, sans-serif;
   font-size: 1em;
+  padding: 3px;
 }
 
-#sendbtn {
-  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+#contacttable input:focus {
+  box-shadow: 0px 0px 5px 1px #0ad7b8;
 }
 
-#sendbtn:hover {
+#contacttable .sendbtn:hover {
   cursor: pointer;
-  background: #0ad7b8;
-  color: #ffffff;
+  color: #0ad7b8;
+  box-shadow: 0px 0px 5px 1px #0ad7b8;
 }
 
 @media only screen and (max-width: 1000px) {

@@ -1,3 +1,29 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.twocol {
+  width: 48%;
+  padding: 1%;
+  float: left;
+}
+
+.logintable {
+  text-align: left;
+}
+
+.logintable input {
+  border: solid 1px #0c580c;
+  border-radius: 5px;
+  outline: none;
+  background: #ffffff;
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  padding: 3px;
+}
+
+.logintable input:focus {
+  box-shadow: 0px 0px 5px 1px #0c580c;
+}
+
+.logintable .sendbtn:hover {
+  color: #0c580c;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px 1px #0c580c;
+}
