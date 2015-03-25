@@ -3,7 +3,7 @@ html {
 	padding: 0px;
 	width: 100%;
 	height: 100%;
-	background: url("/assets/Site/brown.jpg") repeat center center fixed;
+	background: url("/assets/site/brown.jpg") repeat center center fixed;
 }
 
 body {
@@ -99,7 +99,7 @@ nav {
 
 nav ul {
 	font-family: 'Lobster', Georgia, Times, serif;
-	background: url("/assets/Site/opttextures.png") repeat-x;
+	background: url("/assets/site/opttextures.png") repeat-x;
 	width: 98%;
 	padding: 1%;
 	margin-bottom: 0px;
@@ -154,6 +154,8 @@ nav a:hover {
 	float: left;
 	clear: both;
 	width: 99.8%;
+	overflow:auto;
+	padding: 0px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -298,6 +300,37 @@ footer {
 	font-family: 'Lobster', Georgia, Times, serif;
 }
 
+
+.logintable {
+  text-align: left;
+}
+
+.logintable input {
+  border: solid 1px #0c580c;
+  border-radius: 5px;
+  outline: none;
+  background: #ffffff;
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  padding: 3px;
+}
+
+.logintable input:focus {
+  box-shadow: 0px 0px 5px 1px #0c580c;
+}
+
+.logintable .sendbtn:hover {
+  color: #0c580c;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px 1px #0c580c;
+}
+
+.twocol {
+  width: 48%;
+  padding: 1%;
+  float: left;
+}
+
 @media only screen and (max-width: 1000px) {
 	
 	#logo {
@@ -343,5 +376,9 @@ footer {
 	
 	.popupContainer {
 		width: 50%;
+	}
+	
+	.twocol {
+		width: 98%;
 	}
 }

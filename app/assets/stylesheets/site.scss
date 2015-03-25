@@ -1,8 +1,3 @@
-#content {
-  overflow: auto;
-  padding: 0px;
-}
-
 /*Home Page*/
 #homecontent {
   padding: 1%;
@@ -26,8 +21,18 @@
 }
 
 /*About Page*/
+#about {
+  background: linear-gradient(#632a05 5%, #ffffff 20%);
+  width: 100%;
+  float: left;
+}
+
 #aboutcont {
   margin: 1%;
+}
+#aboutcont h1 {
+  color: #ffffff;
+  text-shadow: 0px 0px 15px #0c580c, 0px 0px 15px #0c580c;
 }
 
 #aboutheader {
@@ -70,6 +75,24 @@
   padding-right: 2%;
 }
 
+.vertical {
+  width: 45%;
+  float: left;
+  margin: 2%;
+  border: solid 2px #98440c;
+  border-radius: 10px;
+  box-shadow: 0px 0px 7px 2px #632a05;
+}
+
+.horizontal {
+  width: 85%;
+  float: left;
+  margin: 2%;
+  border: solid 2px #98440c;
+  border-radius: 10px;
+  box-shadow: 0px 0px 7px 2px #632a05;
+}
+
 /*Contact Page*/
 
 #contactheader {
@@ -98,10 +121,9 @@
 }
 
 #contactcont {
-  background: -webkit-linear-gradient(#0ad7b8, #ffffff);
-  background: -o-linear-gradient(#0ad7b8, #ffffff); 
-  background: -moz-linear-gradient(#0ad7b8, #ffffff);
-  background: linear-gradient(#0ad7b8, #ffffff);
+  background: linear-gradient(#0ad7b8 5%, #ffffff 30%);
+  width: 100%;
+  float: left;
 }
 
 .col {

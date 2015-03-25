@@ -17,15 +17,14 @@ Rails.application.routes.draw do
 
   get 'products/index'
 
-  get 'signup' => 'users#new'
-  get 'login' => 'users#login'
+  get 'account' => 'users#account'
   get 'home' => 'site#home'
   get 'about' => 'site#about'
   get 'contact' => 'site#contact' 
-  get 'womens' => 'products#womens'
-  get 'mens' => 'products#mens'
-  get 'sport' => 'products#sport'
-  get 'accessories' => 'products#accessories'
+  get 'womens' => 'products#index'
+  get 'mens' => 'products#index'
+  get 'sport' => 'products#index'
+  get 'accessories' => 'products#index'
 
   #Sets the path for the main page when they go to the website eg index
   #root 'site#home'

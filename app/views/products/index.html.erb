@@ -1,5 +1,11 @@
+<% content_for :header do%>
+<h1>Header</h1>
+<% end %>
+
+<% content_for :content do %>
 <h1>Products#index</h1>
 <% @products.each do |product| %>
  <%= product.Title %>
  </br>
 <%end%>
+<% end %>

@@ -1,29 +1,6 @@
-.twocol {
-  width: 48%;
+#accountcont {
   padding: 1%;
+  background: linear-gradient(#0ad7b8 5%, #ffffff 30%);
   float: left;
-}
-
-.logintable {
-  text-align: left;
-}
-
-.logintable input {
-  border: solid 1px #0c580c;
-  border-radius: 5px;
-  outline: none;
-  background: #ffffff;
-  font-family: 'Cabin', Helvetica, Arial, sans-serif;
-  font-size: 1em;
-  padding: 3px;
-}
-
-.logintable input:focus {
-  box-shadow: 0px 0px 5px 1px #0c580c;
-}
-
-.logintable .sendbtn:hover {
-  color: #0c580c;
-  cursor: pointer;
-  box-shadow: 0px 0px 5px 1px #0c580c;
+  width: 98%;
 }
