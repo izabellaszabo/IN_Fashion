@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   
+  get 'contacts/new'
+
   #ADDED BY NIALL WHAT DOES THIS TO DO
   resources :products, only:[:index]
   resource :cart, only:[:show]
+  resources :contacts
   resources :order_items, only: [:create,:update,:destroy]
   #root to:"products#index"
   #ADDED BY NIALL WHAT DOES THIS TO DO
@@ -26,6 +29,7 @@ Rails.application.routes.draw do
   get 'mens' => 'products#mens'
   get 'sport' => 'products#sport'
   get 'accessories' => 'products#accessories'
+  
 
   #Sets the path for the main page when they go to the website eg index
   #root 'site#home'

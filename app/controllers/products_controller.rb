@@ -4,5 +4,10 @@ class ProductsController < ApplicationController
     @products = Product.all
     #Some more investigation needs to be done on the new section
     #@order_item = current_order.order_items.new
+    
+    
+    
   end
+
+  
 end
