@@ -3,8 +3,6 @@ class ContactsController < ApplicationController
   
   def show
     @contact = Contact.find(params[:id])
-    #@contact = Contact.new
-    
   end
   
   #Action related for a new contact to the system
@@ -28,7 +26,4 @@ class ContactsController < ApplicationController
       params.require(:contact).permit(:name, :email, :message)
     end
     
-
-  
-
 end
