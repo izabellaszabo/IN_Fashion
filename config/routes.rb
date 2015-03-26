@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   get 'login' => 'users#login'
   get 'home' => 'site#home'
   get 'about' => 'site#about'
-  get 'contact' => 'site#contact' 
+  get 'contact' => 'contacts#contact' 
   get 'womens' => 'products#womens'
   get 'mens' => 'products#mens'
   get 'sport' => 'products#sport'
