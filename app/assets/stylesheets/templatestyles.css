@@ -88,9 +88,9 @@ header {
 nav {
 	width: 99.6%;
 	margin-top: 2%;
-	margin-bottom: 1%;
+	margin-bottom: 1px;
 	text-align: right;
-	border: solid 2px #0c580c;
+	border: solid 2px #000000;
 	border-radius: 7px;
 	box-shadow: 0px 0px 10px 2px #000000;
 	clear: both;
@@ -104,9 +104,7 @@ nav ul {
 	padding: 1%;
 	margin-bottom: 0px;
 	margin-top: 0px;
-	border-top: solid 1px #0c580c;
-	border-radius: 7px;
-	box-shadow: 0px 0px 10px 2px #000000;
+	border-bottom: solid 1px #000000;
 	/*linear-gradient(to bottom, #65d855, #057805);*/
 }
 
@@ -140,21 +138,22 @@ nav a:hover {
 
 #navimg {
 	text-align: left;
-	margin-top: 2px;
 	overflow: hidden;
 	padding-bottom: 0px;
+	border: solid 0px #000000;
+	border-radius: 7px;
 }
 
 #main {
 	box-shadow: 0px 0px 10px 2px #000000;
-	border: solid 2px #0c580c;
+	border: solid 2px #000000;
 	border-radius: 10px;
 	background-color: #ffffff;
 	margin: 0px;
 	float: left;
 	clear: both;
 	width: 99.8%;
-	overflow:auto;
+	overflow: auto;
 	padding: 0px;
 }
 

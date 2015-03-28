@@ -1,11 +1,40 @@
 <% content_for :header do%>
-<h1>Header</h1>
+<div id="search">
+ <form>
+  <input id="searchbar" type="search" name="productsearch" placeholder="Search Products..." />
+ </form>
+</div>
 <% end %>
 
 <% content_for :content do %>
-<h1>Products#index</h1>
-<% @products.each do |product| %>
- <%= product.Title %>
- </br>
-<%end%>
+<div id="refine">
+ REFINE <br/>
+ Subcategry, Price Range, Rating
+ <br/>
+ Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+ Nam eget sapien ut lectus semper porta ultrices vel erat. Quisque eget ante ultrices, 
+ tempor ligula vitae, faucibus purus. Mauris ultricies libero id odio dictum, ac laoreet lorem maximus.
+</div>
+
+<div id="products">
+ <!-- IMPORTANT Change product category HERE!-->
+  <% @products.each do |product| %>
+  <div class="eachproduct">
+   <img src="assets/site/header.jpg" alt="Product Image"/>
+   
+   <h3 class="title"><a href="item"><%= product.Title %></a></h3>
+   
+   <div class="functionality">
+    <div class="price"><%= product.price %></div>
+    <div class="addtocart"><a href="#">Add to Cart</a></div>
+   </div>
+  </div>
+  <%end%>
+  
+   <div id="pageno">
+    PAGENO <br/>
+    Quisque eget ante ultrices, tempor ligula vitae, faucibus purus. 
+   </div>
+ </div>
+
 <% end %>

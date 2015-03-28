@@ -62,36 +62,35 @@
 			<section class="popupBody">
 				<!-- User Login -->
 				<div class="user_login">
-					<table class="logintable">
-					  <form autofill="on">
-					    <tr class="space">
-					      <td>Username</td>
-					      <td><input type="text" name="username" autofocus required /></td>
-					    </tr>
-					    <tr class="space">
-					      <td>Password</td>
-					      <td><input type="password" name="password" required /></td>
-					    </tr>
-					    <tr class="space">
-					      <td><input type="checkbox" name="remmeber" value="remember">Remember Me</td>
-					    </tr>
-					    <tr>
-					      <td><input type="Submit" value="Log In" class="sendbtn"></td>
-					    </tr>
-					  </form>
-					</table>
+					<form>
+						<table class="logintable">
+						    <tr class="space">
+						      <td>Username</td>
+						      <td><input type="text" name="username" autofocus required /></td>
+						    </tr>
+						    <tr class="space">
+						      <td>Password</td>
+						      <td><input type="password" name="password" required /></td>
+						    </tr>
+						    <tr class="space">
+						      <td><input type="checkbox" name="remmeber" value="remember">Remember Me</td>
+						    </tr>
+						    <tr>
+						      <td><input type="Submit" value="Log In" class="sendbtn"></td>
+						    </tr>
+						</table>
+					</form>
 					
 					<p>
 						Don't have an account yet? <a href="#" id="register_form" class="signup">Sign up!</a>
 					<br />
 						<a href="#" class="forgot_password">Forgot your password?</a>
 					</p>
-
 				</div>
-	
+				
 				<!-- Registration Form -->
 				<div class="user_register">
-					<form autofill="off">
+					<form>
 						<table class="logintable">
 						    <tr class="space">
 						      <td>Username</td>
@@ -110,10 +109,10 @@
 						    </tr>
 						</table>
 					</form>
-
-							<p class="backbtn">
-								<a href="#">Back</a>
-							</p>
+					
+					<p class="backbtn">
+						<a href="#">Back</a>
+					</p>
 				</div>
 			</section>
 		</div>
@@ -122,7 +121,7 @@
 	<script type="text/javascript">
 		$("#modal_trigger").leanModal({top : 200, overlay : 0.6, closeButton: ".modal_close" });
 		$(function(){
-			
+	
 			// Calling Register Form
 			$("#register_form").click(function(){
 				$(".user_login").hide();

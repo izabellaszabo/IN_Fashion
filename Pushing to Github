@@ -4,7 +4,7 @@ Make changes
 
 $ git add -A
 $ git commit -m "Insert a message here"
-$ git push -u origin master
+$ git push
 
 Hopefully username and password saved in enviroment.
 

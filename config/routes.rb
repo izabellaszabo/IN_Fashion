@@ -8,13 +8,9 @@ Rails.application.routes.draw do
   #ADDED BY NIALL WHAT DOES THIS TO DO
   
   get 'order_items/create'
-
   get 'order_items/update'
-
   get 'order_items/destroy'
-
   get 'carts/show'
-
   get 'products/index'
 
   get 'account' => 'users#account'
@@ -25,6 +21,7 @@ Rails.application.routes.draw do
   get 'mens' => 'products#index'
   get 'sport' => 'products#index'
   get 'accessories' => 'products#index'
+  get 'item' => 'products#item'
 
   #Sets the path for the main page when they go to the website eg index
   #root 'site#home'

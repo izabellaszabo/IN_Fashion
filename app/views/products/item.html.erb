@@ -1,0 +1,112 @@
+<% content_for :header do %>
+<div id="search">
+ SEARCH <br/>
+ Nam eget sapien ut lectus semper porta ultrices vel erat. Quisque eget ante ultrices, tempor ligula vitae, faucibus purus.
+</div>
+<% end %>
+
+<% content_for :content do %>
+<div id="itemcont">
+<div id="breadcrumbs">
+  <ul>
+    <li>
+      <h4><a href="home">Home</a></h4>
+    </li>
+    <li>
+      >
+    </li>
+    <li>
+      <h4><a href="#">e.g Womens</a></h4>
+    </li>
+    <li>
+      >
+    </li>
+    <li>
+      <h4><a href="#">e.g. Gloves</a></h4>
+    </li>
+    <li>
+      >
+    </li>
+  </ul>
+</div>
+
+<div id="item">
+  
+  <h2>Item Title</h2>
+  
+  <div id="itemimg">
+    <img src="assets/site/header.jpg" alt="Product Image" />
+  </div>
+  
+  <div id="itemdesc">
+    <h4 id="itemprice">Price here</h4>
+    
+    <div id="rating">
+      <span>☆</span>
+      <span>☆</span>
+      <span>☆</span>
+      <span>☆</span>
+      <span>☆</span>
+      <br/>
+      <ul id="review">
+        <li>
+          <h4><a href="#">View Reviews</a></h4> 
+        </li>
+        <li>
+          ||
+        </li>
+        <li>
+          <h4><a href="#">Review this Product</a></h4>
+        </li>
+      </ul>
+    </div>
+
+    <div id="desc">
+      In ex sapien, pellentesque ut imperdiet at, vulputate non felis. Aliquam sed libero vulputate, molestie nunc sollicitudin, 
+      consequat libero. Curabitur tincidunt tortor in arcu efficitur, non bibendum justo aliquet. Morbi rhoncus diam eu ipsum
+      consequat, sit amet lacinia purus cursus. Proin gravida sem semper metus suscipit egestas. In malesuada viverra molestie.
+      Maecenas vehicula a augue et rutrum.
+    </div>
+    
+    <div id="size">
+      <select class="dropdown">
+        <option value="default">Choose your size...</option>
+        <option value="xs">X-Small</option>
+        <option value="s">Small</option>
+        <option value="m">Medium</option>
+        <option value="l">Large</option>
+        <option value="xl">X-Large</option>
+      </select>
+    </div>  
+    
+    <div id="color">
+      <select class="dropdown">
+        <option value="default">Choose a color...</option>
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="purple">Purple</option>
+        <option value="blue">Blue</option>
+        <option value="yellow">Yellow</option>
+        <option value="orange">Orange</option>
+        <option value="white">White</option>
+        <option value="black">Black</option>
+      </select>
+    </div>
+    
+  </div>
+  
+  <div id="itemaddtocart">
+    <!-- Color and Size have to be validated before added to cart? -->
+    <h4><a href="#">Add to Cart</a></h4>
+  </div>
+
+</div>
+
+<div id="recommended">
+ RECOMMENDED FOR YOU <br/>
+ Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam eget sapien ut lectus semper porta ultrices vel erat. Quisque eget ante ultrices, tempor ligula vitae, faucibus purus. Mauris ultricies libero id odio dictum, ac laoreet lorem maximus.
+</div>
+
+</div>
+
+<% end %>

@@ -209,6 +209,10 @@ tr.space > td
     height: 200px;
   }
   
+  #contactcont {
+  background: linear-gradient(to right, #0ad7b8 5%, #ffffff 30%);
+  }
+  
   #contactheader h1 {
     top: 2%;
     left: 3%;
@@ -218,5 +222,7 @@ tr.space > td
   
   .col {
     width: 97%;
+    border-right: solid 0px #ffffff;
+    border-bottom: solid 2px #ffffff;
   }
 }
