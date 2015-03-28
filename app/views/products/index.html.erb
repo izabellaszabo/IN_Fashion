@@ -8,15 +8,76 @@
 
 <% content_for :content do %>
 <div id="refine">
- REFINE <br/>
- Subcategry, Price Range, Rating
- <br/>
- Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
- Nam eget sapien ut lectus semper porta ultrices vel erat. Quisque eget ante ultrices, 
- tempor ligula vitae, faucibus purus. Mauris ultricies libero id odio dictum, ac laoreet lorem maximus.
+ <h3>Refine Results</h3>
+ 
+ <div id="refinecont">
+  <div id="sub">
+  <h4>Subcategory</h4>
+   <ul>
+    <li>
+     <a href="#">Business Attire</a>
+    </li>
+    <li>
+     <a href="#">Shirts</a>
+    </li>
+    <li>
+     <a href="#">Pants</a>
+    </li>
+    <li>
+     <a href="#">Skirts</a>
+    </li>
+    <li>
+     <a href="#">Formal Wear</a>
+    </li>
+    <li>
+     <a href="#">Shoes</a>
+    </li>
+    <li>
+     <a href="#">Accessories</a>
+    </li>
+   </ul>
+  </div>
+  
+  <div id="pri">
+   <h4>Price Range</h4>
+   <ul>
+    <li>
+     <a href="#">€0 - €30</a>
+    </li>
+    <li>
+     <a href="#">€30 - €70</a>
+    </li>
+    <li>
+     <a href="#">€70 - €150</a>
+    </li>
+    <li>
+     <a href="#">€150 - €300</a>
+    </li>
+    <li>
+     <a href="#">€300+</a>
+    </li>
+   </ul>
+  </div>
+  
+  <div id="rate">
+   <h4>Rating</h4>
+   <ul>
+    <li style="cursor: default;">
+     <div style="direction: rtl;">
+     <span>☆</span>
+     <span>☆</span>
+     <span>☆</span>
+     <span>☆</span>
+     <span>☆</span>
+    </div>
+    </li>
+   </ul>
+  </div>
+ </div>
 </div>
 
 <div id="products">
+ <h1>Women's</h1>
  <!-- IMPORTANT Change product category HERE!-->
   <% @products.each do |product| %>
   <div class="eachproduct">
@@ -32,8 +93,7 @@
   <%end%>
   
    <div id="pageno">
-    PAGENO <br/>
-    Quisque eget ante ultrices, tempor ligula vitae, faucibus purus. 
+    &lt; 1 &gt;
    </div>
  </div>
  

@@ -1,7 +1,8 @@
 <% content_for :header do %>
 <div id="search">
- SEARCH <br/>
- Nam eget sapien ut lectus semper porta ultrices vel erat. Quisque eget ante ultrices, tempor ligula vitae, faucibus purus.
+ <form>
+  <input id="searchbar" type="search" name="productsearch" placeholder="Search Products..." />
+ </form>
 </div>
 <% end %>
 
@@ -93,11 +94,14 @@
       </select>
     </div>
     
-  </div>
-  
-  <div id="itemaddtocart">
-    <!-- Color and Size have to be validated before added to cart? -->
-    <h4><a href="#">Add to Cart</a></h4>
+    <div id="quantity">
+      <input type="number" name="quantity" min="1" max="100" placeholder="Quantity" />
+    </div>
+    
+    <div id="itemaddtocart">
+      <!-- Color and Size have to be validated before added to cart? -->
+      <h4><a href="#">Add to Cart</a></h4>
+    </div>
   </div>
 
 </div>

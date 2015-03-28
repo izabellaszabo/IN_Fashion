@@ -1,6 +1,5 @@
 /* Products Page */
 #search {
-  background: #f9f9f9;
   width: 99%;
   text-align: right;
   padding-right: 1%;
@@ -11,8 +10,8 @@
 #searchbar {
   border-radius: 15px;
   border: solid 1px #999;
-  cursor: pointer;
-  color: #999;
+  cursor: text;
+  color: #fff;
   padding-right: 3px;
   padding-top: 3px;
   padding-bottom: 3px;
@@ -29,12 +28,42 @@
 
 #refine {
   float: left;
-  width: 12.5%;
+  width: 13%;
   margin: 0.5%;
-  padding: 0.5%;
-  border: solid 1px #999;
-  border-radius: 7px;
-  box-shadow: 0px 0px 7px 2px #000;
+}
+
+#refinecont {
+  padding: 3%;
+}
+
+#refine h3 {
+  margin: 0px;
+  color: #761f31; 
+  border-bottom: solid 1px #999; 
+  padding: 2%;
+}
+
+#refine h4{
+  margin-bottom: 0px;
+  margin-top: 5%;
+  color: #fb7142;
+}
+
+#refinecont ul {
+  padding-left: 17%;
+  margin: 0px;
+  text-align: left;
+  list-style-type: square;
+}
+
+#refinecont a {
+  color: #000;
+  text-decoration: none;
+}
+
+#refinecont a:hover {
+  text-decoration: underline;
+  color: #761f31;
 }
 
 #products {
@@ -53,8 +82,7 @@
 
 .eachproduct img {
   max-width: 100%;
-  border: solid 1px #999999;
-  border-radius: 7px;
+  border: solid 1px #999;
 }
 
 .title {
@@ -62,10 +90,14 @@
 }
 
 .title a {
-  color: green;
+  color: #761f31;
   text-decoration: none;
 }
 
+.title a:hover {
+  text-decoration: underline;
+}
+ 
 .functionality {
   width: 98%;
   margin: 1%;
@@ -80,24 +112,27 @@
   content: "€";
 }
 
-.addtocart {
+.addtocart a {
   width: 61%;
   float: left; 
   text-align: center;
-  border: solid 1px #999999;
-  border-radius: 5px;
-  background: #0c580c;
+  color: #fb7142;
+  text-decoration: none;
   padding: 1%;
 }
 
-.addtocart a {
-  color: #fff;
-  text-decoration: none;
+.addtocart a:hover {
+  text-decoration: underline;
 }
 
 #pageno {
   width: 100%;
   float: left;
+  text-align: center;
+}
+
+.currentpage a {
+  text-decoration: underline;
 }
 
 /* Item Page */
@@ -111,7 +146,7 @@
 }
 
 #breadcrumbs a {
-  color: #000000;
+  color: #000;
   text-decoration: none;
 }
 
@@ -135,6 +170,7 @@
 #item h2 {
   margin-top: 0px;
   margin-bottom: 0.5%;
+  color: #761f31;
 }
 
 #itemimg {
@@ -144,8 +180,7 @@
 
 #itemimg img {
   max-width: 100%;
-  border: solid 1px #999999;
-  border-radius: 7px;
+  border: solid 1px #999;
 }
 
 #itemdesc {
@@ -172,15 +207,17 @@
   margin-bottom: 1%;
 }
 
-#rating > span:hover:before,
-#rating > span:hover ~ span:before {
-   content: "\2605";
-   position: absolute;
+span:hover:before,
+span:hover ~ span:before {
+  color: #761f31;
+  content: "\2605";
+  position: absolute;
+  cursor: pointer;
 }
 
 #rating a {
   text-decoration: none;
-  color: #000000;
+  color: #000;
 }
 
 #review {
@@ -202,38 +239,51 @@
 }
 
 #itemaddtocart {
-  width: 100%;
+  width: 25%;
   float: left;
+  margin-top: 1%;
 }
 
 #itemaddtocart h4 {
-  margin-bottom: 1%;
-  margin-top: 0.5%;
+  margin: 0px;
 }
 
 #itemaddtocart a {
   text-decoration: none;
-  color: #cccccc;
-  width: 31%;
-  margin-left: 2%;
-  border: solid 1px #999999;
-  border-radius: 5px;
-  background: #0c580c;
+  width: 100%;
+  color: #761f31;
+  border: solid 1px #999;
+  background: #fb7142;
   float: left;
   text-align: center;
-  padding-top: 0.5%;
-  padding-bottom: 0.5%;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
 
 .dropdown {
+  width: 20%;
   border-radius: 5px;
   margin-left: 0px;
   margin-bottom: 1%;
   margin-top: 1%;
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+  outline: none;
 }
 
 .dropdown:hover {
   cursor: pointer;
+}
+
+#quantity input {
+  width: 19%;
+  padding-right: 0.5%;
+  padding-left: 0.5%;
+  border: solid 1px #999;
+  border-radius: 5px;
+  margin-bottom: 1%;
+  margin-top: 1%;
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+  outline: none;
 }
 
 #size {
@@ -247,7 +297,57 @@
   padding-left: 1%;
 }
 
-
+@media only screen and (max-width: 1000px) {
+  #refine {
+    width: 99%;
+  }
+  
+  #refinecont {
+    width: 98%;
+    padding: 1%;
+    overflow: auto;
+    border-bottom: solid 1px #999;
+  }
+  
+  #refinecont h3 {
+    padding: 1%;
+  }
+  
+  #refinecont h4 {
+    margin-top: 1%;
+  }
+  
+  #refinecont ul {
+    padding-left: 1%;
+  }
+  
+  #refinecont li {
+    margin-right: 1%;
+  }
+  
+  #sub {
+    width: 33%;
+    float: left;
+  }
+  
+  #pri {
+    width: 33%;
+    float: left;
+  }
+  
+  #rate {
+    width: 33%;
+    float: left;
+  }
+  
+  #products {
+    width: 98%;
+  }
+  
+  .eachproduct {
+    width: 29%;
+  }
+}
 
 
 
