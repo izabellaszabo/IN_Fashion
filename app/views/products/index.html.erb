@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <% content_for :header do%>
 <div id="search">
  <form>
@@ -38,3 +39,26 @@
  </div>
 
 <% end %>
+=======
+<% content_for :header do %>
+
+    <h1>About Us</h1>
+
+<% end %>
+
+
+<% content_for :header do %>
+<H1>Header</H1>
+
+/*Looping through the producs*/
+
+<h1>Products#index</h1>
+<% @products.each do |product| %>
+ <%= product.Title %>
+ </br>
+<%end%>
+
+<%= puts @param1 %>
+
+<%end%> 
+>>>>>>> 8716769ffc5794af169ba39250d9d2e6451c7294

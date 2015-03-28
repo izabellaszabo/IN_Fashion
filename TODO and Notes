@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 Reviews as popup like facebook app page "posts to page"
 
@@ -18,3 +19,24 @@ KRAKEN Image Compressor
 ***********************************
 
 Captcha?
+=======
+Remember me option for login?
+
+FOR NIALL
+Each page needs the items below. Header is for the header and the contents
+
+<% content_for :header do %>
+<H1>Header</H1>
+<%end%>
+
+
+
+<% content_for :content do %>
+<%= @contact.name %>, <%= @contact.email %>
+<%end%>
+
+NIALL 
+
+1) commit my changes
+2) passing parameters via link_to do an example of this
+>>>>>>> 8716769ffc5794af169ba39250d9d2e6451c7294
