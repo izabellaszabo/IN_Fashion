@@ -19,21 +19,13 @@ Rails.application.routes.draw do
   get 'account' => 'users#account'
   get 'home' => 'site#home'
   get 'about' => 'site#about'
-<<<<<<< HEAD
-  get 'contact' => 'site#contact' 
+  #get 'contact' => 'site#contact' 
   get 'womens' => 'products#index'
   get 'mens' => 'products#index'
   get 'sport' => 'products#index'
   get 'accessories' => 'products#index'
   get 'item' => 'products#item'
-=======
   get 'contact' => 'contacts#new' 
-  get 'womens' => 'products#womens'
-  get 'mens' => 'products#mens'
-  get 'sport' => 'products#sport'
-  get 'accessories' => 'products#accessories'
-  
->>>>>>> 8716769ffc5794af169ba39250d9d2e6451c7294
 
   #Sets the path for the main page when they go to the website eg index
   #root 'site#home'
