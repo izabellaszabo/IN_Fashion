@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   get 'accessories' => 'products#index'
   get 'item' => 'products#item'
   get 'contact' => 'contacts#new' 
+  get 'checkout' => 'cart#checkout'
+  get 'cart' => 'cart#show'
 
   #Sets the path for the main page when they go to the website eg index
   #root 'site#home'

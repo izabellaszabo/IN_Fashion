@@ -1,6 +1,7 @@
 /*Home Page*/
 #homecontent {
   padding: 1%;
+  text-align: center;
 }
 
 #offers {
@@ -10,6 +11,11 @@
   color: #000;
   padding-top: 1%;
   padding-bottom: 1%;
+}
+
+#offers h3 {
+  margin-left: 2%;
+  color: #761f31;
 }
 
 .offerscol {

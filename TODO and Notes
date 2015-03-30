@@ -1,12 +1,10 @@
-<<<<<<< HEAD
-
 Reviews as popup like facebook app page "posts to page"
 
 Products page
 
-Logo
+Logo and header img photoshop
 
-Sliding header
+Different Header depending on page
 
 Home page fresh offers
 
@@ -14,12 +12,17 @@ Cart page
 
 Checkout page
 
+Search Functionality
+
+Page numbering
+
+Recommendation code
+
 ***********************************
 KRAKEN Image Compressor
 ***********************************
 
 Captcha?
-=======
 Remember me option for login?
 
 FOR NIALL
@@ -39,4 +42,3 @@ NIALL
 
 1) commit my changes
 2) passing parameters via link_to do an example of this
->>>>>>> 8716769ffc5794af169ba39250d9d2e6451c7294

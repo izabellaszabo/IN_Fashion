@@ -90,7 +90,7 @@
 }
 
 .title a {
-  color: #761f31;
+  color: #000;
   text-decoration: none;
 }
 
@@ -297,6 +297,11 @@ span:hover ~ span:before {
   padding-left: 1%;
 }
 
+#recommended h4 {
+  margin: 1%;
+  color: #fb7142;
+}
+
 @media only screen and (max-width: 1000px) {
   #refine {
     width: 99%;
@@ -347,6 +352,15 @@ span:hover ~ span:before {
   .eachproduct {
     width: 29%;
   }
+  
+  #itemimg {
+    width: 100%;
+  }
+  
+  #itemdesc {
+    width: 98%;
+  }
+  
 }
 
 

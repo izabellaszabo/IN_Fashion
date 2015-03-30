@@ -1,18 +1,20 @@
 <% content_for :header do %>
-  <h1>Header</h1>
-  <%= @tempVar %>
 <% end %>
 
 <% content_for :content do %>
 
 <div id="homecontent">
-<h1>Home</h1>
-<p>So I need some content now...</p>
+
+<img src="assets/site/spring.jpg" alt="product" />
+
+
 </div>
 
 <div id="offers">
+  <h3>Popular this week</h3>
   <div class="offerscol">
-    Offer 1
+    Offer 1<br/>
+    Loop through newest products
   </div>
   
   <div class="offerscol">
