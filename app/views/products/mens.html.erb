@@ -1,0 +1,101 @@
+<% content_for :header do%>
+<div id="search">
+ <form>
+  <input id="searchbar" type="search" name="productsearch" placeholder="Search Products..." />
+ </form>
+</div>
+<% end %>
+
+<% content_for :content do %>
+<div id="refine">
+ <h3>Refine Results</h3>
+ 
+ <div id="refinecont">
+  <div id="sub">
+  <h4>Subcategory</h4>
+   <ul>
+    <li>
+     <a href="#">Business Attire</a>
+    </li>
+    <li>
+     <a href="#">Shirts</a>
+    </li>
+    <li>
+     <a href="#">Pants</a>
+    </li>
+    <li>
+     <a href="#">Skirts</a>
+    </li>
+    <li>
+     <a href="#">Formal Wear</a>
+    </li>
+    <li>
+     <a href="#">Shoes</a>
+    </li>
+    <li>
+     <a href="#">Accessories</a>
+    </li>
+   </ul>
+  </div>
+  
+  <div id="pri">
+   <h4>Price Range</h4>
+   <ul>
+    <li>
+     <a href="#">€0 - €30</a>
+    </li>
+    <li>
+     <a href="#">€30 - €70</a>
+    </li>
+    <li>
+     <a href="#">€70 - €150</a>
+    </li>
+    <li>
+     <a href="#">€150 - €300</a>
+    </li>
+    <li>
+     <a href="#">€300+</a>
+    </li>
+   </ul>
+  </div>
+  
+  <div id="rate">
+   <h4>Rating</h4>
+   <ul>
+    <li style="cursor: default;">
+     <div style="direction: rtl;">
+     <span>☆</span>
+     <span>☆</span>
+     <span>☆</span>
+     <span>☆</span>
+     <span>☆</span>
+    </div>
+    </li>
+   </ul>
+  </div>
+ </div>
+</div>
+
+<div id="products">
+ <!-- IMPORTANT Change product category HERE!-->
+  <% @products.each do |product| %>
+  <div class="eachproduct">
+   <img src="assets/site/header.jpg" alt="Product Image"/>
+   
+   <h3 class="title"><a href="item"><%= product.Title %></a></h3>
+   
+   <div class="functionality">
+    <div class="price"><%= product.price %></div>
+    <div class="addtocart"><a href="#">Add to Cart</a></div>
+   </div>
+  </div>
+  <%end%>
+  
+   <div id="pageno">
+    &lt; 1 &gt;
+   </div>
+ </div>
+ 
+ <%= puts @param1 %>
+
+<% end %>
