@@ -17,13 +17,14 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.create(user_params)
     @contact.save
-    render :nothing => true
+    #render :nothing => true
+    render 'site/about'
   end
 
   private
 
-    def user_params
+  def user_params
       params.require(:contact).permit(:name, :email, :message)
-    end
+  end
     
 end

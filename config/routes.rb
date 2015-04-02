@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :products, only:[:index]
   resource :cart, only:[:show]
   resources :contacts
+  resources :users
   resources :order_items, only: [:create,:update,:destroy]
   #root to:"products#index"
   #ADDED BY NIALL WHAT DOES THIS TO DO
