@@ -9,14 +9,28 @@ class ProductsController < ApplicationController
   
   def men
     #This is the search that does a search with a where clause
-    @products = Product.where(Catagory:"sheep")
+    @products = Product.where(Catagory:"men")
     #This redirects to the view
     render 'products/index'
   end
   
   def women
     #This is the search that does a search with a where clause
-    @products = Product.where(Catagory:"fruit")
+    @products = Product.where(Catagory:"women")
+    #This redirects to the view
+    render 'products/index'
+  end
+  
+  def sport
+    #This is the search that does a search with a where clause
+    @products = Product.where(Catagory:"sport")
+    #This redirects to the view
+    render 'products/index'
+  end
+  
+  def accessories
+    #This is the search that does a search with a where clause
+    @products = Product.where(Catagory:"accessories")
     #This redirects to the view
     render 'products/index'
   end
