@@ -51,19 +51,8 @@ ActiveRecord::Schema.define(version: 20150402081143) do
 
   add_index "orders", ["order_status_id"], name: "index_orders_on_order_status_id"
 
-  create_table "products", force: :cascade do |t|
-    t.string   "Title"
-    t.string   "Description"
-    t.string   "Catagory"
-    t.decimal  "price",       precision: 12, scale: 3
-    t.string   "Size"
-    t.string   "Colour"
-    t.integer  "Review_id"
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
-  end
-
-  add_index "products", ["Review_id"], name: "index_products_on_Review_id"
+# Could not dump table "products" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
   create_table "reviews", force: :cascade do |t|
     t.integer  "Product_id"

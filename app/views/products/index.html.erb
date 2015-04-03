@@ -77,15 +77,14 @@
 </div>
 
 <div id="products">
- <!-- IMPORTANT Change product category HERE!-->
  <% @products.each do |product| %>
   <div class="eachproduct">
    <img src="assets/site/header.jpg" alt="Product Image"/>
    
-   <h3 class="title"><a href="item"><%= product.Title %></a></h3>
+   <h3 class="title"><%= link_to product.Title, product %></h3>
    
    <div class="functionality">
-    <div class="price"><%= product.price %></div>
+    <div class="price"><%= number_with_precision(product.price, precision: 2) %></div>
     <div class="addtocart"><a href="#">Add to Cart</a></div>
    </div>
   </div>

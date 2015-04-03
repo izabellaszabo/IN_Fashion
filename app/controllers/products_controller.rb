@@ -4,7 +4,17 @@ class ProductsController < ApplicationController
     #@products = Product.where(Catagory: "fruit")
     #Some more investigation needs to be done on the new section
     #@order_item = current_order.order_items.new
-
+  end
+  
+  def show
+    @product = Product.find(params[:id])
+  end
+  
+  def new
+    @item = Item.new
+  end
+  
+  def edit
   end
   
   def men
@@ -34,6 +44,17 @@ class ProductsController < ApplicationController
     #This redirects to the view
     render 'products/index'
   end
-
   
+  def subcategory
+    @products = Product.where(subcategory: params[:subcategory])
+    render 'products/index'
+  end
+  
+  private
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def product_params
+      # Add more permits here
+      params.require(:product).permit(:title, :description, :price, :features, :catagory, :subcategory)
+    end
+    
 end

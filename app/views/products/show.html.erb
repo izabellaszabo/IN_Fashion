@@ -17,13 +17,13 @@
       >
     </li>
     <li>
-      <h4><a href="#">e.g Womens</a></h4>
+      <h4><%= link_to @product.Catagory.titlecase, :action => @product.Catagory, :controller => :products %></h4>
     </li>
     <li>
       >
     </li>
     <li>
-      <h4><a href="#">e.g. Gloves</a></h4>
+      <h4><%= link_to @product.subcategory.titlecase, :action => 'subcategory', :subcategory => @product.subcategory %></h4>
     </li>
     <li>
       >
@@ -32,15 +32,15 @@
 </div>
 
 <div id="item">
-  
-  <h2>Item Title</h2>
+
+  <h2><%= @product.Title %></h2>
   
   <div id="itemimg">
-    <img src="assets/site/header.jpg" alt="Product Image" />
+    <img src="/assets/site/header.jpg" alt="Product Image" />
   </div>
   
   <div id="itemdesc">
-    <h4 id="itemprice">Price here</h4>
+    <h4 id="itemprice"><%= number_with_precision(@product.price, precision: 2) %></h4>
     
     <div id="rating">
       <span>☆</span>
@@ -63,11 +63,11 @@
     </div>
 
     <div id="desc">
-      In ex sapien, pellentesque ut imperdiet at, vulputate non felis. Aliquam sed libero vulputate, molestie nunc sollicitudin, 
-      consequat libero. Curabitur tincidunt tortor in arcu efficitur, non bibendum justo aliquet. Morbi rhoncus diam eu ipsum
-      consequat, sit amet lacinia purus cursus. Proin gravida sem semper metus suscipit egestas. In malesuada viverra molestie.
-      Maecenas vehicula a augue et rutrum.
+      <%= @product.Description %>
+      <br/>
+      <%= @product.features %>
     </div>
+    
     
     <div id="size">
       <select class="dropdown">
