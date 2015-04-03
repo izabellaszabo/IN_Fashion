@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20150402141030) do
-=======
-ActiveRecord::Schema.define(version: 20150402081143) do
->>>>>>> 422c105ffc6f3570420840c5f0690b50d4803d13
 
   create_table "contacts", force: :cascade do |t|
     t.string   "name"

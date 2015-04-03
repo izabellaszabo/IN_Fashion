@@ -21,7 +21,11 @@
 		</div>
 		<div id="right">
 			<div id="welcome">
-				Welcome to our online store.
+				<% if session[:username] %>
+				Welcome to our online store <%= session[:username]%>.
+				<%else%>
+				Welcome muppet
+				<%end%>
 			</div>
 			<div id="quickmenu">
 				<ul id="quicklinks">
@@ -31,7 +35,11 @@
 					<li> | </li>
 					<li><%=link_to "Checkout", 'checkout' %></li>
 					<li> | </li>
-					<li><a id="modal_trigger" href="#modal">Login</a></li>
+					<% if session[:username] %>
+						<%=link_to "Logout", 'logout' %>
+					<%else%>
+						<li><a id="modal_trigger" href="#modal">Login</a></li>
+					<%end%>
 				</ul>
 			</div>
 		</div>
@@ -61,7 +69,8 @@
 			<section class="popupBody">
 				<!-- User Login -->
 				<div class="user_login">
-					<%= form_for(@user) do |f| %>
+					<!-- WHY IS THIS LOGIN PATH? TO BE CHECKED FURTHER-->
+					<%= form_for(:session, url: login_path)do |f| %>
 					
 						<table class="logintable">
 						    <tr class="space">
@@ -69,10 +78,6 @@
 						      
 						      <td><%= f.text_field :name, :autofocus=>true, :required => true %></td>
 						      
-						    </tr>
-						    <tr class="space">
-						      <td>Password</td>
-						      <td><%= f.password_field :password, :required => true %></td>
 						    </tr>
 						    <tr class="space">
 						      <td>Password</td>

@@ -29,6 +29,11 @@ Rails.application.routes.draw do
   get 'contact' => 'contacts#new' 
   get 'checkout' => 'cart#checkout'
   get 'cart' => 'cart#show'
+  
+  #Added for the login action
+  get    'login'   => 'sessions#new'
+  post   'login'   => 'sessions#create'
+  get 'logout'  => 'sessions#destroy'
 
   #Sets the path for the main page when they go to the website eg index
   #root 'site#home'
