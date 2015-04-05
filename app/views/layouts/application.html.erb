@@ -1,3 +1,4 @@
+<% User_Var() %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +21,11 @@
 		</div>
 		<div id="right">
 			<div id="welcome">
-				Welcome to our online store.
+				<% if session[:username] %>
+				Welcome to our online store <%= session[:username]%>.
+				<%else%>
+				Welcome muppet
+				<%end%>
 			</div>
 			<div id="quickmenu">
 				<ul id="quicklinks">
@@ -30,7 +35,11 @@
 					<li> | </li>
 					<li><%=link_to "Checkout", :action => 'checkout', :controller => 'carts' %></li>
 					<li> | </li>
-					<li><a id="modal_trigger" href="#modal">Login</a></li>
+					<% if session[:username] %>
+						<%=link_to "Logout", 'logout' %>
+					<%else%>
+						<li><a id="modal_trigger" href="#modal">Login</a></li>
+					<%end%>
 				</ul>
 			</div>
 		</div>
@@ -59,24 +68,30 @@
 			<section class="popupBody">
 				<!-- User Login -->
 				<div class="user_login">
-					<form>
+					<!-- WHY IS THIS LOGIN PATH? TO BE CHECKED FURTHER-->
+					<%= form_for(:session, url: login_path)do |f| %>
+					
 						<table class="logintable">
 						    <tr class="space">
 						      <td>Username</td>
-						      <td><input type="text" name="username" autofocus required /></td>
+						      
+						      <td><%= f.text_field :name, :autofocus=>true, :required => true %></td>
+						      
 						    </tr>
 						    <tr class="space">
 						      <td>Password</td>
-						      <td><input type="password" name="password" required /></td>
+						      <td><%= f.password_field :password, :required => true %></td>
 						    </tr>
 						    <tr class="space">
 						      <td><input type="checkbox" name="remmeber" value="remember">Remember Me</td>
 						    </tr>
 						    <tr>
-						      <td><input type="Submit" value="Log In" class="sendbtn"></td>
+						      <td><%= f.submit "Submit", class: "btn btn-primary" %></td>
+						      
 						    </tr>
 						</table>
-					</form>
+					
+					<%end%>
 					
 					<p>
 						Don't have an account yet? <a href="#" id="register_form" class="signup">Sign up!</a>
@@ -87,25 +102,26 @@
 				
 				<!-- Registration Form -->
 				<div class="user_register">
-					<form>
+					<%= form_for(@user) do |f| %>
+						<%= render 'shared/error_messages' %>
 						<table class="logintable">
 						    <tr class="space">
 						      <td>Username</td>
-						      <td><input type="text" name="username" autofocus required /></td>
+						      <td><%= f.text_field :name, :autofocus=>true, :required => true %></td>
 						    <tr>
 						    <tr class="space">
 						      <td>Password</td>
-						      <td><input type="password" name="password" required /></td>
+						      <td><%= f.password_field :password, :required => true %></td>
 						    <tr>
 						      <tr class="space">
 						      <td>Repeat Password</td>
-						      <td><input type="password" name="password" required /></td>
+						      <td><%= f.password_field :password_confirmation, :required => true %></td>
 						    <tr>
 						    <tr>
 						      <td><input type="Submit" value="Register" class="sendbtn"></td>
 						    </tr>
 						</table>
-					</form>
+					<%end%>
 					
 					<p class="backbtn">
 						<a href="#">Back</a>

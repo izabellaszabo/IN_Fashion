@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :products
   resources :cart, only:[:show]
   resources :contacts
+  resources :users
   resources :order_items, only: [:create,:update,:destroy]
   #root to:"products#index"
   #ADDED BY NIALL WHAT DOES THIS TO DO
@@ -23,9 +24,19 @@ Rails.application.routes.draw do
   get 'mens' => 'products#men'
   get 'sport' => 'products#sport'
   get 'contact' => 'contacts#new' 
+<<<<<<< HEAD
   get 'checkout' => 'carts#checkout'
   get 'cart' => 'carts#index'
   get 'subcategory' => 'products#subcategory'
+=======
+  get 'checkout' => 'cart#checkout'
+  get 'cart' => 'cart#show'
+  
+  #Added for the login action
+  get    'login'   => 'sessions#new'
+  post   'login'   => 'sessions#create'
+  get 'logout'  => 'sessions#destroy'
+>>>>>>> 21c0f02c778307757fea374d861a54ed867dcc71
 
   #Sets the path for the main page when they go to the website eg index
   root 'site#home'
