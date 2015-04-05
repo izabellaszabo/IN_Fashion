@@ -24,11 +24,11 @@
 			</div>
 			<div id="quickmenu">
 				<ul id="quicklinks">
-					<li><%=link_to "My Account", 'account' %></li>
+					<li><%=link_to "My Account", :action => 'account', :controller => 'users' %></li>
 					<li> | </li>
-					<li><%=link_to "My Cart", 'cart' %></li>
+					<li><%=link_to "My Cart", :action => 'index', :controller => 'carts' %></li>
 					<li> | </li>
-					<li><%=link_to "Checkout", 'checkout' %></li>
+					<li><%=link_to "Checkout", :action => 'checkout', :controller => 'carts' %></li>
 					<li> | </li>
 					<li><a id="modal_trigger" href="#modal">Login</a></li>
 				</ul>
@@ -38,10 +38,9 @@
 	
 	<nav>
 		<ul>
-			<li><%=link_to "Women's", 'womens' %></li> 
-			<li><%=link_to "Men's", 'mens' %></li> 
-			<li><%=link_to "Sport Wear", 'sport' %></li>
-			<li><%=link_to "Accessories", 'accessories' %></li>
+			<li><%=link_to "Women's", :action => 'women', :controller => 'products' %></li> 
+			<li><%=link_to "Men's", :action => 'men', :controller => 'products' %></li> 
+			<li><%=link_to "Sport Wear", :action => 'sport', :controller => 'products' %></li>
 		</ul>
 
 		<div id="navimg">
@@ -141,19 +140,18 @@
 	<footer>
 		<div id="footerlinks">
 			<ul>
-				<li><%=link_to "Home", 'home' %></li> 
+				<li><%=link_to "Home", :action => 'home', :controller => 'site' %></li> 
 				<li> | </li>
-				<li><%=link_to "Women's", 'womens' %></li> 
+				<li><%=link_to "Women's", :action => 'women', :controller => 'products' %></li> 
 				<li> | </li>
-				<li><%=link_to "Men's", 'mens' %></li> 
+				<li><%=link_to "Men's", :action => 'men', :controller => 'products' %></li> 
 				<li> | </li>
-				<li><%=link_to "Sport Wear", 'sport' %></li>
+				<li><%=link_to "Sport Wear", :action => 'sport', :controller => 'products' %></li>
 				<li> | </li>
-				<li><%=link_to "Accessories", 'accessories' %></li>
+				<li><%=link_to "About", :action => 'about', :controller => 'site' %></li> 
 				<li> | </li>
-				<li><%=link_to "About", 'about' %></li> 
-				<li> | </li>
-				<li><%=link_to "Contact", 'contact' %></li> 
+				<!-- HERE doesn't seem to work -->
+				<li><%=link_to "Contact", new_contact_path, :controller => 'contacts' %></li> 
 			</ul>
 		</div>
 		

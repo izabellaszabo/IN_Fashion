@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  
-  get 'contacts/new'
 
   #ADDED BY NIALL WHAT DOES THIS TO DO
   resources :products
@@ -15,6 +13,7 @@ Rails.application.routes.draw do
   get 'order_items/destroy'
   get 'carts/show'
   get 'products/index'
+  get 'contacts/new'
 
   get 'account' => 'users#account'
   get 'home' => 'site#home'
@@ -23,21 +22,20 @@ Rails.application.routes.draw do
   get 'womens' => 'products#women'
   get 'mens' => 'products#men'
   get 'sport' => 'products#sport'
-  get 'accessories' => 'products#accessories'
   get 'contact' => 'contacts#new' 
-  get 'checkout' => 'cart#checkout'
-  get 'cart' => 'cart#show'
+  get 'checkout' => 'carts#checkout'
+  get 'cart' => 'carts#index'
   get 'subcategory' => 'products#subcategory'
 
   #Sets the path for the main page when they go to the website eg index
-  #root 'site#home'
+  root 'site#home'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'site#home'
+  #root 'site#home'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

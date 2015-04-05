@@ -20,6 +20,8 @@ class ProductsController < ApplicationController
   def men
     #This is the search that does a search with a where clause
     @products = Product.where(Catagory:"men")
+    @category = 'men'
+    @subcategory = 'none'
     #This redirects to the view
     render 'products/index'
   end
@@ -27,6 +29,8 @@ class ProductsController < ApplicationController
   def women
     #This is the search that does a search with a where clause
     @products = Product.where(Catagory:"women")
+    @category = 'women'
+    @subcategory = 'none'
     #This redirects to the view
     render 'products/index'
   end
@@ -34,19 +38,16 @@ class ProductsController < ApplicationController
   def sport
     #This is the search that does a search with a where clause
     @products = Product.where(Catagory:"sport")
-    #This redirects to the view
-    render 'products/index'
-  end
-  
-  def accessories
-    #This is the search that does a search with a where clause
-    @products = Product.where(Catagory:"accessories")
+    @category = 'sport'
+    @subcategory = 'none'
     #This redirects to the view
     render 'products/index'
   end
   
   def subcategory
     @products = Product.where(subcategory: params[:subcategory])
+    @subcategory = params[:subcategory]
+    @category = params[:breadcrumbsCategory]
     render 'products/index'
   end
   
@@ -54,7 +55,7 @@ class ProductsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
       # Add more permits here
-      params.require(:product).permit(:title, :description, :price, :features, :catagory, :subcategory)
+      params.require(:product).permit(:title, :description, :price, :features, :catagory, :subcategory, :color)
     end
     
 end

@@ -14,27 +14,63 @@
   <div id="sub">
   <h4>Subcategory</h4>
    <ul>
-    <li>
-     <a href="#">Business Attire</a>
+    <% if @category.eql? 'women' %>
+     <li>
+      <%= link_to "Skirts & Dresses", :action => 'subcategory', :subcategory => 'dress', :breadcrumbsCategory => @category %>
+     </li>
+     <li>
+      <%= link_to "Business Attire", :action => 'subcategory', :subcategory => 'business', :breadcrumbsCategory => @category %>
+     </li>
+     <li>
+      <%= link_to "Casual", :action => 'subcategory', :subcategory => 'casual-Women', :breadcrumbsCategory => @category %>
+     </li>
+     <li>
+      <%= link_to "Jumpers and Coats", :action => 'subcategory', :subcategory => 'coats-Women', :breadcrumbsCategory => @category %>
+     </li>
+     <li>
+     <%= link_to "Shoes", :action => 'subcategory', :subcategory => 'shoes-Women', :breadcrumbsCategory => @category %>
     </li>
     <li>
-     <a href="#">Shirts</a>
+     <%= link_to "Accessories", :action => 'subcategory', :subcategory => 'accessories-Women', :breadcrumbsCategory => @category %>
+    </li>
+     <% end %>
+
+    <% if @category.eql? 'men' %>
+     <li>
+      <%= link_to "Suits", :action => 'subcategory', :subcategory => 'suits', :breadcrumbsCategory => @category %>
+     </li>
+     <li>
+      <%= link_to "Casual", :action => 'subcategory', :subcategory => 'casual-Men', :breadcrumbsCategory => @category %>
+     </li>
+     <li>
+      <%= link_to "Jumpers and Coat", :action => 'subcategory', :subcategory => 'coats-Men', :breadcrumbsCategory => @category %>
+     </li>
+     <li>
+     <%= link_to "Shoes", :action => 'subcategory', :subcategory => 'shoes-Men', :breadcrumbsCategory => @category %>
     </li>
     <li>
-     <a href="#">Pants</a>
+     <%= link_to "Accessories", :action => 'subcategory', :subcategory => 'accessories-Men', :breadcrumbsCategory => @category %>
     </li>
-    <li>
-     <a href="#">Skirts</a>
-    </li>
-    <li>
-     <a href="#">Formal Wear</a>
-    </li>
-    <li>
-     <a href="#">Shoes</a>
-    </li>
-    <li>
-     <a href="#">Accessories</a>
-    </li>
+    <% end %>
+    
+    <% if @category.eql? 'sport' %>
+     <li>
+      <%= link_to "Women's Sport Gear", :action => 'subcategory', :subcategory => 'gear-Women', :breadcrumbsCategory => @category %>
+     </li>
+     <li>
+      <%= link_to "Men's Sport Gear", :action => 'subcategory', :subcategory => 'gear-Men', :breadcrumbsCategory => @category %>
+     </li>
+     <li>
+      <%= link_to "Women's Shoes", :action => 'subcategory', :subcategory => 'sport-Shoes-Women', :breadcrumbsCategory => @category %>
+     </li>
+     <li>
+      <%= link_to "Men's Shoes", :action => 'subcategory', :subcategory => 'sport-Shoes-Men', :breadcrumbsCategory => @category %>
+     </li>
+      <li>
+      <%= link_to "Workout Equipment", :action => 'subcategory', :subcategory => 'equipment', :breadcrumbsCategory => @category %>
+     </li>
+    <% end %>
+  
    </ul>
   </div>
   
@@ -58,43 +94,52 @@
     </li>
    </ul>
   </div>
-  
-  <div id="rate">
-   <h4>Rating</h4>
-   <ul>
-    <li style="cursor: default;">
-     <div style="direction: rtl;">
-     <span>☆</span>
-     <span>☆</span>
-     <span>☆</span>
-     <span>☆</span>
-     <span>☆</span>
-    </div>
-    </li>
-   </ul>
-  </div>
  </div>
 </div>
-
+ 
 <div id="products">
+ <div id="breadcrumbs" style="padding-top: 1%; padding-left: 1%;">
+  <ul>
+    <li>
+      <h4><%= link_to "Home", :action => 'home', :controller => :site %></h4>
+    </li>
+    <li>
+      >
+    </li>
+    <li>
+      <h4><%= link_to @category.titlecase, :action => @category, :breadcrumbsCategory => @category %></h4>
+    </li>
+    <li>
+      >
+    </li>
+    <% if @subcategory != 'none' %>
+    <li>
+      <h4>
+       <%= link_to @subcategory.titlecase, :action => 'subcategory', 
+       :subcategory => @subcategory, :breadcrumbsCategory => @category %>
+      </h4>
+    </li>
+    <li>
+      >
+    </li>
+    <% end %>
+  </ul>
+ </div>
  <% @products.each do |product| %>
-  <div class="eachproduct">
-   <img src="assets/site/header.jpg" alt="Product Image"/>
-   
-   <h3 class="title"><%= link_to product.Title, product %></h3>
-   
-   <div class="functionality">
-    <div class="price"><%= number_with_precision(product.price, precision: 2) %></div>
-    <div class="addtocart"><a href="#">Add to Cart</a></div>
+   <div class="eachproduct">
+    <%= image_tag product.image_url , :class => "productsimg"%>
+    
+    <h3 class="title"><%= link_to product.Title, product %></h3>
+    
+    <div class="functionality">
+     <div class="price"><%= number_with_precision(product.price, precision: 2) %></div>
+     <div class="addtocart"><a href="#">Add to Cart</a></div>
+    </div>
    </div>
-  </div>
   <%end%>
-  
    <div id="pageno">
     &lt; 1 &gt;
    </div>
  </div>
- 
- <%= puts @param1 %>
 
 <% end %>

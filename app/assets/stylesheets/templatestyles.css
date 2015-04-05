@@ -24,6 +24,7 @@ header {
 	margin-top: 1%;
 	clear: both;
 	float: left;
+	position: relative;
 }
 
 #logo {
@@ -135,6 +136,7 @@ nav a:hover {
 	text-align: left;
 	overflow: hidden;
 	padding-bottom: 0px;
+	position: relative;
 }
 
 #main {

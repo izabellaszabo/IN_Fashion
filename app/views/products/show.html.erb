@@ -11,7 +11,7 @@
 <div id="breadcrumbs">
   <ul>
     <li>
-      <h4><a href="home">Home</a></h4>
+      <h4><%= link_to "Home", :action => 'home', :controller => :site %></h4>
     </li>
     <li>
       >
@@ -23,7 +23,9 @@
       >
     </li>
     <li>
-      <h4><%= link_to @product.subcategory.titlecase, :action => 'subcategory', :subcategory => @product.subcategory %></h4>
+      <h4><%= link_to @product.subcategory.titlecase, :action => 'subcategory', 
+        :subcategory => @product.subcategory, :breadcrumbsCategory => @product.Catagory %>
+      </h4>
     </li>
     <li>
       >
@@ -36,7 +38,7 @@
   <h2><%= @product.Title %></h2>
   
   <div id="itemimg">
-    <img src="/assets/site/header.jpg" alt="Product Image" />
+    <%= image_tag @product.image_url %>
   </div>
   
   <div id="itemdesc">
@@ -108,10 +110,8 @@
 
 <div id="recommended">
  <h4>Recommended for you</h4>
-  <p>Loop through a couple products in same subcategory</p>
+  
 </div>
 </div>
-
-<%= puts @param1 %>
 
 <% end %>
