@@ -22,9 +22,9 @@
 		<div id="right">
 			<div id="welcome">
 				<% if session[:username] %>
-				Welcome to our online store <%= session[:username]%>.
+				Welcome to our online store <%= session[:username]%>. <%= render 'layouts/cart_text' %>
 				<%else%>
-				Welcome muppet
+				Welcome muppet 
 				<%end%>
 			</div>
 			<div id="quickmenu">

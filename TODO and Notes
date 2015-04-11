@@ -23,6 +23,10 @@ KRAKEN Image Compressor
 Captcha?
 Remember me option for login?
 
+***********************************
+STARTING THE SERVER
+***********************************
+rails server -b $IP -p $PORT
 
 
 

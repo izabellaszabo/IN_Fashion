@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  #ADDED BY NIALL WHAT DOES THIS TO DO
+  #ADDED WHEN DO CART TO BE INVESTIGATED
   resources :products
-  resources :cart, only:[:show]
+  resource :cart, only:[:show]
   resources :contacts
   resources :users
   resources :order_items, only: [:create,:update,:destroy]
