@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   get 'checkout' => 'cart#checkout'
   get 'cart' => 'cart#show'
   get 'search' => 'products#search'
+  get 'submitOrder' => 'carts#submitOrder'
   
   #Added for the login action
   get 'login'   => 'sessions#new'

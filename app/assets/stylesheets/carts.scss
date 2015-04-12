@@ -1,3 +1,125 @@
-// Place all the styles related to the Carts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* Checkout Page */
+#checkoutcont {
+  padding: 1%;
+  background: linear-gradient(#fb7142 5%, #ffffff 40%);
+  width: 98%;
+  float: left;
+}
+
+#checkoutcont h1 {
+  border-bottom: solid 1px #fff;
+  padding-left: 1%;
+  margin-bottom: 0px;
+}
+
+#checkoutcont h3 {
+  color: #761f31;
+  margin-top: 1%;
+}
+
+#checkoutform input, #textarea {
+  border: solid 1px #fb7142;
+  outline: none;
+  background: #fff;
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  padding: 3px;
+  margin-bottom: 3%;
+}
+
+#textarea {
+  border-radius: 0px;
+}
+
+#checkoutform input:hover {
+  box-shadow: 0px 0px 1px 1px #fb7142;
+}
+
+#submitorder input {
+  margin-top: 3%;
+  text-decoration: none;
+  color: #761f31;
+  border: solid 1px #999;
+  background: #fb7142;
+  text-align: center;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  font-family: 'Lobster', Georgia, Times, serif;
+  margin-right: auto;
+  margin-left: auto;
+  width: 65%;
+}
+
+#submitorder input:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 2px 1px #fb7142;
+}
+
+#link {
+  color: #000;
+  font-family: 'Lobster', Georgia, Times, serif;
+  color: #761f31;
+}
+
+#subtotallbl {
+  width: 50%;
+  float: left;
+}
+
+#subtotalcost {
+  width: 50%;
+  float: left;
+  text-align: right;
+}
+
+#shippinglbl {
+  width: 50%;
+  float: left;
+}
+
+#shippingcost {
+  width: 50%;
+  float: left;
+  text-align: right;
+}
+
+#totalcost {
+  width: 100%;
+  float: left;
+  text-align: center;
+  font-size: 1.4em;
+  border-bottom: solid 1px #000;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+
+#comments {
+  border-bottom: solid 1px #000;
+  margin-bottom: 5%;
+}
+
+#submitorder {
+  text-align: center;
+}
+
+/* Thank You Page */
+#thankscont {
+  background: linear-gradient(#fb7142 15%, #ffffff 60%);
+  float: left;
+  width: 98%;
+  padding: 1%;
+}
+
+#thankscont h2 {
+  color: #761f31;
+  border-bottom: solid 1px #000;
+  padding-left: 1%;
+}
+
+@media only screen and (max-width: 1000px) {
+  /* Checkout Page */
+  #checkoutcont {
+    background: linear-gradient(to right, #fb7142 5%, #fff 30%);
+  }
+  
+}

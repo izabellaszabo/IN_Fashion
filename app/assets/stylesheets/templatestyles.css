@@ -296,7 +296,6 @@ footer {
   font-family: 'Cabin', Helvetica, Arial, sans-serif;
   font-size: 1em;
   padding: 3px;
-  outline: none;
 }
 
 .logintable input:focus {

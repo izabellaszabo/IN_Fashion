@@ -1,0 +1,28 @@
+<% content_for :header do %>
+<% end %>
+
+<% content_for :content do %>
+<div id="thankscont">
+<h2>Thank you, your order has been placed</h2>
+<p>An email confirmation has been sent to you.</p>
+
+<p>Order Number: <%= @orderNum %></p>
+<ul>
+  <li>
+    <%= @items %> Item(s) will be shipped to <%= @name %>
+  </li>
+  <li>
+    Orders within the Republic of Ireland arrive within 3-5 working days.
+  </li>
+  <li>
+    Orders to other countries can take up to 10 working days.
+  </li>
+  <li>
+    This and all previous orders can be found under <%= link_to "My Account", "account", :id => "link" %>.
+  </li>
+</ul>
+
+
+
+</div>
+<% end %>

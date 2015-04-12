@@ -1,7 +1,119 @@
 <% content_for :header do %>
-Header
+
 <% end %>
 
+
+
+
 <% content_for :content do %>
-Checkout
+
+<div id="checkoutcont">
+<h1>Checkout</h1>
+
+<% if session[:username] != nil%>
+<%= form_tag "submitOrder", method: "get", :id => "checkoutform" do %>
+<div class="col">
+  <h3 style="text-align: center;">Delivery Details</h3>
+  <p>
+    Customer Name
+    <br/>
+    Street Address
+    <br/>
+    Town/City
+    <br/>
+    Country
+  </p>
+  <p>
+    Phone
+    <br/>
+    Email
+  </p>
+  <p>If delivery details are incorrect, please edit them under <%= link_to "My Account", "account", :id => "link" %>.</p>
+</div>
+
+<div class="col">
+  <h3 style="text-align: center;">Payment Details</h3>
+  <%= radio_button_tag :payby, 'card', :checked => true %> Pay by Card (Visa, Debit, etc)
+  <table>
+    <tr>
+      <td>
+        Card Type
+        <br/>
+        <%= text_field_tag :cardtype, '', :required => true %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Card Holder's Name
+        <br/>
+        <%= text_field_tag :cardname, '', :required => true %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Card Number
+        <br/>
+        <%= text_field_tag :cardnumber, '', :required => true %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Expiration Date
+        <br/>
+        <%= text_field_tag :cardexpiration, '', :placeholder => "MM/YYYY", :required => true %>
+      </td>
+    </tr>
+  </table>
+  <br/>
+  <%= radio_button_tag :payby, 'giftcard' %> Redeem Gift Card
+  <br/>
+  Gift Card Number
+  <br/>
+  <!-- When Giftcard radio_button is selected, this giftcardnum should be required. -->
+  <%= text_field_tag :giftcardnum %>
+  
+</div>
+
+<div class="col" id="lastcol">
+  <h3 style="text-align: center;">Order Summary</h3>
+  <div id="subtotallbl">Subtotal(...item(s)): </div>
+  <div id="subtotalcost">€</div>
+  <div id="shippinglbl">Shipping: </div>
+  <div id="shippingcost">
+    <!-- If country = ireland, shipping n/a, if outside republic shipping = 10 euro -->
+    n/a
+  </div>
+  <div id="totalcost">Order Total: €</div>
+  
+  <div>
+    Promotional Codes
+    <br/>
+    <!--If promo code == ruby, then discount 25% -->
+    <%= text_field_tag(:promocode) %>
+  </div>
+  <div id="comments">
+    Delivery Comments
+    <br/>
+    <%= text_area_tag :comments, '', :id => "textarea", :cols => "30", :rows => "5" %>
+  </div>
+  
+  <!-- This submit button will collect all info on this page, delivery details, 
+  payment details and order items and they will be submitted and saved to orders table. 
+  Then summary of this info will be presented on thank you page to simulate some sort 
+  of payment action. -->
+  <div id="submitorder">
+    <%= submit_tag "Submit Order!" %> 
+  </div>
+  <% end %>
+</div>
+
+<% else %>
+  <p>Please Login to checkout items.</p>
+<% end %>
+
+</div>
+
+
+
+
 <% end %>
