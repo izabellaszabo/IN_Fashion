@@ -1,8 +1,11 @@
 <% content_for :header do%>
 <div id="search">
- <form>
-  <input id="searchbar" type="search" name="productsearch" placeholder="Search Products..." />
- </form>
+ <%= form_tag("search", method: "get") do %>
+  <%= text_field_tag(:searchbar) %>
+  <%= hidden_field_tag :breadcrumbsCategory , @category %>
+  <%= hidden_field_tag :subcategory , 'none' %>
+  <%= submit_tag "Go", :id=> "searchbutton" %> 
+<% end %>
 </div>
 <% end %>
 
@@ -78,7 +81,7 @@
    <h4>Price Range</h4>
    <ul>
     <li>
-     <a href="#">€0 - €30</a>
+     <%= link_to "€0 - €30", :method => 'priceRange(0, 30)', :subcategory => @subcategory, :breadcrumbsCategory => @category %>
     </li>
     <li>
      <a href="#">€30 - €70</a>
@@ -125,21 +128,47 @@
     <% end %>
   </ul>
  </div>
- <% @products.each do |product| %>
-   <div class="eachproduct">
-    <%= image_tag product.image_url , :class => "productsimg"%>
-    
-    <h3 class="title"><%= link_to product.Title, product %></h3>
-    
-    <div class="functionality">
-     <div class="price"><%= number_with_precision(product.price, precision: 2) %></div>
-     <div class="addtocart"><a href="#">Add to Cart</a></div>
+ <table id="productsTable">
+  <col width="23%" />
+  <col width="23%" />
+  <col width="23%" />
+  <col width="23%" />
+ <% @products.each_with_index do |product, index| %>
+  <% if index % 4 == 0 %>
+   <tr>
+  <% end %>
+   <td>
+    <div class="eachproduct">
+     <%= image_tag product.image_url , :class => "productsimg"%>
+     
+     <h3 class="title"><%= link_to product.Title, product %></h3>
+     
+     <div class="functionality">
+      <div class="price"><%= number_with_precision(product.price, precision: 2) %></div>
+      <div class="addtocart"><a href="#">Add to Cart</a></div>
+     </div>
     </div>
-   </div>
-  <%end%>
-   <div id="pageno">
-    &lt; 1 &gt;
-   </div>
+   </td>
+   <% if index % 4 == 3 %>
+    </tr>
+   <% end %>
+  <% end %>
+  <% if @products.length < 4 %>
+    <td>
+    </td>
+    <% if @products.length < 3 %>
+     <td>
+     </td>
+     <% if @products.length < 2 %>
+      <td>
+      </td>
+     <% end %>
+    <% end %>
+   <% end %>
+  </table>
+  <% if @products.length == 0 %>
+   <p id="nomatches">Sorry, no matches found for: "<%= params[:searchbar] %>"</p>
+  <% end %>
  </div>
 
 <% end %>

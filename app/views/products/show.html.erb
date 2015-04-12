@@ -110,8 +110,29 @@
 
 <div id="recommended">
  <h4>Recommended for you</h4>
+ <table id="productsTable">
+    <col width="23%" />
+    <col width="23%" />
+    <col width="23%" />
+    <col width="23%" />
+ 
+ <% @recommended.each_with_index do |product, index| %>
+  <% if index % 4 == 0 %>
+   <tr>
+  <% end %>
+   <td>
+    <div class="eachproduct">
+     <%= image_tag product.image_url , :class => "productsimg"%>
+     <h3 class="title"><%= link_to product.Title, product %></h3>
+    </div>
+   </td>
+   <% if index % 4 == 3 %>
+    </tr>
+   <% end %>
+ <% end %>
+ </table>
   
-</div>
+  </div>
 </div>
 
 <% end %>

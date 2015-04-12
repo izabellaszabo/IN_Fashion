@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
   
   def show
     @product = Product.find(params[:id])
+    @recommended = Product.where(subcategory: @product.subcategory).shuffle.take(4)
   end
   
   def new
@@ -19,7 +20,7 @@ class ProductsController < ApplicationController
   
   def men
     #This is the search that does a search with a where clause
-    @products = Product.where(Catagory:"men")
+    @products = Product.where(Catagory:"men").shuffle
     @category = 'men'
     @subcategory = 'none'
     #This redirects to the view
@@ -28,7 +29,7 @@ class ProductsController < ApplicationController
   
   def women
     #This is the search that does a search with a where clause
-    @products = Product.where(Catagory:"women")
+    @products = Product.where(Catagory:"women").shuffle
     @category = 'women'
     @subcategory = 'none'
     #This redirects to the view
@@ -37,7 +38,7 @@ class ProductsController < ApplicationController
   
   def sport
     #This is the search that does a search with a where clause
-    @products = Product.where(Catagory:"sport")
+    @products = Product.where(Catagory:"sport").shuffle
     @category = 'sport'
     @subcategory = 'none'
     #This redirects to the view
@@ -45,9 +46,24 @@ class ProductsController < ApplicationController
   end
   
   def subcategory
-    @products = Product.where(subcategory: params[:subcategory])
+    @products = Product.where(subcategory: params[:subcategory]).shuffle
     @subcategory = params[:subcategory]
     @category = params[:breadcrumbsCategory]
+    render 'products/index'
+  end
+  
+  def priceRange(min, max)
+    @products = Products.find :all, 
+      :conditions => ['price BETWEEN ? AND ?', min, max]
+    @subcategory = params[:subcategory]
+    @category = params[:breadcrumbsCategory]
+    render 'products/index'
+  end
+  
+  def search
+    @products = Product.where("title like '%#{params[:searchbar]}%' AND Catagory = '#{params[:breadcrumbsCategory]}' ")
+    @category = params[:breadcrumbsCategory]
+    @subcategory = params[:subcategory]
     render 'products/index'
   end
   

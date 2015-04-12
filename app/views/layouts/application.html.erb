@@ -20,28 +20,25 @@
 		<img src="/assets/site/logo.jpg" alt="logo"/>
 		</div>
 		<div id="right">
-			<div id="welcome">
+			<% if session[:username] %>
+			Welcome, <%= session[:username]%>
+			<%else%>
+			Welcome  to our online store!
+			<%end%>
+			<br/>
+			<ul id="quicklinks">
+				<li><%=link_to "My Account", :action => 'show', :controller => 'users' %></li>
+				<li> | </li>
+				<li><%=link_to "My Cart", :action => 'index', :controller => 'carts' %></li>
+				<li> | </li>
+				<li><%=link_to "Checkout", :action => 'checkout', :controller => 'carts' %></li>
+				<li> | </li>
 				<% if session[:username] %>
-				Welcome to our online store <%= session[:username]%>.
+					<%=link_to "Logout", 'logout' %>
 				<%else%>
-				Welcome muppet
+					<li><a id="modal_trigger" href="#modal">Login</a></li>
 				<%end%>
-			</div>
-			<div id="quickmenu">
-				<ul id="quicklinks">
-					<li><%=link_to "My Account", :action => 'account', :controller => 'users' %></li>
-					<li> | </li>
-					<li><%=link_to "My Cart", :action => 'index', :controller => 'carts' %></li>
-					<li> | </li>
-					<li><%=link_to "Checkout", :action => 'checkout', :controller => 'carts' %></li>
-					<li> | </li>
-					<% if session[:username] %>
-						<%=link_to "Logout", 'logout' %>
-					<%else%>
-						<li><a id="modal_trigger" href="#modal">Login</a></li>
-					<%end%>
-				</ul>
-			</div>
+			</ul>
 		</div>
 	</header>
 	
@@ -86,7 +83,7 @@
 						      <td><input type="checkbox" name="remmeber" value="remember">Remember Me</td>
 						    </tr>
 						    <tr>
-						      <td><%= f.submit "Submit", class: "btn btn-primary" %></td>
+						      <td><%= f.submit "Submit", class: "btn btn-primary", id: "sendbtn" %></td>
 						      
 						    </tr>
 						</table>

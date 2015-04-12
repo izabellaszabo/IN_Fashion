@@ -16,10 +16,9 @@ Rails.application.routes.draw do
   get 'products/index'
   get 'contacts/new'
 
-  get 'account' => 'users#account'
+  get 'account' => 'users#show'
   get 'home' => 'site#home'
   get 'about' => 'site#about'
-  #get 'contact' => 'site#contact' 
   get 'womens' => 'products#women'
   get 'mens' => 'products#men'
   get 'sport' => 'products#sport'
@@ -29,10 +28,11 @@ Rails.application.routes.draw do
   get 'subcategory' => 'products#subcategory'
   get 'checkout' => 'cart#checkout'
   get 'cart' => 'cart#show'
+  get 'search' => 'products#search'
   
   #Added for the login action
-  get    'login'   => 'sessions#new'
-  post   'login'   => 'sessions#create'
+  get 'login'   => 'sessions#new'
+  post 'login'   => 'sessions#create'
   get 'logout'  => 'sessions#destroy'
 
   #Sets the path for the main page when they go to the website eg index

@@ -17,12 +17,12 @@ class UsersController < ApplicationController
     end
   end
   
-  #Evertying below here is private unless public keyword used
+  #Everyting below here is private unless public keyword used
   private
   
   #Setting up Strong parameters as this is needed
   def user_params
-      params.require(:user).permit(:name, :email, :password)
+      params.require(:user).permit(:name, :email, :password, :billing_address, :delivery_address)
   end
 
 end

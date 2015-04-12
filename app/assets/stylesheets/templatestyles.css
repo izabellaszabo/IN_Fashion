@@ -38,56 +38,46 @@ header {
 
 #right {
 	float: left;
-	width: 70%;
+	width: 68%;
 	height: 100%;
-}
-
-#welcome {
 	font-family: 'Lobster', Georgia, Times, serif;
 	text-align: right;
-	padding-right: 3%;
+	padding-right: 2%;
 	font-size: 1.1em;
 	color: #fff;
 }
 
-#quickmenu {
-	float: right;
-	margin-top: 1%;
-	padding-right: 2%;
-}
-
-#quickmenu ul {
+#right ul {
 	text-align: right;
-	padding-top: 0.5%;
-	padding-bottom: 1%;
-	padding-left: 3%;
-	padding-right: 5%;
-	margin-top: 0px;
-	margin-bottom: 2px;
 	display: inline;
 	white-space: nowrap;
+	padding-left: 0px;
 }
 
-#quickmenu li {
+#right li {
 	display: inline;
 	list-style: none;
 	padding-left: 0%;
-	padding-right: 3%;
+	padding-right: 1%;
 	color: #aaa;
+	font-size: 0.95em;
+	font-family: 'Cabin', Helvetica, Arial, sans-serif;
 }
 
-#quickmenu a {
+#right a {
 	color: #fb7142;
 	text-decoration: none;
+	font-size: 0.95em;
+	font-family: 'Cabin', Helvetica, Arial, sans-serif;
 }
 
-#quickmenu a:hover {
+#right a:hover {
 	text-decoration: underline;
 }
 
 nav {
 	width: 99.7%;
-	margin-top: 2%;
+	margin-top: 1%;
 	text-align: right;
 	clear: both;
 	float: left;
@@ -301,7 +291,6 @@ footer {
 
 .logintable input {
   border: solid 1px #fb7142;
-  border-radius: 5px;
   outline: none;
   background: #fff;
   font-family: 'Cabin', Helvetica, Arial, sans-serif;
@@ -316,6 +305,12 @@ footer {
 
 .logintable .sendbtn:hover {
   color: #fb7142;
+  cursor: pointer;
+  box-shadow: 0px 0px 1px 1px #fb7142;
+}
+
+#sendbtn:hover {
+	color: #fb7142;
   cursor: pointer;
   box-shadow: 0px 0px 1px 1px #fb7142;
 }
@@ -337,7 +332,6 @@ footer {
 	
 	nav {
 		width: 100%;
-		font-size: 1.3em;
 		margin-bottom: 2%;
 	}
 	

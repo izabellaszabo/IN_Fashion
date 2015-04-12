@@ -2,19 +2,20 @@ Reviews as popup like facebook app page "posts to page"
 
 Logo and header img photoshop
 
-Home page fresh offers
-
 Cart page
 
 Checkout page
 
-Search Functionality
-
-Recommendation code
-
 One Size Option
 
 Colours dynamically pulled from database!
+
+Forgot Password
+
+User Show page
+<%= session[:password].gsub!(/./, "\u2022 ") %>
+
+Price Range
 
 ***********************************
 KRAKEN Image Compressor

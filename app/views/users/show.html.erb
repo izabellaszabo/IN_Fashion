@@ -1,12 +1,40 @@
 <% content_for :header do %>
-
 <% end %>
 
-
-
 <% content_for :content do %>
-<h2>Name : </h2><%= @user.name %>,
-</br>
-<h2>Email : </h2><%= @user.email %>
+
+<div id="accountcont">
+    
+<h1>Account Details</h1>
+
+<% if session[:username] %>
+    <table>
+    <tr>
+        <td>Name</td>
+        <td><%= session[:name] %></td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td><%= session[:email] %></td>
+    </tr>
+    <tr>
+        <td>Password</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Delivery Address</td>
+        <td><%= session[:delivery_address] %></td>
+    </tr>
+    <tr>
+        <td>Billing Address</td>
+        <td><%= session[:billing_address] %></td>
+    </tr>
+    
+</table>
+<%else%>
+    <p>Please Login to view your account details!</p>
+<%end%>
+
+</div>
 
 <% end %>
