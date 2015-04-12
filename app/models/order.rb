@@ -5,7 +5,7 @@ class Order < ActiveRecord::Base
   
   # Private Method that is run to set the status to 1.
   before_create :set_order_status
-  # NEED TO FIGURE OUT WHEN SAVE HAPPENS
+  # Seting the subtotal if anychanges happen in the prices. 
   before_save :update_subtotal
 
   # This method goes through Order Item, Checks if it is valid and then sums total

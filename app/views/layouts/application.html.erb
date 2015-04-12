@@ -34,9 +34,15 @@
 				<li><%=link_to "Checkout", :action => 'checkout', :controller => 'carts' %></li>
 				<li> | </li>
 				<% if session[:username] %>
+<<<<<<< HEAD
 					<%=link_to "Logout", 'logout' %>
 				<%else%>
 					<li><a id="modal_trigger" href="#modal">Login</a></li>
+=======
+				Welcome to our online store <%= session[:username]%>. <%= render 'layouts/cart_text' %>
+				<%else%>
+				Welcome muppet 
+>>>>>>> a86251824f6aca3274f61cd8983d52b540e04c3f
 				<%end%>
 			</ul>
 		</div>
