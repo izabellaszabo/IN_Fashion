@@ -1,3 +1,7 @@
+<% content_for :title do %>
+Shopping @ IN Fashion
+<% end %>
+
 <% content_for :header do%>
 <div id="search">
  <%= form_tag("search", method: "get") do %>
@@ -81,19 +85,19 @@
    <h4>Price Range</h4>
    <ul>
     <li>
-     <%= link_to "€0 - €30", :method => 'priceRange(0, 30)', :subcategory => @subcategory, :breadcrumbsCategory => @category %>
+     <%= link_to "€0 - €30", :action => 'priceRange', :subcategory => @subcategory, :breadcrumbsCategory => @category, :min => 0, :max => 30 %>
     </li>
     <li>
-     <a href="#">€30 - €70</a>
+     <%= link_to "€30 - €70", :action => 'priceRange', :subcategory => @subcategory, :breadcrumbsCategory => @category, :min => 30, :max => 70 %>
     </li>
     <li>
-     <a href="#">€70 - €150</a>
+     <%= link_to "€70 - €150", :action => 'priceRange', :subcategory => @subcategory, :breadcrumbsCategory => @category, :min => 70, :max => 150 %>
     </li>
     <li>
-     <a href="#">€150 - €300</a>
+     <%= link_to "€150 - €300", :action => 'priceRange', :subcategory => @subcategory, :breadcrumbsCategory => @category, :min => 150, :max => 300 %>
     </li>
     <li>
-     <a href="#">€300+</a>
+     <%= link_to "300+", :action => 'priceRange', :subcategory => @subcategory, :breadcrumbsCategory => @category, :min => 300, :max => "none" %>
     </li>
    </ul>
   </div>
@@ -139,7 +143,7 @@
   <% end %>
    <td>
     <div class="eachproduct">
-     <%= image_tag product.image_url , :class => "productsimg"%>
+     <%= link_to image_tag(product.image_url, :class => "productsimg"), product %>
      
      <h3 class="title"><%= link_to product.Title, product %></h3>
      

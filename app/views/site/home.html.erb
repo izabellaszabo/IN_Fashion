@@ -34,7 +34,7 @@
   <% end %>
    <td>
     <div class="eachproduct">
-     <%= image_tag product.image_url , :class => "productsimg"%>
+     <%= link_to image_tag(product.image_url, :class => "productsimg"), product %>
      <h3 class="title"><%= link_to product.Title, product %></h3>
     </div>
    </td>

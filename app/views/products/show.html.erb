@@ -1,5 +1,8 @@
-<% content_for :header do %>
+<% content_for :title do %>
+Product Details
+<% end %>
 
+<% content_for :header do %>
 <% end %>
 
 <% content_for :content do %>
@@ -49,7 +52,7 @@
       <br/>
       <ul id="review">
         <li>
-          <h4><a href="#">View Reviews</a></h4> 
+          <h4><a id="review_trigger" href="#reviews">View Reviews</a></h4> 
         </li>
         <li>
           ||
@@ -118,7 +121,7 @@
   <% end %>
    <td>
     <div class="eachproduct">
-     <%= image_tag product.image_url , :class => "productsimg"%>
+     <%= link_to image_tag(product.image_url, :class => "productsimg"), product %>
      <h3 class="title"><%= link_to product.Title, product %></h3>
     </div>
    </td>
@@ -129,6 +132,82 @@
  </table>
   
   </div>
+  <!-- Changed from modal-->
+  <div id="reviews" class="reviewsContainer" style="display:none;">
+			<header class="popupHeader">
+				<div class="header_title">Reviews</div>
+				<div class="modal_close">Close</div>
+			</header>
+			
+			<section class="popupBody">
+				<!-- View Reviews -->
+				<div class="view_reviews">
+					<% if @reviews != nil %>
+					We have reviews!
+
+					<% else %>
+					<p>
+					  This product hasn't been reviewed yet.
+					</p>
+					<p>
+						Be the first to review this product <a href="#" id="new_review" class="signup">Here</a>!
+					</p>
+					<% end %>
+				</div>
+				
+				<!-- New Review Form -->
+				<div class="new_review" style="display:none">
+				  <p>New Review for: <%= @product.Title %></p>
+				  <%= form_tag @reviews, :action => :new, :method => :post do %>
+				  <div id="reviewRating">
+				    Rating:     
+				    <span>☆</span>
+            <span>☆</span>
+            <span>☆</span>
+            <span>☆</span>
+            <span>☆</span>
+            <% hidden_field_tag :rating => "getNewRating()"%>
+          </div>
+          <p>
+            Comments:
+            <br/>
+            <%= text_area_tag :comments, '', :id => "reviewComments", :rows => 7 %>
+          </p>
+          <% hidden_field_tag :productId => @product.id %>
+          <%= submit_tag "Add Review", :id => "addReviewBtn" %>
+					<% end %>
+					<p class="backbtn">
+						<a href="#">Back</a>
+					</p>
+				</div>
+			</section>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$("#review_trigger").leanModal({top : 200, overlay : 0.6, closeButton: ".modal_close" });
+		$(function(){
+	
+			// Calling New Review
+			$("#new_review").click(function(){
+				$(".view_reviews").hide();
+				$(".new_review").show();
+				$(".header_title").text('Review this Product');
+				return false;
+			});
+						
+			// Going back to Reviews Page
+			$(".backbtn").click(function(){
+				$(".new_review").hide();
+				$(".view_reviews").show();
+				$(".header_title").text('Reviews');
+				return false;
+			});
+		})
+	
+  	function getNewRating() {
+  	  
+  	}
+	</script>
 </div>
 
 <% end %>

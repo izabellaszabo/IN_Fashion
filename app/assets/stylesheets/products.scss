@@ -262,6 +262,38 @@ span:hover ~ span:before {
   display: inline;
 }
 
+.reviewsContainer {
+  position:absolute;
+	width: 40%;
+	height: auto;
+	background: #fff;
+	border: solid 1px #fff;
+	box-shadow: 0px 0px 15px 2px #000;
+}
+
+#reviewForm input, #reviewComments, #addReviewBtn {
+  border: solid 1px #fb7142;
+  outline: none;
+  background: #fff;
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  padding: 3px;
+}
+
+#reviewForm input:hover, #addReviewBtn:hover {
+  box-shadow: 0px 0px 1px 1px #fb7142;
+  color: #fb7142;
+}
+
+#reviewComments:hover {
+  box-shadow: 0px 0px 1px 1px #fb7142;
+}
+
+#reviewComments {
+  border-radius: 0px;
+  width: 80%;
+}
+
 #itemdesc h4 {
   margin: 0px;
 }

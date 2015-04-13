@@ -115,6 +115,7 @@
   margin-right: 1%;
   margin-bottom: 1%;
   border-top: solid 1px #000;
+  background: linear-gradient(#fb7142 1%, #ffffff 10%);
 }
 
 #thanksconth2 {
@@ -123,7 +124,31 @@
   margin-bottom: 5px;
 }
 
-/* Cart Show Page */
+/* Cart Index Page */
+#cartcont {
+  padding: 1%;
+}
+
+#cartItem {
+  width: 100%;
+  float: left;
+  border-bottom: solid 1px #999;
+}
+
+#cartTitle {
+  width: 60%;
+  float: left;
+}
+
+#cartQuantity {
+  width: 20%;
+  float: left;
+}
+
+#cartPrice {
+  width: 20%;
+  float: left;
+}
 
 
 @media only screen and (max-width: 1000px) {

@@ -7,7 +7,7 @@ class SiteController < ApplicationController
   end
 
   def home
-    @fresh = Product.where.not(Catagory: "sport").shuffle.take(8)
+    @fresh = Product.where.not(Catagory: "sport").shuffle.take(12)
   end
   
 end

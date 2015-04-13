@@ -17,8 +17,7 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.create(user_params)
     @contact.save
-    #render :nothing => true
-    render 'site/about'
+    render 'site/thankyou'
   end
 
   private

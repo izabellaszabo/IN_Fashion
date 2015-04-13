@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   get 'checkout' => 'carts#checkout'
   get 'cart' => 'carts#index'
   get 'subcategory' => 'products#subcategory'
+  get 'priceRange' => 'products#priceRange'
   get 'checkout' => 'cart#checkout'
   get 'cart' => 'cart#show'
   get 'search' => 'products#search'

@@ -1,9 +1,6 @@
 class ProductsController < ApplicationController
   #When the index controller is called it stores all the products in a Products and Orders in Order_Items
   def index
-    #@products = Product.where(Catagory: "fruit")
-    #Some more investigation needs to be done on the new section
-    #@order_item = current_order.order_items.new
   end
   
   def show
@@ -38,7 +35,7 @@ class ProductsController < ApplicationController
   
   def sport
     #This is the search that does a search with a where clause
-    @products = Product.where(Catagory:"sport").shuffle
+    @products = Product.where("Catagory = 'sport' AND subcategory <> 'equipment'").shuffle
     @category = 'sport'
     @subcategory = 'none'
     #This redirects to the view
@@ -52,9 +49,8 @@ class ProductsController < ApplicationController
     render 'products/index'
   end
   
-  def priceRange(min, max)
-    @products = Products.find :all, 
-      :conditions => ['price BETWEEN ? AND ?', min, max]
+  def priceRange
+    @products = Product.where("price BETWEEN ? AND ? AND Catagory = ? AND subcategory = ?", params[:min], params[:max], params[:breadcrumbsCategory], params[:subcategory])
     @subcategory = params[:subcategory]
     @category = params[:breadcrumbsCategory]
     render 'products/index'
@@ -65,6 +61,11 @@ class ProductsController < ApplicationController
     @category = params[:breadcrumbsCategory]
     @subcategory = params[:subcategory]
     render 'products/index'
+  end
+  
+  def addReview
+    review = Review.create(:name => "a", :age => 2)
+    review.save
   end
   
   private

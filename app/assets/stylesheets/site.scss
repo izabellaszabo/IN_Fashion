@@ -208,6 +208,25 @@ tr.space > td
   box-shadow: 0px 0px 5px 1px #0ad7b8;
 }
 
+/* Thank you page */
+#contactThanks {
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-bottom: 1%;
+  margin-top: 0px;
+  border-top: solid 1px #000;
+  background: linear-gradient(#fb7142 1%, #ffffff 10%);
+  float: left;
+  width: 98%;
+  padding-left: 1%;
+}
+
+#contactThanksh2{
+  color: #761f31;
+  margin-bottom: 5px;
+  margin-left: 2%;
+}
+
 @media only screen and (max-width: 1000px) {
   /*About Page*/
   #leftdiv {
