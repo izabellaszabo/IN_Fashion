@@ -136,26 +136,33 @@ Product Details
 			<div class="view_reviews">
 				<% if @reviews.length != 0 %>
 				  <% @reviews.each do |review| %>
-				  <div id="reviewDate">
-				    <%= review.Date.strftime("%Y-%m-%d") %>
-				  </div>
-				  <div>
-				    <%= review.summary %>
-				  </div>
-				  <div>
-				    <%= review.Comment %>
-				  </div>
-				  <div>
-				    <%= review.Rating %>
+				  <div id="reviews">
+            <div id="reviewRating">
+  				    <%= "4/5" %>
+  				  </div>
+  				  <div id="reviewSummary">
+  				    <%= review.summary %>
+  				  </div>
+  				  <div id="reviewDate">
+  				    <%= review.Date.strftime("%Y-%b-%d") %>
+  				  </div>
+  				  <div id="reviewBy">
+  				    <%= "By Name of User" %>
+  				  </div>
+  				  <div id="reviewComment">
+  				    <%= review.Comment %>
+  				  </div>
 				  </div>
 				  <% end %>
-
+				  <div id="writereview">
+				    Write your own Review <%= link_to "here", new_review_path(:productid => @product.id), {:class => "signup"} %>.
+				  </div>
 				<% else %>
 				<p>
 				  This product hasn't been reviewed yet.
 				</p>
 				<p>
-					Be the first to review this product <%= link_to "Here", new_review_path, :class => 'signup' %>!
+					Be the first to review this product <%= link_to "Here", new_review_path(:productid => @product.id), {:class => "signup"} %>!
 				</p>
 				<% end %>
 			</div>

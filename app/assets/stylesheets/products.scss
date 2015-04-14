@@ -271,27 +271,38 @@ span:hover ~ span:before {
 	box-shadow: 0px 0px 15px 2px #000;
 }
 
-#reviewForm input, #reviewComments, #addReviewBtn {
-  border: solid 1px #fb7142;
-  outline: none;
-  background: #fff;
-  font-family: 'Cabin', Helvetica, Arial, sans-serif;
-  font-size: 1em;
-  padding: 3px;
+#reviewRating {
+  width: 15%;
+  float: left;
 }
 
-#reviewForm input:hover, #addReviewBtn:hover {
-  box-shadow: 0px 0px 1px 1px #fb7142;
-  color: #fb7142;
+#reviewSummary {
+  width: 60%;
+  float: left;
+  font-family: 'Lobster', Georgia, Times, serif;
 }
 
-#reviewComments:hover {
-  box-shadow: 0px 0px 1px 1px #fb7142;
+#reviewDate {
+  width: 25%;
+  float: left;
+  text-align: right;
 }
 
-#reviewComments {
-  border-radius: 0px;
-  width: 80%;
+#reviewBy {
+  width: 100%;
+  float: left;
+  font-family: 'Lobster', Georgia, Times, serif;
+}
+
+#reviewComment {
+  width: 100%;
+  float: left;
+}
+
+#writereview {
+  width: 100%;
+  float: left;
+  margin-top: 2%;
 }
 
 #itemdesc h4 {
