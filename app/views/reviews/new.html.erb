@@ -1,0 +1,39 @@
+<% content_for :title do %>
+Write a Review
+<% end %>
+
+<% content_for :header do %>
+<% end %>
+
+<% content_for :content do %>
+<div class="new_review">
+  <p>New Review for: <%= @reviewingProduct.Title %></p>
+  <%= form_for(@review) do %>
+  <div id="reviewRating">
+    Rating:     
+    <span>☆</span>
+    <span>☆</span>
+    <span>☆</span>
+    <span>☆</span>
+    <span>☆</span>
+    <!--getNewRating() -->
+    <% hidden_field_tag :rating, "4" %>
+  </div>
+  <p>
+    Summary:
+    <br/>
+    <%= text_field_tag :summary, '', :id => "reviewComments"%>
+  </p>
+  <p>
+    Comments:
+    <br/>
+    <%= text_area_tag :comments, '', :id => "reviewComments", :rows => 7 %>
+  </p>
+  <%= hidden_field_tag :productId, @reviewingProduct.id %>
+  <%= submit_tag "Add Review", :id => "addReviewBtn" %>
+	<% end %>
+	<p class="backbtn">
+		<a href="#">Back</a>
+	</p>
+</div>
+<% end %>

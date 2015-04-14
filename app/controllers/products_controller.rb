@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @recommended = Product.where(subcategory: @product.subcategory).shuffle.take(4)
+    @reviews = Review.where(Product_id: params[:id])
   end
   
   def new
@@ -50,7 +51,17 @@ class ProductsController < ApplicationController
   end
   
   def priceRange
-    @products = Product.where("price BETWEEN ? AND ? AND Catagory = ? AND subcategory = ?", params[:min], params[:max], params[:breadcrumbsCategory], params[:subcategory])
+    subcat = params[:subcategory]
+    if params[:subcategory].eql? "none"
+      subcat = "%"
+    end  
+    
+    max = params[:max]
+    if max.eql? "none"
+      max = "%"
+    end
+    
+    @products = Product.where("price BETWEEN ? AND ? AND Catagory = ? AND subcategory LIKE ?", params[:min], max, params[:breadcrumbsCategory], subcat)
     @subcategory = params[:subcategory]
     @category = params[:breadcrumbsCategory]
     render 'products/index'
@@ -63,16 +74,12 @@ class ProductsController < ApplicationController
     render 'products/index'
   end
   
-  def addReview
-    review = Review.create(:name => "a", :age => 2)
-    review.save
-  end
-  
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
       # Add more permits here
-      params.require(:product).permit(:title, :description, :price, :features, :catagory, :subcategory, :color)
+      params.require(:product).permit(:id, :title, :description, :price, :features, :catagory, :subcategory, :color)
+      params.require(:review).permit(:id, :Comment, :userId, :Rating, :product_id, :Date)
     end
     
 end

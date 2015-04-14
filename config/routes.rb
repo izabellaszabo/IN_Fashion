@@ -2,11 +2,11 @@ Rails.application.routes.draw do
 
   #ADDED WHEN DO CART TO BE INVESTIGATED
   resources :products
-  resource :cart, only:[:show]
+  resources :cart, only:[:show]
   resources :contacts
   resources :users
   resources :order_items, only: [:create,:update,:destroy]
-  #root to:"products#index"
+  resources :reviews
   #ADDED BY NIALL WHAT DOES THIS TO DO
   
   get 'order_items/create'
@@ -31,6 +31,10 @@ Rails.application.routes.draw do
   get 'cart' => 'cart#show'
   get 'search' => 'products#search'
   get 'submitOrder' => 'carts#submitOrder'
+  get 'change_details' => 'users#change_details'
+  get 'updateAccount' => 'users#updateAccount'
+  get 'updateBilling' => 'users#updateBilling'
+  get 'updateDelivery' => 'users#updateDelivery'
   
   #Added for the login action
   get 'login'   => 'sessions#new'
@@ -43,9 +47,6 @@ Rails.application.routes.draw do
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-  #root 'site#home'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -66,7 +66,7 @@
 				<!-- User Login -->
 				<div class="user_login">
 					<!-- WHY IS THIS LOGIN PATH? TO BE CHECKED FURTHER-->
-					<%= form_for(:session, url: login_path)do |f| %>
+					<%= form_for(:session, url: login_path) do |f| %>
 					
 						<table class="logintable">
 						    <tr class="space">
@@ -104,6 +104,7 @@
 						<table class="logintable">
 						    <tr class="space">
 						      <td>Email</td>
+						      <!-- Have to change param to email here and in user_controller -->
 						      <td><%= f.text_field :email, :autofocus=>true, :required => true, :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}' %></td>
 						    <tr>
 						    <tr class="space">

@@ -58,7 +58,7 @@ Product Details
           ||
         </li>
         <li>
-          <h4><a href="#">Review this Product</a></h4>
+          <h4><%= link_to "Review this Product", new_review_path(:productid => @product.id) %></h4>
         </li>
       </ul>
     </div>
@@ -85,13 +85,6 @@ Product Details
       <select class="dropdown">
         <option value="default">Choose a color...</option>
         <option value="red">Red</option>
-        <option value="green">Green</option>
-        <option value="purple">Purple</option>
-        <option value="blue">Blue</option>
-        <option value="yellow">Yellow</option>
-        <option value="orange">Orange</option>
-        <option value="white">White</option>
-        <option value="black">Black</option>
       </select>
     </div>
     
@@ -130,83 +123,52 @@ Product Details
    <% end %>
  <% end %>
  </table>
-  
-  </div>
-  <!-- Changed from modal-->
-  <div id="reviews" class="reviewsContainer" style="display:none;">
-			<header class="popupHeader">
-				<div class="header_title">Reviews</div>
-				<div class="modal_close">Close</div>
-			</header>
-			
-			<section class="popupBody">
-				<!-- View Reviews -->
-				<div class="view_reviews">
-					<% if @reviews != nil %>
-					We have reviews!
+</div>
 
-					<% else %>
-					<p>
-					  This product hasn't been reviewed yet.
-					</p>
-					<p>
-						Be the first to review this product <a href="#" id="new_review" class="signup">Here</a>!
-					</p>
-					<% end %>
-				</div>
-				
-				<!-- New Review Form -->
-				<div class="new_review" style="display:none">
-				  <p>New Review for: <%= @product.Title %></p>
-				  <%= form_tag @reviews, :action => :new, :method => :post do %>
-				  <div id="reviewRating">
-				    Rating:     
-				    <span>☆</span>
-            <span>☆</span>
-            <span>☆</span>
-            <span>☆</span>
-            <span>☆</span>
-            <% hidden_field_tag :rating => "getNewRating()"%>
-          </div>
-          <p>
-            Comments:
-            <br/>
-            <%= text_area_tag :comments, '', :id => "reviewComments", :rows => 7 %>
-          </p>
-          <% hidden_field_tag :productId => @product.id %>
-          <%= submit_tag "Add Review", :id => "addReviewBtn" %>
-					<% end %>
-					<p class="backbtn">
-						<a href="#">Back</a>
-					</p>
-				</div>
-			</section>
-		</div>
-	</div>
+<div id="reviews" class="reviewsContainer" style="display:none;">
+		<header class="popupHeader">
+			<div class="header_title">Reviews</div>
+			<div class="modal_close">Close</div>
+		</header>
+		
+		<section class="popupBody">
+			<!-- View Reviews -->
+			<div class="view_reviews">
+				<% if @reviews.length != 0 %>
+				  <% @reviews.each do |review| %>
+				  <div id="reviewDate">
+				    <%= review.Date.strftime("%Y-%m-%d") %>
+				  </div>
+				  <div>
+				    <%= review.summary %>
+				  </div>
+				  <div>
+				    <%= review.Comment %>
+				  </div>
+				  <div>
+				    <%= review.Rating %>
+				  </div>
+				  <% end %>
+
+				<% else %>
+				<p>
+				  This product hasn't been reviewed yet.
+				</p>
+				<p>
+					Be the first to review this product <%= link_to "Here", new_review_path, :class => 'signup' %>!
+				</p>
+				<% end %>
+			</div>
+		</section>
+</div>
+</div>
 	<script type="text/javascript">
-		$("#review_trigger").leanModal({top : 200, overlay : 0.6, closeButton: ".modal_close" });
-		$(function(){
-	
-			// Calling New Review
-			$("#new_review").click(function(){
-				$(".view_reviews").hide();
-				$(".new_review").show();
-				$(".header_title").text('Review this Product');
-				return false;
-			});
-						
-			// Going back to Reviews Page
-			$(".backbtn").click(function(){
-				$(".new_review").hide();
-				$(".view_reviews").show();
-				$(".header_title").text('Reviews');
-				return false;
-			});
-		})
+	  $("#review_trigger").leanModal({top : 200, overlay : 0.6, closeButton: ".modal_close" });
 	
   	function getNewRating() {
   	  
   	}
+  	
 	</script>
 </div>
 

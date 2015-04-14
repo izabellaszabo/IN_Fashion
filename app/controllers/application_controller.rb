@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   
   #used for methods that are needed in the View as well to
   helper_method :current_order
-
+  
   #NEEDS TO BE INVESTIGATED FURTHER ON THIS ONE
   def current_order
     if !session[:order_id].nil?

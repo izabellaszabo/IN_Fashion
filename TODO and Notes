@@ -1,42 +1,32 @@
 Reviews as popup like facebook app page "posts to page"
-
-Admin User has special functionality
-
-Logo img photoshop
-
-Cart Page
-
-Account Page
+http://stackoverflow.com/questions/12490076/rails-3-how-to-insert-record-in-database-using-rails
 
 One Size Option
-
 Colours dynamically pulled from database!
-
-Forgot Password
-
-User Show page
-<%= session[:password].gsub!(/./, "\u2022 ") %>
-
-Price Range
-http://stackoverflow.com/questions/22870538/rails-display-similar-products-using-a-products-specific-attribute-in-a-table
-http://stackoverflow.com/questions/24338341/how-to-filter-products-details-using-in-rails-4
+Logo img photoshop
 
 Rating Stars
 
+
+
+
+User Show page
+Cart Page
+
+Admin User has special functionality
+
+Forgot Password
 Email Confirmation
 
 
-1. Account link not working
+
+
 
 2. Cart template missing
 
 3. Login Validation againt existing database users
 
 4. Sending emails from rails?
-
-5. Cart
-
-6. ?Prove contact message was sent. - (Admin user has messages display)
 
 7. Create Story
 

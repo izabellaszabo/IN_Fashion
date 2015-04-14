@@ -12,7 +12,7 @@ Checkout
 <% if session[:username] != nil%>
 <%= form_tag "submitOrder", method: "get", :id => "checkoutform" do %>
 <div class="col">
-  <h2 style="text-align: center;">Delivery Details</h2>
+  <h2>Delivery Details</h2>
   <p>
     Customer Name
     <br/>
@@ -31,7 +31,7 @@ Checkout
 </div>
 
 <div class="col">
-  <h2 style="text-align: center;">Payment Details</h2>
+  <h2>Payment Details</h2>
   <%= radio_button_tag :payby, 'card', :checked => true %> Pay by Card (Visa, Debit, etc)
   <table>
     <tr>
@@ -74,7 +74,7 @@ Checkout
 </div>
 
 <div class="col" id="lastcol">
-  <h2 style="text-align: center;">Order Summary</h2>
+  <h2>Order Summary</h2>
   <div id="subtotallbl">Subtotal(...item(s)): </div>
   <div id="subtotalcost">€</div>
   <div id="shippinglbl">Shipping: </div>

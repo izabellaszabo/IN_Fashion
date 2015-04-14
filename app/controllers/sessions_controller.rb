@@ -4,16 +4,15 @@ class SessionsController < ApplicationController
   end
 
   def create
-    #user = User.find_by(email: params[:session][:email].downcase)
-    
     # finding a user by the name variable username passed from the view
-    user = User.find_by(name: params[:session][:name])
+    @user = User.find_by(email: params[:session][:email])
     
     #Checking if the user and password are correct
-    if user && user.authenticate(params[:session][:password])
+    if @user && @user.authenticate(params[:session][:password])
       #log_in user
-      session[:username]=user.name
-      redirect_to user
+      session[:user_id] = @user.id
+      ###### Could redirect to previous viewed products??????????
+      redirect_to '/home'
 
     #else
       #redirect_to "/"
