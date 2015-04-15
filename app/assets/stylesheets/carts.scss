@@ -158,3 +158,30 @@
   }
   
 }
+
+
+/* Cart Index Page */
+#cartcont {
+  padding: 1%;
+}
+
+#cartItem {
+  width: 100%;
+  float: left;
+  border-bottom: solid 1px #999;
+}
+
+#cartTitle {
+  width: 60%;
+  float: left;
+}
+
+#cartQuantity {
+  width: 20%;
+  float: left;
+}
+
+#cartPrice {
+  width: 20%;
+  float: left;
+}

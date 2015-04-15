@@ -4,7 +4,6 @@ function addToCart(price,id) {
     var str = document.getElementById("cp1").innerHTML; 
     //var res = str.replace("Test");
     
-    
     //Count of the items in the cart will be null at start
     var count = sessionStorage.getItem("Count");
     
@@ -15,28 +14,36 @@ function addToCart(price,id) {
     var strItemId = "Item_ID_";
     var strItemPrice = "Item_Price_"
     
+    var ResultValue
+    
     //Check to see if the session is null and set to one
     if (count==null){
         //Creating the full Item ID
         strItemId = strItemId.concat("1");
         strItemPrice  = strItemPrice.concat("1");
         sessionStorage.setItem("Count", "1");
-        
-        SessionPrice=price;
+        sessionStorage.setItem("TotalPrice", price);
+        ResultValue=price;
 
     }else{
+        
+        
         
         //Creating the full Item ID
         strItemId = strItemId.concat(count);
         strItemPrice  = strItemPrice.concat(count);
-        
-        alert("this is the strItemPrice "+strItemPrice)
+        ResultValue = sessionStorage.getItem("TotalPrice");
         
         count = parseInt(count) +parseInt(1);
         sessionStorage.setItem("Count", count);
         
-        SessionPrice = parseInt(SessionPrice) +parseInt(price);
-
+        ResultValue = parseInt(ResultValue) + parseInt(price);
+        
+        sessionStorage.setItem("TotalPrice", ResultValue);
+        
+        //alert("Result Value "+ ResultValue)
+        //alert("Price Value "+ price)
+        //SessionPrice = +SessionPrice + +price;
         
     }
     
@@ -46,10 +53,14 @@ function addToCart(price,id) {
     sessionStorage.setItem(strItemPrice , price);
     
     //Setting the price in the top right hand corner
-    document.getElementById("cp1").innerHTML = SessionPrice;
+    document.getElementById("cp1").innerHTML = ResultValue;
     
 }
 
+function cleardetails(){
+    sessionStorage.clear();
+    alert("All Details cleared")
+}
 
 function listResults() {
     
