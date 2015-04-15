@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
   
   def create 
     productid = params[:productId]
-    @user = User.find_by(email: session[:email])
+    @user = User.find_by(id: session[:user_id])
     Review.create(:Product_id => productid, :Comment => params[:comments], :Rating => params[:rating], 
       :userId => @user.id, :summary => params[:summary], :Date => Time.now.strftime("%Y-%b-%d %H:%M"))
       redirect_to product_path(:id => productid)

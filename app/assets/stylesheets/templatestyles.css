@@ -6,7 +6,6 @@ html {
 	background: url("/assets/site/silk.jpg") repeat-y;
 	background-size: 25% auto;
 	background-color: #d4cfd3;
-	/*repeat center center fixed;*/
 }
 
 body {
@@ -21,19 +20,10 @@ header {
 	width: 99.6%;
 	height: 8%;
 	color: #fff;
-	margin-top: 1%;
-	clear: both;
 	float: left;
 	position: relative;
-}
-
-#logo {
-	float: left;
-	width: 30%;
-}
-
-#logo img {
-	height: 50px;
+	margin-bottom: 1%;
+	border-bottom: solid 1px #000;
 }
 
 #right {
@@ -45,6 +35,7 @@ header {
 	padding-right: 2%;
 	font-size: 1.1em;
 	color: #fff;
+	margin-top: 1%;
 }
 
 #right ul {
@@ -75,34 +66,49 @@ header {
 	text-decoration: underline;
 }
 
-nav {
-	width: 99.7%;
-	margin-top: 1%;
-	text-align: right;
-	clear: both;
+#logo {
 	float: left;
+	width: 30%;
+	background: linear-gradient(to bottom right, #fef0ec 25%, #d4cfd3 50%);
 }
 
-nav ul {
+#logo img {
+	max-width: 70%;
+	float: left;
+	max-height: 250px;
+}
+
+#nav {
+	width: 69.7%;
+	text-align: right;
+	float: left;
+	font-family: 'Lobster', Georgia, Times, serif;
+	margin-bottom: 0px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+#nav ul {
 	font-family: 'Lobster', Georgia, Times, serif;
 	width: 98%;
 	padding-right: 1%;
 	padding-left: 1%;
 	padding-top: 1%;
 	padding-bottom: 0.2%;
-	margin-bottom: 1%;
 	margin-top: 0px;
-	border-bottom: solid 1px #000;
+	float: left;
+	margin-bottom: 0px;
 }
 
-nav li {
+#nav li {
 	font-size: 1.2em; 
 	display: inline;
 	list-style-type: none;
 	margin-right: 1%;
 }
 
-nav a {
+#nav a {
 	color: #fff;
 	text-decoration: none;
 	padding-right: 1%;
@@ -111,22 +117,18 @@ nav a {
 	padding-bottom: 0.5%;
 }
 
-nav a:hover {
+#nav a:hover {
 	text-shadow: 0px 0px 5px #761f31;
 	text-decoration: underline;
 }
-
-/*.active {
-	box-shadow: 0px 0px 10px 2px #000 inset;
-	border: solid 1px #000;
-	border-radius: 15px;
-}*/
 
 #navimg {
 	text-align: left;
 	overflow: hidden;
 	padding-bottom: 0px;
 	position: relative;
+	float: left;
+	width: 100%;
 }
 
 #main {
@@ -321,17 +323,8 @@ footer {
 }
 
 @media only screen and (max-width: 1000px) {
-	#logo {
-		width: 98%;
-	}
-	
-	#right {
-	 	width: 98%;
-	}
-	
-	nav {
-		width: 100%;
-		margin-bottom: 2%;
+	#nav {
+		position: relative;
 	}
 	
 	#content {
@@ -347,7 +340,7 @@ footer {
 		padding-left:0px;
 	}
 	
-	nav ul {
+	#nav ul {
 		width: 97.8%;
 	}
 	

@@ -17,7 +17,7 @@
 <body>
 	<header>
 		<div id="logo">
-		<img src="/assets/site/logo.jpg" alt="logo"/>
+			<img src="/assets/site/logo.png" alt="logo"/>
 		</div>
 		<div id="right">
 			<% if session[:username] != nil %>
@@ -40,19 +40,18 @@
 				<%end%>
 			</ul>
 		</div>
+		<div id="nav">
+			<ul>
+				<li><%=link_to "Women's", :action => 'women', :controller => 'products' %></li> 
+				<li><%=link_to "Men's", :action => 'men', :controller => 'products' %></li> 
+				<li><%=link_to "Sport's Wear", :action => 'sport', :controller => 'products' %></li>
+			</ul>
+		</div>
 	</header>
 	
-	<nav>
-		<ul>
-			<li><%=link_to "Women's", :action => 'women', :controller => 'products' %></li> 
-			<li><%=link_to "Men's", :action => 'men', :controller => 'products' %></li> 
-			<li><%=link_to "Sport's Wear", :action => 'sport', :controller => 'products' %></li>
-		</ul>
-
-		<div id="navimg">
-			<%= yield :header %>
-		</div>
-	</nav>
+	<div id="navimg">
+		<%= yield :header %>
+	</div>
 	
 	<div id="main">	
 		<%= yield :content %>

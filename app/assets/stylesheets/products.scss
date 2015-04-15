@@ -248,9 +248,30 @@ span:hover ~ span:before {
   color: #000;
 }
 
-#review {
+#reviewshowBody {
+  padding: 0px;
+  float: left;
+}
+
+.view_reviews {
+  width: 100%;
+  float: left;
+}
+
+#reviews {
   padding: 0px;
   margin: 0px;
+  background: #fff;
+  float: left;
+  max-width: 100%;
+}
+
+#reviewsGrey {
+  padding: 0px;
+  margin: 0px;
+  background: #ddd;
+  float: left;
+  max-width: 100%;
 }
 
 #review h4 {
