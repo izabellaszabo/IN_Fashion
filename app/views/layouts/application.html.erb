@@ -21,7 +21,8 @@
 		</div>
 		<div id="right">
 			<% if session[:username] != nil %>
-			Welcome, <%= session[:username] %>, your Cart is €<div id="cp1">0.00</div>
+			<div style="float: left; width: 93%;">Welcome, <%= session[:username] %>; Your Cart total is €</div>
+			<div id="cp1" style="float: left; width: 7%; text-align: left;">0.00</div>
 			<% else %>
 			Welcome  to our online store!
 			<% end %>
