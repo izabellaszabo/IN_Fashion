@@ -7,6 +7,7 @@ Write a Review
 
 <% content_for :content do %>
 <div class="new_review">
+  <% if session[:username] %>
   <p>New Review for: <%= @reviewingProduct.Title %></p>
   <%= form_for(@review) do %>
   <div id="reviewRating">
@@ -35,5 +36,10 @@ Write a Review
 	<p class="backbtn">
 		<a href="#">Back</a>
 	</p>
+	<% else %>
+	<h2>Write a Review</h2>
+  <p>You have to be logged in to submit a review.</p>
+  <%= link_to "Back", product_path(:id => @reviewingProduct.id), :class => "signup" %>
+  <% end %>
 </div>
 <% end %>
