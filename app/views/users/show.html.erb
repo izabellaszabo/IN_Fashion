@@ -125,7 +125,7 @@ Account Details
         <% if @user.delivery_address == nil %>
             <% delivery = "Example Name | 123 Main Street | Dublin | Ireland".split('|') %>
         <% else %>
-            <% delivery =  @user.delivery_address.split('|') %>
+            <% delivery = @user.delivery_address.split('|') %>
         <% end %>
         <% if @viewType.eql? "editdelivery" %>
             <%= form_tag "updateDelivery", method: "get", :id => "accountForm" do %>
