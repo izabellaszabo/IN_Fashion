@@ -145,19 +145,17 @@ Product Details
  </table>
 </div>
 
-<div id="reviews" class="reviewsContainer" style="display:none;">
+<div id="reviews" style="display:none;">
 		<header class="popupHeader">
 			<div class="header_title">Reviews</div>
 			<div class="modal_close">Close</div>
 		</header>
-		
 		<section class="reviewshowBody">
-			<!-- View Reviews -->
 			<div class="view_reviews">
 				<% if @reviews.length != 0 %>
 				  <% @reviews.each_with_index do |review, index| %>
 				  <% if index % 2 == 0 %>
-				    <div id="reviews">
+				    <div id="reviewsWhite">
 				  <% else %>
 				    <div id="reviewsGrey">
 				  <% end %>
@@ -171,7 +169,7 @@ Product Details
   				    <%= review.Date.strftime("%Y-%b-%d") %>
   				  </div>
   				  <div id="reviewBy">
-  				    <div style="font-family: 'Cabin', Helvetica, Arial, sans-serif; width: 20px; float: left">By</div>
+  				    <div style="font-family: 'Cabin', Helvetica, Arial, sans-serif; width: 20px; float: left;">By</div>
   				    <% user = User.find_by(id: session[:user_id]) %>
   				    <%= user.name + " " + user.lastname %>
   				  </div>
@@ -181,7 +179,7 @@ Product Details
 				  </div>
 				  <% end %>
 				  <div id="writereview">
-				    Write your own Review <%= link_to "here", new_review_path(:productid => @product.id), {:class => "signup"} %>.
+				    Write your own Review <%= link_to "here", new_review_path(:productid => @product.id), {:class => "signup", :style => "color: #761f31"} %>.
 				  </div>
 				<% else %>
 				<p>
@@ -196,7 +194,7 @@ Product Details
 </div>
 </div>
 	<script type="text/javascript">
-	  $("#review_trigger").leanModal({top : 200, overlay : 0.6, closeButton: ".modal_close" });
+	  $("#review_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_close" });
 	
   	function getNewRating() {
   	  
