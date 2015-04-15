@@ -40,9 +40,20 @@ Product Details
     <%= image_tag @product.image_url %>
   </div>
   
+  
+   <%= form_for @product, :url => 'carts#submitOrder'  do |f|  %>
+     
+    <%= f.submit "Add todo", class: "btn btn-primary" %>
+   
+  
+  
   <div id="itemdesc">
     <h4 id="itemprice"><%= number_with_precision(@product.price, precision: 2) %></h4>
+    <h4 id="itemprice"><%= f.label :price,number_with_precision(@product.price, precision:2) %>
     
+    
+    
+    <%end%>
     <div id="rating">
       <span>☆</span>
       <span>☆</span>
