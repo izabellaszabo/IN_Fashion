@@ -112,6 +112,9 @@ Product Details
     <div id="itemaddtocart">
       <!-- Color and Size have to be validated before added to cart? -->
       <h4><a href="#">Add to Cart</a></h4>
+      <%= tag "input", { "type" => "button", "value" => "Add to Cart", "onclick" => "addToCart(#{@product.price},#{@product.id})" } %>
+      <%= tag "input", { "type" => "button", "value" => "List", "onclick" => "listResults()" } %>
+      <%= tag "input", { "type" => "button", "value" => "Clear Details(Will be removed)", "onclick" => "cleardetails()" } %>
     </div>
   </div>
 
