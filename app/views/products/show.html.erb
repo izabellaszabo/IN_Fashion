@@ -179,15 +179,17 @@ Product Details
   				  </div>
 				  <% end %>
 				  <div id="writereview">
-				    Write your own Review <%= link_to "here", new_review_path(:productid => @product.id), {:class => "signup", :style => "color: #761f31"} %>.
+				    Write your own Review <%= link_to "here", new_review_path(:productid => @product.id), {:class => "signup"} %>.
 				  </div>
   				<% else %>
-    				<p>
-    				  This product hasn't been reviewed yet.
-    				</p>
-    				<p>
-    					Be the first to review this product <%= link_to "Here", new_review_path(:productid => @product.id), {:class => "signup"} %>!
-    				</p>
+  				  <div id="noreviews">
+      				<p>
+      				  This product hasn't been reviewed yet.
+      				</p>
+      				<p>
+      					Be the first to review this product <%= link_to "Here", new_review_path(:productid => @product.id), {:class => "signup"} %>!
+      				</p>
+    				</div>
   				<% end %>
   			</div>
   		</div>
@@ -195,11 +197,6 @@ Product Details
 </div>
 	<script type="text/javascript">
 	  $("#review_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_close" });
-	
-  	function getNewRating() {
-  	  
-  	}
-  	
 	</script>
 </div>
 

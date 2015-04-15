@@ -260,8 +260,9 @@ span:hover ~ span:before {
 .reviewshowBody {
   padding: 0px;
   float: left;
-  height: 91%;
+  height: 90%;
   overflow-y: scroll;
+  width: 100%;
 }
 
 .reviewshowBody::-webkit-scrollbar {
@@ -340,7 +341,12 @@ span:hover ~ span:before {
   float: left;
   margin-top: 1%;
   padding: 1%;
-  color: #761f31;
+  text-align: center;
+}
+
+#noreviews {
+  width: 98%;
+  padding: 1%;
   text-align: center;
 }
 
