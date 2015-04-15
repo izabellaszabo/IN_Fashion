@@ -148,12 +148,16 @@ Product Details
 			<div class="modal_close">Close</div>
 		</header>
 		
-		<section class="popupBody">
+		<section class="reviewshowBody">
 			<!-- View Reviews -->
 			<div class="view_reviews">
 				<% if @reviews.length != 0 %>
-				  <% @reviews.each do |review| %>
-				  <div id="reviews">
+				  <% @reviews.each_with_index do |review, index| %>
+				  <% if index % 2 == 0 %>
+				    <div id="reviews">
+				  <% else %>
+				    <div id="reviewsGrey">
+				  <% end %>
             <div id="reviewRating">
   				    <%= "4/5" %>
   				  </div>
@@ -164,7 +168,9 @@ Product Details
   				    <%= review.Date.strftime("%Y-%b-%d") %>
   				  </div>
   				  <div id="reviewBy">
-  				    <%= "By Name of User" %>
+  				    <div style="font-family: 'Cabin', Helvetica, Arial, sans-serif; width: 20px; float: left">By</div>
+  				    <% user = User.find_by(id: session[:user_id]) %>
+  				    <%= user.name + " " + user.lastname %>
   				  </div>
   				  <div id="reviewComment">
   				    <%= review.Comment %>

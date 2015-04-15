@@ -10,7 +10,7 @@ Account Details
 <h1 id="accountconth1">Account Details</h1>
 <div id="accountcont">
 <% if session[:username] %>
-    <% @user = User.find_by(id: session[:d]) %>
+    <% @user = User.find_by(id: session[:user_id]) %>
     
     <div class="col">
         <h2>User Details</h2>
