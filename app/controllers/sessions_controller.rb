@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:session][:password])
       #log_in user
       session[:user_id] = @user.id
+      session[:username] = @user.name
       ###### Could redirect to previous viewed products??????????
       redirect_to '/home'
 
