@@ -3,6 +3,8 @@ class ProductsController < ApplicationController
   def index
   end
   
+
+  
   def show
     @product = Product.find(params[:id])
     @recommended = Product.where(subcategory: @product.subcategory).shuffle.take(4)

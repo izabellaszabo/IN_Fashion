@@ -40,9 +40,20 @@ Product Details
     <%= image_tag @product.image_url %>
   </div>
   
+  
+   <%= form_for @product, :url => 'carts#submitOrder'  do |f|  %>
+     
+    <%= f.submit "Add todo", class: "btn btn-primary" %>
+   
+  
+  
   <div id="itemdesc">
     <h4 id="itemprice"><%= number_with_precision(@product.price, precision: 2) %></h4>
+    <h4 id="itemprice"><%= f.label :price,number_with_precision(@product.price, precision:2) %>
     
+    
+    
+    <%end%>
     <div id="rating">
       <span>☆</span>
       <span>☆</span>
@@ -113,8 +124,8 @@ Product Details
       <!-- Color and Size have to be validated before added to cart? -->
       <h4><a href="#">Add to Cart</a></h4>
       <%= tag "input", { "type" => "button", "value" => "Add to Cart", "onclick" => "addToCart(#{@product.price},#{@product.id})" } %>
-      <%= tag "input", { "type" => "button", "value" => "List", "onclick" => "listResults()" } %>
-      <%= tag "input", { "type" => "button", "value" => "Clear Details(Will be removed)", "onclick" => "cleardetails()" } %>
+      <%= tag "input", { "type" => "button", "value" => "List", "onclick" => "window.location.replace('../viewcart')" } %>
+      <%= tag "input", { "type" => "button", "value" => "Clear Details(Will be removed)","onclick" => "cleardetails()" } %>
     </div>
   </div>
 

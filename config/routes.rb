@@ -48,6 +48,7 @@ Rails.application.routes.draw do
   get 'cart' => 'carts#index'
   get 'checkout' => 'carts#checkout'
   get 'submitOrder' => 'carts#submitOrder'
+  get 'viewcart' => 'carts#view'
   
   #get 'carts/show'
   #get 'cart' => 'cart#show'

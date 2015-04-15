@@ -20,4 +20,13 @@ class CartsController < ApplicationController
     render 'carts/thankyou'
   end
   
+  def update
+    
+    render '/'
+  end
+  
+  def create
+  
+  end
+  
 end

@@ -40,10 +40,7 @@ function addToCart(price,id) {
         ResultValue = parseInt(ResultValue) + parseInt(price);
         
         sessionStorage.setItem("TotalPrice", ResultValue);
-        
-        //alert("Result Value "+ ResultValue)
-        //alert("Price Value "+ price)
-        //SessionPrice = +SessionPrice + +price;
+    
         
     }
     
