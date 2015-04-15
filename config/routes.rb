@@ -7,41 +7,56 @@ Rails.application.routes.draw do
   resources :users
   resources :order_items, only: [:create,:update,:destroy]
   resources :reviews
-  #ADDED BY NIALL WHAT DOES THIS TO DO
   
+
+  #Order_Items Routes  
   get 'order_items/create'
   get 'order_items/update'
   get 'order_items/destroy'
-  get 'carts/show'
-  get 'products/index'
-  get 'contacts/new'
 
-  get 'account' => 'users#show'
-  get 'home' => 'site#home'
-  get 'about' => 'site#about'
+  #Prodcut Routes
   get 'womens' => 'products#women'
   get 'mens' => 'products#men'
   get 'sport' => 'products#sport'
-  get 'contact' => 'contacts#new' 
-  get 'checkout' => 'carts#checkout'
-  get 'cart' => 'carts#index'
   get 'subcategory' => 'products#subcategory'
   get 'priceRange' => 'products#priceRange'
-  get 'checkout' => 'cart#checkout'
-  get 'cart' => 'cart#show'
   get 'search' => 'products#search'
-  get 'submitOrder' => 'carts#submitOrder'
+  get 'products/index'
+  
+  #Contact Routes
+  get 'contact' => 'contacts#new'
+  get 'contacts/new'
+  
+  #Site Routes
+  get 'home' => 'site#home'
+  get 'about' => 'site#about'
+
+  #Users Routes
   get 'change_details' => 'users#change_details'
   get 'updateAccount' => 'users#updateAccount'
   get 'updateBilling' => 'users#updateBilling'
   get 'updateDelivery' => 'users#updateDelivery'
+  get 'account' => 'users#show'
   
-  #Added for the login action
+  #Session routes
   get 'login'   => 'sessions#new'
   post 'login'   => 'sessions#create'
   get 'logout'  => 'sessions#destroy'
-
+  
+  #Cart routes
+  get 'cartcreate' => 'carts#create'
+  get 'cart' => 'carts#index'
+  get 'checkout' => 'carts#checkout'
+  get 'submitOrder' => 'carts#submitOrder'
+  
+  #get 'carts/show'
+  #get 'cart' => 'cart#show'
+  #get 'cart' => 'carts#index'
+  #get 'checkout' => 'carts#checkout'
+  #get 'checkout' => 'cart#checkout'
   #Sets the path for the main page when they go to the website eg index
+  
+  #Default Route
   root 'site#home'
 
 

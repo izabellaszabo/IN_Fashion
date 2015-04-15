@@ -102,9 +102,14 @@
 						<%= render 'shared/error_messages' %>
 						<table class="logintable">
 						    <tr class="space">
+						      <td>Name</td>
+						      <!-- Have to change param to email here and in user_controller -->
+						      <td><%= f.text_field :name, :autofocus=>true, :required => true %></td>
+						    <tr>
+						   	<tr class="space">
 						      <td>Email</td>
 						      <!-- Have to change param to email here and in user_controller -->
-						      <td><%= f.text_field :email, :autofocus=>true, :required => true, :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}' %></td>
+						      <td><%= f.text_field :email, :autofocus=>true, :required => true %></td>
 						    <tr>
 						    <tr class="space">
 						      <td>Password</td>
