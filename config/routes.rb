@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   resources :users
   resources :order_items, only: [:create,:update,:destroy]
   resources :reviews
-  
 
   #Order_Items Routes  
   get 'order_items/create'

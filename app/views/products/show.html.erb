@@ -40,25 +40,16 @@ Product Details
     <%= image_tag @product.image_url %>
   </div>
   
-  
    <%= form_for @product, :url => 'carts#submitOrder'  do |f|  %>
-     
     <%= f.submit "Add todo", class: "btn btn-primary" %>
-   
-  
-  
+
   <div id="itemdesc">
     <h4 id="itemprice"><%= number_with_precision(@product.price, precision: 2) %></h4>
     <h4 id="itemprice"><%= f.label :price,number_with_precision(@product.price, precision:2) %></h4>
     
     <%end%>
     <div id="rating">
-      <span>☆</span>
-      <span>☆</span>
-      <span>☆</span>
-      <span>☆</span>
-      <span>☆</span>
-      <br/>
+      <div id="viewRating"></div>
       <ul id="review">
         <li>
           <h4><a id="review_trigger" href="#reviews">View Reviews</a></h4> 
@@ -162,50 +153,41 @@ Product Details
 		<section class="reviewshowBody">
 			<div id="viewreviews">
 				<% if @reviews.length != 0 %>
-				  <% @reviews.each_with_index do |review, index| %>
-				  <% if index % 2 == 0 %>
-				    <div id="reviewsWhite">
-				  <% else %>
-				    <div id="reviewsGrey">
-				  <% end %>
-              <div id="reviewRating">
-    				    <%= "4/5" %>
-    				  </div>
-    				  <div id="reviewSummary">
-    				    <%= review.summary %>
-    				  </div>
-    				  <div id="reviewDate">
-    				    <%= review.Date.strftime("%Y-%b-%d") %>
-    				  </div>
-    				  <div id="reviewBy">
-    				    <div style="font-family: 'Cabin', Helvetica, Arial, sans-serif; width: 20px; float: left;">By</div>
-    				    <% user = User.find_by(id: review.userId) %>
-    				    <%= user.name + " " + user.lastname %>
-    				  </div>
-    				  <div id="reviewComment">
-    				    <%= review.Comment %>
-    				  </div>
-  				  </div>
-				  <% end %>
+  				<% @reviews.each_with_index do |review, index| %>
+  				  <% if index % 2 == 0 %>
+  				    <div id="reviewsWhite">
+  				  <% else %>
+  				    <div id="reviewsGrey">
+  				  <% end %>
+            <%= render partial: "review", locals: {review: review, index: index} %>
+            </div>
+          <% end %>
 				  <div id="writereview">
 				    Write your own Review <%= link_to "here", new_review_path(:productid => @product.id), {:class => "signup"} %>.
 				  </div>
-  				<% else %>
-  				  <div id="noreviews">
-      				<p>
-      				  This product hasn't been reviewed yet.
-      				</p>
-      				<p>
-      					Be the first to review this product <%= link_to "Here", new_review_path(:productid => @product.id), {:class => "signup"} %>!
-      				</p>
-    				</div>
-  				<% end %>
-  			</div>
+  		  <% else %>
+  			  <div id="noreviews">
+      			<p>
+      			  This product hasn't been reviewed yet.
+      			</p>
+      			<p>
+      				Be the first to review this product <%= link_to "Here", new_review_path(:productid => @product.id), {:class => "signup"} %>!
+      			</p>
+    			</div>
+  			<% end %>
   		</div>
   	</section>
 </div>
+</div>
 	<script type="text/javascript">
 	  $("#review_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_close" });
+	  
+	  $('#viewRating').raty({
+      readOnly: true,
+      hints: ['Abominable', 'Poor', 'Average', 'Good', 'Gorgeous'],
+      score: <%= @product.rating %>,
+      path: '/assets/products'
+    });
 	</script>
 </div>
 

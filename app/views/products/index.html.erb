@@ -143,14 +143,7 @@ Shopping @ IN Fashion
   <% end %>
    <td>
     <div class="eachproduct">
-     <%= link_to image_tag(product.image_url, :class => "productsimg"), product %>
-     
-     <h3 class="title"><%= link_to product.Title, product %></h3>
-     
-     <div class="functionality">
-      <div class="productindexrating">Rating</div>
-      <div class="price"><%= number_with_precision(product.price, precision: 2) %></div>
-     </div>
+      <%= render partial: "product", locals: {product: product, index: index} %>
     </div>
    </td>
    <% if index % 4 == 3 %>

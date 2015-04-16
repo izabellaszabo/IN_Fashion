@@ -12,16 +12,10 @@ Write a Review
   <div id="newreviewform">
     <h3>New Review for: <%= @reviewingProduct.Title %></h3>
     <%= form_for(@review) do %>
-    Rating:
-    <div id="newrating">
-      <span>☆</span>
-      <span>☆</span>
-      <span>☆</span>
-      <span>☆</span>
-      <span>☆</span>
-      <!--getNewRating() -->
-      <% hidden_field_tag :rating, "4" %>
-    </div>
+    Your Rating:
+    <br/>
+    <div id="user_star"></div>
+    
     <p>
       Summary:
       <br/>
@@ -49,4 +43,18 @@ Write a Review
     <%= link_to "Back", product_path(:id => @reviewingProduct.id), :class => "signup" %>
   <% end %>
 </div>
+
+<script>
+  $('#user_star').raty({
+    score: 0,
+    hints: ['Abominable', 'Poor', 'Average', 'Good', 'Gorgeous'],
+    path: '/assets/products',
+    click: function(score, evt) {
+      $.ajax({
+        type: 'PATCH',
+        data: { score: score }, 
+      });
+    }
+  });
+</script>
 <% end %>
