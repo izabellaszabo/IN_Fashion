@@ -6,13 +6,14 @@ class ProductsController < ApplicationController
 
   
   def show
+    @TempOrder=OrderItem.new
     @product = Product.find(params[:id])
     @recommended = Product.where(subcategory: @product.subcategory).shuffle.take(4)
     @reviews = Review.where(Product_id: params[:id])
   end
   
   def new
-    @item = Item.new
+    #@item = Item.new
   end
   
   def edit
