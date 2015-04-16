@@ -1,0 +1,16 @@
+<%= link_to image_tag(product.image_url, :class => "productsimg"), product %>
+
+<h3 class="title"><%= link_to product.Title, product %></h3>
+
+<div class="functionality">
+<div class="productrating<%= index %>" style="width: 61%; float: left;"></div>
+<div class="price"><%= number_with_precision(product.price, precision: 2) %></div>
+</div>
+<script>
+$('.productrating<%= index %>').raty({
+    readOnly: true,
+    hints: ['Abominable', 'Poor', 'Average', 'Good', 'Gorgeous'],
+    score: <%= product.rating %>,
+    path: '/assets/products'
+  });
+</script>

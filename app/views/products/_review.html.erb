@@ -1,0 +1,25 @@
+<div id="reviewRatingStars<%= index %>" style="width: 20%; float: left;"></div>
+<div id="reviewSummary">
+  <%= review.summary %>
+</div>
+<div id="reviewDate">
+  <%= review.Date.strftime("%Y-%b-%d") %>
+</div>
+<div id="reviewBy">
+  <div style="font-family: 'Cabin', Helvetica, Arial, sans-serif; width: 20px; float: left;">By</div>
+  <% user = User.find_by(id: review.userId) %>
+  <%= user.name + " " + user.lastname %>
+</div>
+<div id="reviewComment">
+  <%= review.Comment %>
+</div>
+
+<script>
+$('#reviewRatingStars<%= index %>').raty({
+    readOnly: true,
+    space: false,
+    hints: ['Abominable', 'Poor', 'Average', 'Good', 'Gorgeous'],
+    score: <%= review.Rating %>,
+    path: '/assets/products'
+  });
+</script>

@@ -3,8 +3,6 @@ class ProductsController < ApplicationController
   def index
   end
   
-
-  
   def show
     @TempOrder=OrderItem.new
     @product = Product.find(params[:id])
