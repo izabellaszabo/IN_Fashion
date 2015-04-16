@@ -139,23 +139,16 @@ table#productsTable {
 .price {
   width: 35%;
   float: left;
+  text-align: right;
 }
 
 .price:before {
   content: "€";
 }
-
-.addtocart a {
+.productindexrating {
   width: 61%;
   float: left; 
-  text-align: right;
-  color: #fb7142;
-  text-decoration: none;
-  padding: 1%;
-}
-
-.addtocart a:hover {
-  text-decoration: underline;
+  text-align: left;
 }
 
 #nomatches {

@@ -1,21 +1,41 @@
+<% content_for :title do %>
+My Shopping Bag
+<% end %>
+
 <% content_for :header do %>
 <% end %>
 
 <% content_for :content do %>
+<h1 id="carth1">My Shopping Bag</h1>
 <div id="cartcont">
-<h1>Carts#index</h1>
-
-<div id="cartItem">
-  <div id="cartTitle">
-    Title
+<% if session[:username] %>
+  <div class="cartItem">
+    <div class="cartTitle">
+      Example - Title Here
+    </div>
+    <div class="cartQuantity">
+      Quantity Here
+    </div>
+    <div class="cartColor">
+      Color Here
+    </div>
+    <div class="cartSize">
+      Size Here
+    </div>
+    <div class="cartPrice">
+      €Price Here
+    </div>
   </div>
-  <div id="cartQuantity">
-    Quantity
+  
+  <div id="total">
+    <div id="itemscnt">
+      <h3>*Count* items</h3>
+    </div>
+    <h3>Total: €</h3>
   </div>
-  <div id="cartPrice">
-    €Price
-  </div>
-</div>
+<% else %>
+  <p>Please Login to view your shopping bag.</p>
+<% end %>
 
 </div>
 <% end %>

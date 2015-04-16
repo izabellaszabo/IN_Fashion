@@ -49,9 +49,7 @@ Product Details
   
   <div id="itemdesc">
     <h4 id="itemprice"><%= number_with_precision(@product.price, precision: 2) %></h4>
-    <h4 id="itemprice"><%= f.label :price,number_with_precision(@product.price, precision:2) %>
-    
-    
+    <h4 id="itemprice"><%= f.label :price,number_with_precision(@product.price, precision:2) %></h4>
     
     <%end%>
     <div id="rating">
@@ -181,7 +179,7 @@ Product Details
     				  </div>
     				  <div id="reviewBy">
     				    <div style="font-family: 'Cabin', Helvetica, Arial, sans-serif; width: 20px; float: left;">By</div>
-    				    <% user = User.find_by(id: session[:user_id]) %>
+    				    <% user = User.find_by(id: review.userId) %>
     				    <%= user.name + " " + user.lastname %>
     				  </div>
     				  <div id="reviewComment">
