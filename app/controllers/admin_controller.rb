@@ -8,18 +8,19 @@ class AdminController < ApplicationController
   def viewmessages
     @unreadmessages = Contact.where(readmsg: false)
     @unrepliedmessages = Contact.where(replied: false)
-    render 'admin/ordersignoff'
+    render 'admin/viewmessages'
   end
   
   def viewproducts
     @currentProducts = Product.where(archived: false)
     @archivedproducts = Product.where(archived: true)
-    render 'admin/ordersignoff'
+    render 'admin/viewproducts
+    '
   end
   
   def editproducts
     @product = Product.find_by(id: params[:id])
-    render 'admin/ordersignoff'
+    render 'admin/editproducts'
   end
   
 end

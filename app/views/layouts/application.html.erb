@@ -47,7 +47,6 @@
 				<li> | </li>
 				<% if session[:username] != nil %>
 					<%=link_to "Logout", '/logout' %>
-					<%=link_to "Logout", '/' %>
 				<%else%>
 					<li><a id="modal_trigger" href="#modal">Login/Signup</a></li>
 				<%end%>

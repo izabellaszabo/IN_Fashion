@@ -8,17 +8,32 @@ View Messages
 <% content_for :content do %>
 <h1 class="h1fullwidth">Checkout</h1>
 <div class="topgradientdiv">
+  <div id="unread">
     <% @unreadmessages.each do |unread| %>
-    <div class="name">
-      <%= unread.name %>
-    </div>
-    <div class="message">
-      <%= unread.message %>
-    </div>
-    <div class="unreplied">
-      <%= unread.replied %>
-    </div>
-    
-  <% end %>
+      <div class="name">
+        <%= unread.name %>
+      </div>
+      <div class="message">
+        <%= unread.message %>
+      </div>
+      <div class="action">
+        <%= unread.replied %>
+      </div>
+    <% end %>
+  </div>
+  
+  <div id="unreplied">
+    <% @unrepliedmessages.each do |unreplied| %>
+      <div class="name">
+        <%= unreplied.name %>
+      </div>
+      <div class="message">
+        <%= unreplied.message %>
+      </div>
+      <div class="action">
+        <%= unreplied.replied %>
+      </div>
+    <% end %>
+  </div>
 </div>
 <% end %>
