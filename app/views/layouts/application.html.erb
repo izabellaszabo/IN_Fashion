@@ -15,70 +15,6 @@
 </head>
 
 <body>
-<<<<<<< HEAD
- <header>
-  <div id="logo">
-   <img src="/assets/site/logo.png" alt="logo"/>
-  </div>
-  <div id="right">
-   <% if session[:username].eql? "Admin" %>
-    <div style="float: left; width: 100%;">Welcome <%= session[:username] %>; 
-     You have <%= pluralize(10, "order") %> to Sign off on</div>
-   <% elsif session[:username] != nil %>
-    <div style="float: left; width: 93%;">Welcome, <%= session[:username] %>; Your Cart total is €</div>
-    <div id="cp1" style="float: left; width: 7%; text-align: left;"><%= calculatetotal %></div>
-   <% else %>
-    Welcome  to our online store!
-   <% end %>
-   <br/>
-   <ul id="quicklinks">
-    <li><%=link_to "My Account", "/account" %></li>
-    <li> | </li>
-    <% if session[:username].eql? "Admin" %>
-     <li><%=link_to "Sign off on Orders", '/ordersignoff' %></li>
-     <li> | </li>
-     <li><%=link_to "View Messages", '/viewmessages' %></li>
-     <li> | </li>
-     <li><%=link_to "View Products", '/viewproducts' %></li>
-    <% else %>
-     <li><%=link_to "My Cart", '/cart' %></li>
-     <li> | </li>
-     <li><%=link_to "Checkout", '/checkout' %></li>
-    <% end %>
-    <li> | </li>
-    <% if session[:username] != nil %>
-     <%=link_to "Logout", '/logout' %>
-     <%=link_to "Logout", '/' %>
-    <%else%>
-     <li><a id="modal_trigger" href="#modal">Login/Signup</a></li>
-    <%end%>
-   </ul>
-  </div>
-  <% if session[:username].eql? "Admin" %>
-  <% else %>
-  <div id="nav">
-   <ul>
-    <li><%=link_to "Women's", '/womens' %></li> 
-    <li><%=link_to "Men's", '/mens' %></li> 
-    <li><%=link_to "Sport's Wear", '/sport' %></li>
-   </ul>
-  </div>
-  <% end %>
- </header>
- 
- <div id="navimg">
-  <%= yield :header %>
- </div>
- 
- <div id="main">
-  <%= yield :content %>
-  <%= render partial: ("/layouts/loginform") %>
- </div>
- 
- <script type="text/javascript">
-  $("#modal_trigger").leanModal({top : 200, overlay : 0.6, closeButton: ".modal_close" });
- </script>
-=======
 	<header>
 		<div id="logo">
 			<img src="/assets/site/logo.png" alt="logo"/>
@@ -140,29 +76,29 @@
 	<script type="text/javascript">
 		$("#modal_trigger").leanModal({top : 200, overlay : 0.6, closeButton: ".modal_close" });
 	</script>
->>>>>>> f90f2b07105837449d09717836498d42e08a2a6b
 
- <footer>
-  <div id="footerlinks">
-   <ul>
-    <li><%=link_to "Home", '/home' %></li> 
-    <li> | </li>
-    <li><%=link_to "Women's", '/womens' %></li> 
-    <li> | </li>
-    <li><%=link_to "Men's", '/mens' %></li> 
-    <li> | </li>
-    <li><%=link_to "Sport Wear", '/sport' %></li>
-    <li> | </li>
-    <li><%=link_to "About", '/about' %></li> 
-    <li> | </li>
-    <li><%=link_to "Contact", new_contact_path %></li> 
-   </ul>
-  </div>
-  
-  <div id="updated">
-   &copy; IN Fashion 2015
-  </div>
- </footer>
- 
+	<footer>
+		<div id="footerlinks">
+			<ul>
+				<li><%=link_to "Home", '/home' %></li> 
+				<li> | </li>
+				<li><%=link_to "Women's", '/womens' %></li> 
+				<li> | </li>
+				<li><%=link_to "Men's", '/mens' %></li> 
+				<li> | </li>
+				<li><%=link_to "Sport Wear", '/sport' %></li>
+				<li> | </li>
+				<li><%=link_to "About", '/about' %></li> 
+				<li> | </li>
+				<li><%=link_to "Contact", new_contact_path %></li> 
+			</ul>
+		</div>
+		
+		<div id="updated">
+			&copy; IN Fashion 2015
+		</div>
+	</footer>
+	
 </body>
 </html>
+
