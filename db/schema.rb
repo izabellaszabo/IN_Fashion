@@ -29,9 +29,9 @@ ActiveRecord::Schema.define(version: 20150402141030) do
     t.decimal  "Total_Price", precision: 12, scale: 3
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
+    t.string   "Colour"
+    t.string   "Size"
   end
-
-  add_index "order_items", ["Product_id"], name: "index_order_items_on_Product_id"
 
   create_table "order_statuses", force: :cascade do |t|
     t.string   "name"
@@ -61,6 +61,8 @@ ActiveRecord::Schema.define(version: 20150402141030) do
     t.datetime "Date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "userId"
+    t.string   "summary"
   end
 
   add_index "reviews", ["Product_id"], name: "index_reviews_on_Product_id"
@@ -68,9 +70,12 @@ ActiveRecord::Schema.define(version: 20150402141030) do
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.string   "password_digest"
+    t.string   "billing_address"
+    t.string   "delivery_address"
+    t.string   "lastname"
   end
 
 end

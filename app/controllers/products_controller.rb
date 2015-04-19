@@ -1,13 +1,22 @@
 class ProductsController < ApplicationController
   #When the index controller is called it stores all the products in a Products and Orders in Order_Items
   def index
+    #@TempOrder=OrderItem.new
   end
   
+
+  
   def show
-    @TempOrder=OrderItem.new
+    #Adding to the final ID that is returned as this will be the new ID
+    #@temp_order_id= "TEST VALUE TO SEE"
+    #Select id from Order ORDER BY 
     @product = Product.find(params[:id])
     @recommended = Product.where(subcategory: @product.subcategory).shuffle.take(4)
     @reviews = Review.where(Product_id: params[:id])
+    @TempOrder = OrderItem.new
+    @TempProductID=Order.last
+    #@total_price=OrderItem.select('Total_Price').where(:OrderId => '0').sum(:Total_Price)
+   
   end
   
   def new
@@ -33,6 +42,7 @@ class ProductsController < ApplicationController
     @subcategory = 'none'
     #This redirects to the view
     render 'products/index'
+    
   end
   
   def sport
