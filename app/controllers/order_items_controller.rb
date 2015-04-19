@@ -40,7 +40,7 @@ class OrderItemsController < ApplicationController
   private
   #These are strong params and are needed
   def order_parmas
-    params.require(:order_item).permit(:Quantity, :Total_Price,:OrderID, :Size, :Colour)
+    params.require(:order_item).permit(:Quantity, :Total_Price,:OrderID, :Size, :Colour, :Product_id)
     #params.require(:order_item).permit(:Quantity,:Size, :Colour, :Total_Price)
     #params.require(:contact).permit(:name, :email, :message)
   end

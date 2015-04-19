@@ -33,6 +33,26 @@ My Shopping Bag
     </div>
     <h3>Total: €</h3>
   </div>
+  <% OrderItem.where(:OrderId => '0').all.each do |oi|%>
+  <div class="cartItem">
+    <div class="cartTitle">
+     
+      <%= Product.where(:id => oi.Product_id).select("Title") %>
+    </div>
+    <div class="cartQuantity">
+      <%= oi.Quantity %>
+    </div>
+    <div class="cartColor">
+      <%= oi.Colour %>
+    </div>
+    <div class="cartSize">
+      <%= oi.Size %>
+    </div>
+    <div class="cartPrice">
+      <%= oi.Total_Price %>
+    </div>
+  </div>
+  <%end%>
 <% else %>
   <p>Please Login to view your shopping bag.</p>
 <% end %>

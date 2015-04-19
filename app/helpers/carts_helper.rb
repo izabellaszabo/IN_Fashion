@@ -19,7 +19,7 @@ module CartsHelper
         puts message.sid
         puts "THIS IS A TEST MESSAGE TO SEE IT ALL WORKS I AM IN THE CARTS HELPER"
 
-        puts v1
+ 
     
     
     end

@@ -12,20 +12,12 @@ class SessionsController < ApplicationController
       #log_in user
       session[:user_id] = @user.id
       session[:username] = @user.name
-<<<<<<< HEAD
       redirect_to '/home', :flash => {:success => "Login successful"}
     else
       redirect_to '/home', :flash => {:error => "Login failed, Invalid email/password combination!"}
-=======
-      redirect_to '/home'
-
-    #else
-      #redirect_to "/"
-      # Create an error message.
-      #flash[:danger] = 'Invalid email/password combination'
->>>>>>> 929ff14b9bebbe8a21bc3fc5f7f92ab473c0847a
     end
   end
+
 
   def destroy
     session.delete(:username)
