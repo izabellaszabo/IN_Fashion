@@ -1,17 +1,30 @@
 Rails.application.routes.draw do
 
   #ADDED WHEN DO CART TO BE INVESTIGATED
+  # can be created, read,update, deleted (Set product to not available )
   resources :products
+  
+  # can be created, read, updated and possibly deleted
   resources :cart, only:[:show]
+  
+  # can be created, read
   resources :contacts
+  
+  # can be created, read,update
   resources :users
+  
+  # can be created, read,update
   resources :order_items, only: [:create,:update,:destroy]
+  
+  # can be created, read,
   resources :reviews
 
   #Order_Items Routes  
   get 'order_items/create'
+  get 'aaa' => 'order_items#new'
   get 'order_items/update'
   get 'order_items/destroy'
+  get 'createOrderItem' => 'products#createOrderItem'
 
   #Prodcut Routes
   get 'womens' => 'products#women'

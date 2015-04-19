@@ -12,7 +12,6 @@ class SessionsController < ApplicationController
       #log_in user
       session[:user_id] = @user.id
       session[:username] = @user.name
-      ###### Could redirect to previous viewed products??????????
       redirect_to '/home'
 
     #else

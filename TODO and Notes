@@ -51,3 +51,42 @@ NIALL
 
 1) commit my changes
 2) passing parameters via link_to do an example of this
+
+Listing all the columns, this one works for Order_Item
+1) Start the Rails console
+    > rails console
+2) Run command Model Class name and column_names
+    > OrderItem.column_names
+
+To enter the Rails DB Console 
+> rails dbconsole
+
+Always terminate the commands with an ';'
+
+To Exit the DB Console
+> ctrl d
+
+OrderItem Table  
+["id", "Product_id", "Quantity", "Total_Price", "created_at", "updated_at", "Colour", "Size"] 
+
+
+ Order.column_names
+ ["id", "subtotal", "tax", "shipping", "total", "order_status_id", "created_at", "updated_at"] 
+ 
+ Getting the top value from a table. We need to run this to get the Order_ID from the Order Table and
+ pass this value to, we also need to add a record to Order table to makr this record as being used.
+ http://stackoverflow.com/questions/420352/how-to-get-last-n-records-with-activerecord
+ 
+ VALIDATION ON INPUT FOR THE LOGIN
+ SAVING ORDER DETAILS
+ 
+ 
+ u = User.create :userid => "myuserid", :password => "mypasswd", :user_first_name => "test", :user_last_name => "testovich", :user_status => "mystatus", :user_type => "mytype"
+ Order Table add a base record
+ Order.create :tax => "1", :shipping => "1", :total => "1", :order_status_id => "1", :created_at => "", :updated_at => ""
+ 
+ 
+ http://paweljaniak.co.za/2013/07/25/5-star-ratings-with-rails/
+ 
+ 
+ <%= puts "THIS IS THE VALUE FROM THE CONTROLLER " + (((@TempProductID.id).to_i) + 1).to_s  %>

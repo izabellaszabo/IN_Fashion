@@ -21,8 +21,8 @@
 		</div>
 		<div id="right">
 			<% if session[:username] != nil %>
-			<div style="float: left; width: 93%;">Welcome, <%= session[:username] %>; Your Cart total is €</div>
-			<div id="cp1" style="float: left; width: 7%; text-align: left;">0.00</div>
+			<div style="float: left; width: 93%;">Welcome, <%= session[:username] %>; Your Cart total is €<%= calculatetotal().to_s %></div>
+			<div id="cp1" style="float: left; width: 7%; text-align: left;"><%@CartTotal%></div>
 			<% else %>
 			Welcome  to our online store!
 			<% end %>
@@ -35,7 +35,7 @@
 				<li><%=link_to "Checkout", :action => 'checkout', :controller => 'carts' %></li>
 				<li> | </li>
 				<% if session[:username] != nil %>
-					<%=link_to "Logout", 'logout' %>
+					<%=link_to "Logout", '/' %>
 				<%else%>
 					<li><a id="modal_trigger" href="#modal">Login</a></li>
 				<%end%>
