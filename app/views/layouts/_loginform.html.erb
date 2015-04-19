@@ -7,9 +7,9 @@
 		<!-- User Login -->
 		<div class="user_login">
 			<!-- WHY IS THIS LOGIN PATH? TO BE CHECKED FURTHER-->
-			<%= form_for(:session, url: login_path) do |f| %>
+			<%= form_for :session, url: login_path, html: {:class => "form"} do |f| %>
 			
-				<table class="logintable">
+				<table>
 				    <tr class="space">
 				      <td>Username</td>
 				      
@@ -20,12 +20,9 @@
 				      <td>Password</td>
 				      <td><%= f.password_field :password, :required => true %></td>
 				    </tr>
-				    <tr class="space">
-				      <td><input type="checkbox" name="remmeber" value="remember">Remember Me</td>
-				    </tr>
 				    <tr>
-				      <td><%= f.submit "Submit", class: "btn btn-primary", id: "sendbtn" %></td>
-				      
+				    	<td></td>
+				      <td style="text-align: right;"><%= f.submit "Submit", class: "btn btn-primary", id: "sendbtn" %></td>
 				    </tr>
 				</table>
 			
@@ -34,7 +31,7 @@
 			<p>
 				Don't have an account yet? <%= link_to "Sign up!", new_user_path, :class => "link" %>
 			<br />
-				<a href="#" class="forgot_password">Forgot your password?</a>
+				<a href="#" class="link">Forgot your password?</a>
 			</p>
 		</div>
 	</section>

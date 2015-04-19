@@ -1,5 +1,4 @@
 /* Checkout Page */
-
 .topgradientdiv h2 {
   color: #761f31;
   margin-top: 1%;
@@ -45,24 +44,6 @@
 
 #submitorder {
   text-align: center;
-}
-
-/* Thank You Page */
-#thankscont {
-  float: left;
-  width: 98%;
-  margin-top: 0px;
-  margin-left: 1%;
-  margin-right: 1%;
-  margin-bottom: 1%;
-  border-top: solid 1px #000;
-  background: linear-gradient(#fb7142 1%, #ffffff 10%);
-}
-
-#thanksconth2 {
-  color: #761f31;
-  padding-left: 2%;
-  margin-bottom: 5px;
 }
 
 /* Cart Index Page */
@@ -123,12 +104,3 @@
   float: left;
   text-align: left;
 }
-
-@media only screen and (max-width: 1000px) {
-  /* Checkout Page */
-  #checkoutcont, #cartcont {
-    background: linear-gradient(to right, #fb7142 5%, #fff 30%);
-  }
-  
-}
-

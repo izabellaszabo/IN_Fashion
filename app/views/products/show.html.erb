@@ -44,10 +44,6 @@ Product Details
 
   <div id="itemdesc">
     <h4 id="itemprice"><%= f.label :price,number_with_precision(@product.price, precision:2) %></h4>
-    <%= f.submit "Add todo", class: "btn btn-primary" %>
-    
-
-
     <div id="rating">
       <div id="viewRating"></div>
       <ul id="review">
@@ -114,7 +110,7 @@ Product Details
     
     <div id="itemaddtocart">
       <!-- Color and Size have to be validated before added to cart? -->
-      <h4><a href="#">Add to Cart</a></h4>
+      <h4><%= link_to "Add to Cart", 'cart', :id => "itemaddtocart" %></h4>
       <%= tag "input", { "type" => "button", "value" => "Add to Cart", "onclick" => "addToCart(#{@product.price},#{@product.id})" } %>
       <%= tag "input", { "type" => "button", "value" => "List", "onclick" => "window.location.replace('../viewcart')" } %>
       <%= tag "input", { "type" => "button", "value" => "Clear Details(Will be removed)","onclick" => "cleardetails()" } %>
@@ -154,7 +150,7 @@ Product Details
   </header>
   <section class="reviewshowBody">
    <div id="viewreviews">
-    <% if @reviews.length != 0 %>
+    <% if @reviews.length != 0 && @reviews != nil %>
       <% @reviews.each_with_index do |review, index| %>
         <% if index % 2 == 0 %>
           <div id="reviewsWhite">
@@ -165,7 +161,7 @@ Product Details
             </div>
           <% end %>
       <div id="writereview">
-        Write your own Review <%= link_to "here", new_review_path(:productid => @product.id), {:class => "signup"} %>.
+        Write your own Review <%= link_to "here", new_review_path(:productid => @product.id), {:class => "link"} %>.
       </div>
       <% else %>
        <div id="noreviews">
@@ -173,7 +169,7 @@ Product Details
            This product hasn't been reviewed yet.
          </p>
          <p>
-          Be the first to review this product <%= link_to "Here", new_review_path(:productid => @product.id), {:class => "signup"} %>!
+          Be the first to review this product <%= link_to "Here", new_review_path(:productid => @product.id), {:class => "link"} %>!
          </p>
        </div>
      <% end %>

@@ -15,14 +15,18 @@ class ContactsController < ApplicationController
   end
   
   def create
-    @contact = Contact.create(user_params)
-    @contact.save
-    render 'site/thankyou'
+    @contact = Contact.new(contact_params)
+    if @contact.save()
+      @contact.update_attributes(:readmsg => false, :replied => false)
+      render 'site/thankyou'
+    else
+      redirect_to new_contact_path, :flash => {:error => "Message could not be sent, please try again"}
+    end
   end
 
   private
 
-  def user_params
+  def contact_params
       params.require(:contact).permit(:name, :email, :message)
   end
     

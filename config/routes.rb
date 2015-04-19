@@ -50,6 +50,12 @@ Rails.application.routes.draw do
   get 'submitOrder' => 'carts#submitOrder'
   get 'viewcart' => 'carts#view'
   
+  #Admin routes
+  get 'ordersignoff' => 'admin#ordersignoff'
+  get 'viewmessages' => 'admin#viewmessages'
+  get 'viewproducts' => 'admin#viewproducts'
+  get 'editproducts' => 'admin#editproducts'
+  
   #get 'carts/show'
   #get 'cart' => 'cart#show'
   #get 'cart' => 'carts#index'

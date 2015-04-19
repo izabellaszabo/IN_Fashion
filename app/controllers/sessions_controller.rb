@@ -20,6 +20,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session.delete(:username)
-    redirect_to '/home'
+    redirect_to '/home', :flash => {:success => "Successfully logged out"}
   end
 end

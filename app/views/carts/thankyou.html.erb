@@ -6,8 +6,8 @@ Thank You
 <% end %>
 
 <% content_for :content do %>
-<h2 id="thanksconth2">Thank you, your order has been placed</h2>
-<div id="thankscont">
+<h2 class="h1fullwidth">Thank you, your order has been placed</h2>
+<div class="topgradientdiv">
 <p>An email confirmation has been sent to you.</p>
 
 <p>Order Number: <%= @orderNum %></p>
@@ -22,11 +22,9 @@ Thank You
     Orders to other countries can take up to 10 working days.
   </li>
   <li>
-    This and all previous orders can be found under <%= link_to "My Account", "account", :id => "link" %>.
+    This and all previous orders can be found under <%= link_to "My Account", "account", :class => "link" %>.
   </li>
 </ul>
-
-
 
 </div>
 <% end %>

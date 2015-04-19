@@ -75,6 +75,7 @@ Contact Us
 
 <div class="col" id="lastcol">
   <h3>Mail Us</h3>
+  <div style="color: red;"><%= flash[:error] %></div>
   <%= form_for @contact do |f| %>
   <form id="contactform" action="" method="POST">
     <table id="contacttable">

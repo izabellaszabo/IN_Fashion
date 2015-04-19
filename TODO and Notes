@@ -1,19 +1,5 @@
 Check if cart is empty
 
-logout not working from products#show page
-
-    if params[:password1].eql? params[:password2]
-      @user = User.where(id: session[:user_id])
-      if User.where(:id => params[:userId]).update_all(:name => params[:firstname], :lastname => params[:lastname], :password_digest => params[:password1])
-        redirect_to user_path, :flash => {:success => "Profile Updated"}
-      else
-        redirect_to user_path, :flash => {:error => "Update failed, please make sure your Old Password is correct!"}
-      end
-    else
-      redirect_to user_path, :flash => {:error => "Update failed, new passwords do not match!"}
-    end
-
-
 Admin User has special functionality
 
 Forgot Password - TEXT MESSAGE
@@ -21,25 +7,11 @@ Email Confirmation?
 
 Welcome page - "welcoming the user, provides user with information on their last visit and what they bought. "
 
-Update products set colum in use to: "not in use"
 
 In order history dropdown, to select order
 "Profile page - Purchase history of user is also provided on this page." 
 
 HOME PAGE PRODUCTS!
-
-
-3. Login Validation againt existing database users
-
-7. Create Story
-
-
-***********************************
-KRAKEN Image Compressor
-***********************************
-
-Captcha?
-Remember me option for login?
 
 ***********************************
 STARTING THE SERVER

@@ -4,11 +4,11 @@ Shopping @ IN Fashion
 
 <% content_for :header do%>
 <div id="search">
- <%= form_tag("search", method: "get") do %>
+ <%= form_tag "search", method: "get", :class => "form" do %>
   <%= text_field_tag(:searchbar) %>
   <%= hidden_field_tag :breadcrumbsCategory, @category %>
   <%= hidden_field_tag :subcategory, 'none' %>
-  <%= submit_tag "Go", :id => "searchbutton" %> 
+  <%= submit_tag "Go", :class => "formsubmit" %> 
 <% end %>
 </div>
 <% end %>
@@ -165,9 +165,9 @@ Shopping @ IN Fashion
    <% end %>
   </table>
   <% if @products.length == 0 && params[:searchbar] != nil %>
-   <p id="nomatches">Sorry, no matches found for: "<%= params[:searchbar] %>"</p>
+   <p ckass="nomatches">Sorry, no matches found for: "<%= params[:searchbar] %>"</p>
   <% elsif @products.length == 0 %>
-   <p id="nomatches">Sorry, no matches found in this price range</p>
+   <p class="nomatches">Sorry, no matches found in this price range</p>
   <% end %>
  </div>
 
