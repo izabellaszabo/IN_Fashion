@@ -39,20 +39,25 @@ Product Details
   <div id="itemimg">
     <%= image_tag @product.image_url %>
   </div>
-  
-
 <<<<<<< HEAD
 =======
+  
+
+>>>>>>> 929ff14b9bebbe8a21bc3fc5f7f92ab473c0847a
 
    <%= form_for(@TempOrder) do |f| %>
->>>>>>> 6b4416eb9bb415e26ad0b1ada91e314fcba533be
 
-  <%= form_for(@TempOrder) do |f| %>
   <div id="itemdesc">
+<<<<<<< HEAD
+    <h4 id="itemprice"><%= f.label :price,number_with_precision(@product.price, precision:2) %></h4>
+=======
     <h4 id="itemprice"><%= number_with_precision(@product.price, precision: 2) %></h4>
     <%= f.hidden_field :Total_Price ,:value => @product.price %>
     <%= f.hidden_field :OrderID ,:value => "0" %>
+    
 
+
+>>>>>>> 929ff14b9bebbe8a21bc3fc5f7f92ab473c0847a
     <div id="rating">
       <div id="viewRating"></div>
       <ul id="review">
@@ -74,8 +79,11 @@ Product Details
       <br/>
       <%= @product.features %>
     </div>
+    
     <%puts "This is product size" + @product.Size.to_s %>
+
       <div>
+        
         <%if @product.Size == 'all' %>
           <%= f.select(:Colour, [["Select Color",0],['xs',1],['s',2],['m',3],['l',4],['xl',5]]) %>
         <%elsif @product.Size == 'shoe' then %>
@@ -96,17 +104,32 @@ Product Details
         <% end%>
         
     </div>
-
+        
+ 
+    
     <div id="quantity">
+      
       <%= f.number_field :Quantity, :class => 'text_field', :step => 'any' %>
+      
       <%= puts "THIS IS THE VALUE FROM THE CONTROLLER " + calculatetotal().to_s  %>
+      
+      
+      
     </div>
+    
     
     <div id="itemaddtocart">
       <!-- Color and Size have to be validated before added to cart? -->
+<<<<<<< HEAD
+      <h4><%= link_to "Add to Cart", 'cart', :id => "itemaddtocart" %></h4>
+      <%= tag "input", { "type" => "button", "value" => "Add to Cart", "onclick" => "addToCart(#{@product.price},#{@product.id})" } %>
+      <%= tag "input", { "type" => "button", "value" => "List", "onclick" => "window.location.replace('../viewcart')" } %>
+      <%= tag "input", { "type" => "button", "value" => "Clear Details(Will be removed)","onclick" => "cleardetails()" } %>
+=======
       <h4><a href="#">Add to Cart</a></h4>
       <%= f.submit "Add todo", class: "btn btn-primary" %>
       <%end%>
+>>>>>>> 929ff14b9bebbe8a21bc3fc5f7f92ab473c0847a
     </div>
   </div>
 
@@ -126,8 +149,7 @@ Product Details
   <% end %>
    <td>
     <div class="eachproduct">
-     <%= link_to image_tag(product.image_url, :class => "productsimg"), product %>
-     <h3 class="title"><%= link_to product.Title, product %></h3>
+      <%= render partial: "product", locals: {product: product, index: index} %>
     </div>
    </td>
    <% if index % 4 == 3 %>
@@ -138,14 +160,13 @@ Product Details
 </div>
 
 <div id="reviews" style="display:none;">
-<<<<<<< HEAD
   <header class="popupHeader" style="height: auto;">
    <div class="header_title">Reviews</div>
    <div class="modal_close">Close</div>
   </header>
   <section class="reviewshowBody">
    <div id="viewreviews">
-    <% if @reviews.length != 0 %>
+    <% if @reviews.length != 0 && @reviews != nil %>
       <% @reviews.each_with_index do |review, index| %>
         <% if index % 2 == 0 %>
           <div id="reviewsWhite">
@@ -156,7 +177,7 @@ Product Details
             </div>
           <% end %>
       <div id="writereview">
-        Write your own Review <%= link_to "here", new_review_path(:productid => @product.id), {:class => "signup"} %>.
+        Write your own Review <%= link_to "here", new_review_path(:productid => @product.id), {:class => "link"} %>.
       </div>
       <% else %>
        <div id="noreviews">
@@ -164,57 +185,24 @@ Product Details
            This product hasn't been reviewed yet.
          </p>
          <p>
-          Be the first to review this product <%= link_to "Here", new_review_path(:productid => @product.id), {:class => "signup"} %>!
+          Be the first to review this product <%= link_to "Here", new_review_path(:productid => @product.id), {:class => "link"} %>!
          </p>
        </div>
      <% end %>
     </div>
    </section>
-=======
-		<header class="popupHeader" style="height: auto;">
-			<div class="header_title">Reviews</div>
-			<div class="modal_close">Close</div>
-		</header>
-		<section class="reviewshowBody">
-			<div id="viewreviews">
-				<% if @reviews.length != 0 %>
-  				<% @reviews.each_with_index do |review, index| %>
-  				  <% if index % 2 == 0 %>
-  				    <div id="reviewsWhite">
-  				  <% else %>
-  				    <div id="reviewsGrey">
-  				  <% end %>
-            <%= render partial: "review", locals: {review: review, index: index} %>
-            </div>
-          <% end %>
-				  <div id="writereview">
-				    Write your own Review <%= link_to "here", new_review_path(:productid => @product.id), {:class => "signup"} %>.
-				  </div>
-  		  <% else %>
-  			  <div id="noreviews">
-      			<p>
-      			  This product hasn't been reviewed yet.
-      			</p>
-      			<p>
-      				Be the first to review this product <%= link_to "Here", new_review_path(:productid => @product.id), {:class => "signup"} %>!
-      			</p>
-    			</div>
-  			<% end %>
-  		</div>
-  	</section>
->>>>>>> 6b4416eb9bb415e26ad0b1ada91e314fcba533be
 </div>
 </div>
-	<script type="text/javascript">
-	  $("#review_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_close" });
-	  
-	  $('#viewRating').raty({
+ <script type="text/javascript">
+   $("#review_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_close" });
+   
+   $('#viewRating').raty({
       readOnly: true,
       hints: ['Abominable', 'Poor', 'Average', 'Good', 'Gorgeous'],
       score: <%= @product.rating %>,
       path: '/assets/products'
     });
-	</script>
+ </script>
 </div>
 
 <% end %>
