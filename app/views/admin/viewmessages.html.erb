@@ -8,6 +8,17 @@ View Messages
 <% content_for :content do %>
 <h1 class="h1fullwidth">Checkout</h1>
 <div class="topgradientdiv">
-  <%= @unreadmessages %>
+    <% @unreadmessages.each do |unread| %>
+    <div class="name">
+      <%= unread.name %>
+    </div>
+    <div class="message">
+      <%= unread.message %>
+    </div>
+    <div class="unreplied">
+      <%= unread.replied %>
+    </div>
+    
+  <% end %>
 </div>
 <% end %>
