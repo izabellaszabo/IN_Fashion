@@ -39,8 +39,6 @@ Product Details
   <div id="itemimg">
     <%= image_tag @product.image_url %>
   </div>
-  
-
 
   <%= form_for(@TempOrder) do |f| %>
   <div id="itemdesc">
@@ -71,37 +69,39 @@ Product Details
     </div>
     <%puts "This is product size" + @product.Size.to_s %>
       <div>
-        <%if @product.Size == 'all' %>
-          <%= f.select(:Colour, [["Select Color",0],['xs',1],['s',2],['m',3],['l',4],['xl',5]]) %>
-        <%elsif @product.Size == 'shoe' then %>
-          <%= f.select :Colour, [["Select Color",0],['4',1],['5',2],['6',3],['7',4],['8',4]] %>
-        <%else%>
-          <%= f.select :Colour, [["Select Color",0],["One Size",1]] %>
+        <% if @product.Size == 'all' %>
+          <%= f.select :Colour, [["Select Color",0],['xs',1],['s',2],['m',3],['l',4],['xl',5]], :required => true  %>
+        <% elsif @product.Size == 'shoe' then %>
+          <%= f.select :Colour, [["Select Color",0],['4',1],['5',2],['6',3],['7',4],['8',4]], :required => true  %>
+        <% else %>
+          <%= f.select :Colour, [["Select Color",0],["One Size",1]], :required => true  %>
         <% end%>
         
     </div>
     <div>
 
-        <%if @product.Size == 'all' %>
-          <%= f.select(:Size, [["Select Color",0],['xs',1],['s',2],['m',3],['l',4],['xl',5]]) %>
-        <%elsif @product.Size == 'shoe' then %>
-          <%= f.select :Size, [["Select Color",0],['4',1],['5',2],['6',3],['7',4],['8',4]] %>
-        <%else%>
-          <%= f.select :Size, [["Select Color",0],["One Size",1]] %>
+        <% if @product.Size == 'all' %>
+          <%= f.select :Size, [["Select Color",0],['xs',1],['s',2],['m',3],['l',4],['xl',5]], :required => true  %>
+        <% elsif @product.Size == 'shoe' then %>
+          <%= f.select :Size, [["Select Color",0],['4',1],['5',2],['6',3],['7',4],['8',4]], :required => true  %>
+        <% else %>
+          <%= f.select :Size, [["Select Color",0],["One Size",1]], :required => true %>
         <% end%>
         
     </div>
 
     <div id="quantity">
-      <%= f.number_field :Quantity, :class => 'text_field', :step => 'any' %>
+      <%= f.number_field :Quantity, :class => 'text_field', :step => 'any', :required => true  %>
       <%= puts "THIS IS THE VALUE FROM THE CONTROLLER " + calculatetotal().to_s  %>
     </div>
     
     <div id="itemaddtocart">
-      <!-- Color and Size have to be validated before added to cart? -->
-      <h4><a href="#">Add to Cart</a></h4>
-      <%= f.submit "Add todo", class: "btn btn-primary" %>
-      <%end%>
+      <% if session[:username] %>
+        <%= f.submit "Add to Cart", class: "btn btn-primary", :id => "itemaddtocartbtn" %>
+      <% else %>
+        <p class="centeralign">Please Login to add Items to Cart</p>
+      <% end %>
+    <%end%>
     </div>
   </div>
 

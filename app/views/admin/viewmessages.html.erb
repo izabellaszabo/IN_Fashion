@@ -19,17 +19,19 @@ View Messages
         <h3>Message</h3>
       </div>
       <div class="action">
-        <h3>Action</h3>
+        <h3>Reply Email</h3>
       </div>
       <% @unrepliedmessages.each do |unreplied| %>
-        <div class="name">
-          <%= unreplied.name %>
-        </div>
-        <div class="message">
-          <%= unreplied.message %>
-        </div>
-        <div class="action">
-          <%= link_to "Reply", "/reply", :class => "link", :messageId => unreplied.id %>
+        <div class="eachmsg">
+          <div class="name">
+            <%= unreplied.name %>
+          </div>
+          <div class="message">
+            <%= unreplied.message %>
+          </div>
+          <div class="email">
+            <%= unreplied.email %>s
+          </div>
         </div>
       <% end %>
     <% end %>

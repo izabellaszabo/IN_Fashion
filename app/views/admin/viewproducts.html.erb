@@ -1,0 +1,98 @@
+<% content_for :title do %>
+View Products
+<% end %>
+
+<% content_for :header do %>
+<% end %>
+
+<% content_for :content do %>
+<h1 class="h1fullwidth">View Products</h1>
+<div class="topgradientdiv">
+  <div id="currentProducts">
+    <h2>Current Products</h2>
+    <p class="centeralign">There are <%= @cntcurrent %> Products in circulation</p>
+    <div class="col">
+      <h3 class="centeralign">Women's</h3>
+      <% if @womens != nil %>
+        <% @womens.each do |product| %>
+          <div class="adminproducts">
+            <div class="adminimg">
+              <%= image_tag(product.image_url) %>  
+            </div>
+            <div class="admintitle">
+              <h4><%= link_to product.Title, "editproduct", :class => "link" %></h4> 
+            </div>
+            <div class="adminprice">
+              <%= number_with_precision(product.price, precision: 2) %>  
+            </div>
+          </div>
+        <% end %>
+      <% else %>
+        <p class="centeralign">There are no products to show</p>
+      <% end %>
+    </div>
+    <div class="col">
+      <h3 class="centeralign">Men's</h3>
+      <% if @mens != nil %>
+        <% @mens.each do |product| %>
+          <div class="adminproducts">
+            <div class="adminimg">
+              <%= image_tag(product.image_url) %>  
+            </div>
+            <div class="admintitle">
+              <h4><%= link_to product.Title, "editproduct", :class => "link" %></h4></h4> 
+            </div>
+            <div class="adminprice">
+              <%= number_with_precision(product.price, precision: 2) %>  
+            </div>
+          </div>
+        <% end %>
+      <% else %>
+        <p class="centeralign">There are no products to show</p>
+      <% end %>
+    </div>
+    <div class="col" id="lastcol">
+      <h3 class="centeralign">Sport</h3>
+      <% if @sport != nil %>
+        <% @sport.each do |product| %>
+          <div class="adminproducts">
+            <div class="adminimg">
+              <%= image_tag(product.image_url) %>  
+            </div>
+            <div class="admintitle">
+              <h4><%= link_to product.Title, "editproduct", :class => "link" %></h4></h4> 
+            </div>
+            <div class="adminprice">
+              <%= number_with_precision(product.price, precision: 2) %>  
+            </div>
+          </div>
+        <% end %>
+      <% else %>
+        <p class="centeralign">There are no products to show</p>
+      <% end %>
+    </div>
+  </div>
+  
+  <div id="archivedProducts">
+    <h2>Archived Products</h2>
+    <% if @archivedProducts != nil %>
+      <p class="centeralign">There are <%= @cntarchived %> archived Products</p>
+      <% @archivedProducts.each do |product| %>
+        <div class="adminproducts">
+          <div class="adminimg">
+            <%= image_tag product.image_url, :style => "max-height: 50px;" %>  
+          </div>
+          <div class="admintitle">
+            <h4><%= link_to product.Title, product, :class => "link" %></h4> 
+          </div>
+          <div class="adminprice">
+            <%= number_with_precision(product.price, precision: 2) %>  
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <p class="centeralign">There are no products to show</p>
+    <% end %>
+  </div>
+</div>
+<% end %>

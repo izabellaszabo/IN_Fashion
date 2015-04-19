@@ -1,0 +1,42 @@
+<% content_for :title do %>
+Edit Product
+<% end %>
+
+<% content_for :header do %>
+<% end %>
+
+<% content_for :content do %>
+<h2 class="h1fullwidth">Edit Product</h2>
+  <div class="topgradientdiv">
+    <table>
+        <col width="50%" />
+        <col width="50%" />
+        <% form_tag "editproduct", :method => "get", :class => "form" %>
+        <tr>
+          <td>Title:</td>
+          <td><%= text_field_tag :title, '', :value => @product.Title %></td>
+        </tr>
+        <tr>
+          <td>Category:</td>
+          <td><%= text_field_tag :category, '', :value => @product.Catagory %></td>
+        </tr>
+        <tr>
+          <td>Subcategory:</td>
+          <td><%= text_field_tag :bcity, '', :value => @product.subcategory %></td>
+        </tr>
+        <tr>
+          <td>Price:</td>
+          <td><%= text_field_tag :price, '', :value => @product.price %></td>
+        </tr>
+        <tr>
+          <td>Colour:</td> 
+          <td><%= text_field_tag :colour, '', :value => @product.Colour %></td>
+        </tr>
+        <tr>
+          <td>Description:</td>
+          <td><%= text_area_tag :description, '', :value => @product.Description %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+<% end %>

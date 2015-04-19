@@ -10,10 +10,6 @@ Welcome page - "welcoming the user, provides user with information on their last
 In order history dropdown, to select order
 "Profile page - Purchase history of user is also provided on this page." 
 
-HOME PAGE PRODUCTS!
-
-DB seeds colours
-
 @contact = Contact.find_by(id: message_params)
 @contact.update_attributes(:readmsg => true)
 render '/admin/viewmessages'
