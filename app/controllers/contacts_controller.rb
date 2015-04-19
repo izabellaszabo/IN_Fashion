@@ -14,10 +14,16 @@ class ContactsController < ApplicationController
     @contact = Contact.new
   end
   
+  def edit
+  end
+  
+  def update
+  end
+  
   def create
     @contact = Contact.new(contact_params)
     if @contact.save()
-      @contact.update_attributes(:readmsg => false, :replied => false)
+      @contact.update_attributes(:readmsg => 'false', :replied => 'false')
       render 'site/thankyou'
     else
       redirect_to new_contact_path, :flash => {:error => "Message could not be sent, please try again"}
@@ -25,9 +31,12 @@ class ContactsController < ApplicationController
   end
 
   private
-
-  def contact_params
+    def contact_params
       params.require(:contact).permit(:name, :email, :message)
-  end
+    end
     
+    def message_params
+      params.require(:contact).permit(:messageId)
+    end
+  
 end
