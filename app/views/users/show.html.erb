@@ -7,15 +7,16 @@ Account Details
 
 <% content_for :content do %>
 
-<h1 id="accountconth1">Account Details</h1>
-<div id="accountcont">
+<h1 class="h1fullwidth">Account Details</h1>
+<div class="topgradientdiv">
 <% if session[:username] %>
     <% @user = User.find_by(id: session[:user_id]) %>
-    
     <div class="col">
-        <h2>User Details</h2>
+        <h2 class="centeralign">User Details</h2>
+        <div style="color: red;"><%= flash[:error] %></div>
+        <div style="color: red;"><%= flash[:success] %></div>
         <% if @viewType.eql? "edituser" %>
-            <%= form_tag "updateAccount", method: "get", :id => "accountForm" do %>
+            <%= form_tag "updateAccount", method: "get", :class => "form" do %>
             <table>
                 <col width="50%" />
                 <col width="50%" />
@@ -33,21 +34,23 @@ Account Details
                 </tr>
                 <tr>
                     <td>Old Password:</td> 
-                    <td><%= text_field_tag(:passwordold) %></td>
+                    <td><%= text_field_tag :passwordold , '', :required => true, :placeholder => "required", :type => "password" %></td>
                 </tr>
                 <tr>
                     <td>New Password:</td>
-                    <td><%= text_field_tag(:password1) %></td>
+                    <td><%= text_field_tag :password1, '', :type => "password"  %></td>
                 </tr>
                 <tr>
                     <td>Confirm Password:</td> 
-                    <td><%= text_field_tag(:password2) %></td>
+                    <td><%= text_field_tag :password2, '', :type => "password"  %></td>
                 </tr>
+                <div id="oldpwincorrect" style="display: none; text-align: center; color: red;">Save Unsuccessful! Old password is Incorrect.</div>
+                <div id="pwcomboincorrect" style="display: none; text-align: center; color: red;">Save Unsuccessful! Password combination is Incorrect.</div>
                 <tr>
-                    <td><%= link_to "Cancel", 'account', :view => "view" %></td>
+                    <td><%= link_to "Cancel", 'account', :view => "view", :class => "link" %></td>
                     <td>
-                        <%= hidden_field_tag :userId, session[:user_id] %>
-                        <%= submit_tag "Save", :class => "accountSubmitBtn" %>
+                        <%= hidden_field_tag :email, @user.email %>
+                        <%= submit_tag "Save", :class => "formsubmit" %>
                     </td>
                 </tr>
             </table>
@@ -62,19 +65,15 @@ Account Details
             Password: <%= "Password".gsub!(/./, "\u2022 ") %>
             <br/>
             <br/>
-            <%= link_to "Change User Details", :action => 'change_details', :detailSection => "user" %>
+            <%= link_to ("Change User Details"), {:action => 'change_details', :detailSection => "user"}, :class => "link" %>
         <% end %>
     </div>
     
     <div class="col">
-        <h2>Billing Details</h2>
-        <% if @user.billing_address == nil %>
-            <% billing = "Example Name | 123 Main Street | Dublin | Ireland".split('|') %>
-        <% else %>
-            <% billing =  @user.billing_address.split('|') %>
-        <% end %>
+        <h2 class="centeralign">Billing Details</h2>
+        <% billing =  @user.billing_address.split('|') %>
         <% if @viewType.eql? "editbilling" %>
-            <%= form_tag "updateBilling", method: "get", :id => "accountForm" do %>
+            <%= form_tag "updateBilling", method: "get", :class => "form" do %>
             <table>
                 <col width="50%" />
                 <col width="50%" />
@@ -95,17 +94,17 @@ Account Details
                     <td><%= text_field_tag :country, '', :value => billing[3].strip %></td>
                 </tr>
                 <tr>
-                    <td><%= link_to "Cancel", 'account', :view => "view" %></td>
+                    <td><%= link_to "Cancel", 'account', :view => "view", :class => "link" %></td>
                     <td>
                         <%= hidden_field_tag :userId, @user.id %>
-                        <%= submit_tag "Save", :class => "accountSubmitBtn" %>
+                        <%= submit_tag "Save", :class => "formsubmit" %>
                     </td>
                 </tr>
             </table>
             <% end%>
         <% else %>
             Bill to: 
-            <div style="text-align: center;">
+            <div class="centeralign" >
             <%= billing[0].strip %>
             <br/>
             <%= billing[1].strip %>
@@ -116,19 +115,15 @@ Account Details
             <br/>
             <br/>
             </div>
-            <%= link_to "Change Billing Details", :action => 'change_details', :detailSection => "billing" %>
+            <%= link_to ("Change Billing Details"), {:action => 'change_details', :detailSection => "billing"}, {:class => "link"} %>
         <% end %>
     </div>
     
     <div class="col" id="lastcol">
-        <h2>Delivery Details</h2>
-        <% if @user.delivery_address == nil %>
-            <% delivery = "Example Name | 123 Main Street | Dublin | Ireland".split('|') %>
-        <% else %>
-            <% delivery = @user.delivery_address.split('|') %>
-        <% end %>
+        <h2 class="centeralign">Delivery Details</h2>
+        <% delivery = @user.delivery_address.split('|') %>
         <% if @viewType.eql? "editdelivery" %>
-            <%= form_tag "updateDelivery", method: "get", :id => "accountForm" do %>
+            <%= form_tag "updateDelivery", method: "get", :class => "form" do %>
             <table>
                 <col width="50%" />
                 <col width="50%" />
@@ -149,10 +144,10 @@ Account Details
                     <td><%= text_field_tag :country, '', :value => delivery[3].strip %></td>
                 </tr>
                 <tr>
-                    <td><%= link_to "Cancel", 'account', :view => "view" %></td>
+                    <td><%= link_to "Cancel", 'account', :view => "view", :class => "link" %></td>
                     <td>
                         <%= hidden_field_tag :userId, @user.id %>
-                        <%= submit_tag "Save", :class => "accountSubmitBtn" %>
+                        <%= submit_tag "Save", :class => "formsubmit" %>
                     </td>
                 </tr>
             </table>
@@ -160,7 +155,7 @@ Account Details
         <% else %>
             Deliver to:
             <br/>
-            <div style="text-align: center;">
+            <div class="centeralign">
             <%= delivery[0].strip %>
             <br/>
             <%= delivery[1].strip %>
@@ -171,7 +166,7 @@ Account Details
             <br/>
             <br/>
             </div>
-            <%= link_to "Change Delivery Details", :action => 'change_details', :detailSection => "delivery" %>
+            <%= link_to ("Change Delivery Details"), {:action => 'change_details', :detailSection => "delivery"}, :class => "link" %>
         <% end %>
     </div>
 <%else%>

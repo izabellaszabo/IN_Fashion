@@ -1,0 +1,96 @@
+<% content_for :title do %>
+Register for an Account
+<% end %>
+
+<% content_for :header do %>
+<% end %>
+
+<% content_for :content do %>
+<h1 class="h1fullwidth">Register for an Account</h1>
+<div class="topgradientdiv">
+  <%= form_for (@user), :html => {class: "form"} do %>
+  <div class="col">
+    <h2 class="centeralign">User Details</h2>
+    <table>
+      <col width="50%" />
+      <col width="50%" />
+      <tr>
+        <td>First Name:</td>
+        <td><%= text_field_tag :firstname, '', :required => true %></td>
+      </tr>
+      <tr>
+        <td>Last Name: </td>
+        <td><%= text_field_tag :lastname, '', :required => true %></td>
+      </tr>
+      <tr>
+        <td>Email/Username:</td>
+        <td><%= text_field_tag :username, '', :required => true, :type => "email" %></td>
+      </tr>
+      <tr>
+        <td>Password:</td>
+        <td><%= text_field_tag :password1, '',  :required => true, :type => "password" %></td>
+      </tr>
+      <tr>
+        <td>Confirm Password:</td> 
+        <td><%= text_field_tag :password2, '', :required => true, :type => "password" %></td>
+      </tr>
+    </table>
+    <div style="color: red;"><%= flash[:error] %></div>
+  </div>
+  
+  <div class="col">
+    <h2 class="centeralign">Billing Details</h2>
+    <table>
+        <col width="50%" />
+        <col width="50%" />
+        <tr>
+            <td>Billing Name:</td>
+            <td><%= text_field_tag :bname, '', :value => "Gorgeous Ruby" %></td>
+        </tr>
+        <tr>
+            <td>Address:</td>
+            <td><%= text_field_tag :bstreet, '', :value => "100 High Street" %></td>
+        </tr>
+        <tr>
+            <td>City/Town:</td>
+            <td><%= text_field_tag :bcity, '', :value => "Funky Town" %></td>
+        </tr>
+        <tr>
+            <td>Country:</td> 
+            <td><%= text_field_tag :bcountry, '', :value => "Geneva" %></td>
+        </tr>
+    </table>
+    <p class="quote">Optional, you can change this anytime.</p>
+  </div>
+    
+  <div class="col" id="lastcol">
+    <h2 class="centeralign">Delivery Details</h2>
+    <table>
+      <col width="50%" />
+      <col width="50%" />
+      <tr>
+        <td>Deliver To:</td>
+        <td><%= text_field_tag :dname, '', :value => "Jason Bourne" %></td>
+      </tr>
+      <tr>
+        <td>Address:</td>
+        <td><%= text_field_tag :dstreet, '', :value => "7 Heaven Row" %></td>
+      </tr>
+      <tr>
+        <td>City/Town:</td>
+        <td><%= text_field_tag :dcity, '', :value => "Cloud 9" %></td>
+      </tr>
+      <tr>
+        <td>Country:</td> 
+        <td><%= text_field_tag :dcountry, '', :value => "Fairytale land" %></td>
+      </tr>
+    </table>
+    <p class="quote">Optional, you can change this anytime.</p>
+  </div>
+  <div class="centeralign">
+  <%= link_to "Cancel", 'home', :class => "link", :id => "margintoright" %>
+  <%= submit_tag ("Create Account"), :class => "formsubmit" %>
+  </div>
+  <% end %>
+</div>
+<% end %>

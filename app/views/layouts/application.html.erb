@@ -54,106 +54,13 @@
 		<%= yield :header %>
 	</div>
 	
-	<div id="main">	
+	<div id="main">
 		<%= yield :content %>
-		<div id="modal" class="popupContainer" style="display:none;">
-			<header class="popupHeader">
-				<div class="header_title">Login</div>
-				<div class="modal_close">Close</div>
-			</header>
-			
-			<section class="popupBody">
-				<!-- User Login -->
-				<div class="user_login">
-					<!-- WHY IS THIS LOGIN PATH? TO BE CHECKED FURTHER-->
-					<%= form_for(:session, url: login_path) do |f| %>
-					
-						<table class="logintable">
-						    <tr class="space">
-						      <td>Username</td>
-						      
-						      <td><%= f.text_field :email, :autofocus=>true, :required => true, :placeholder => "(Your Email)"%></td>
-						      
-						    </tr>
-						    <tr class="space">
-						      <td>Password</td>
-						      <td><%= f.password_field :password, :required => true %></td>
-						    </tr>
-						    <tr class="space">
-						      <td><input type="checkbox" name="remmeber" value="remember">Remember Me</td>
-						    </tr>
-						    <tr>
-						      <td><%= f.submit "Submit", class: "btn btn-primary", id: "sendbtn" %></td>
-						      
-						    </tr>
-						</table>
-					
-					<%end%>
-					
-					<p>
-						Don't have an account yet? <a href="#" id="register_form" class="signup">Sign up!</a>
-					<br />
-						<a href="#" class="forgot_password">Forgot your password?</a>
-					</p>
-				</div>
-				
-				<!-- Registration Form -->
-				<div class="user_register">
-					<%= form_for(@user) do |f| %>
-						<%= render 'shared/error_messages' %>
-						<table class="logintable">
-						    <tr class="space">
-						      <td>Name</td>
-						      <!-- Have to change param to email here and in user_controller -->
-						      <td><%= f.text_field :name, :autofocus=>true, :required => true %></td>
-						    <tr>
-						   	<tr class="space">
-						      <td>Email</td>
-						      <!-- Have to change param to email here and in user_controller -->
-						      <td><%= f.text_field :email, :autofocus=>true, :required => true %></td>
-						    <tr>
-						    <tr class="space">
-						      <td>Password</td>
-						      <td><%= f.password_field :password, :required => true %></td>
-						    <tr>
-						      <tr class="space">
-						      <td>Repeat Password</td>
-						      <td><%= f.password_field :password_confirmation, :required => true %></td>
-						    <tr>
-						    <tr>
-						      <td><input type="Submit" value="Register" class="sendbtn"></td>
-						    </tr>
-						</table>
-					<%end%>
-					
-					<p class="backbtn">
-						<a href="#">Back</a>
-					</p>
-				</div>
-			</section>
-		</div>
+		<%= render partial: ("/layouts/loginform") %>
 	</div>
 	
 	<script type="text/javascript">
 		$("#modal_trigger").leanModal({top : 200, overlay : 0.6, closeButton: ".modal_close" });
-		$(function(){
-	
-			// Calling Register Form
-			$("#register_form").click(function(){
-				$(".user_login").hide();
-				$(".user_register").show();
-				$(".header_title").text('Register');
-				return false;
-			});
-						
-			// Going back to Login Form
-			$(".backbtn").click(function(){
-				$(".user_register").hide();
-				$(".user_login").show();
-				$(".header_title").text('Login');
-				return false;
-			});
-		})
 	</script>
 
 	<footer>

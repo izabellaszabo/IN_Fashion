@@ -7,10 +7,10 @@ Checkout
 <% end %>
 
 <% content_for :content do %>
-<h1 id="checkouth1">Checkout</h1>
-<div id="checkoutcont">
+<h1 class="h1fullwidth">Checkout</h1>
+<div class="topgradientdiv">
 <% if session[:username] != nil%>
-<%= form_tag "submitOrder", method: "get", :id => "checkoutform" do %>
+<%= form_tag "submitOrder", method: "get", :class => "form" do %>
 <div class="col">
   <h2>Delivery Details</h2>
   <p>
@@ -27,7 +27,7 @@ Checkout
     <br/>
     Email
   </p>
-  <p>If delivery details are incorrect, please edit them under <%= link_to "My Account", "account", :id => "link" %>.</p>
+  <p>If delivery details are incorrect, please edit them under <%= link_to "My Account", "account", :class => "link" %>.</p>
 </div>
 
 <div class="col">
@@ -93,14 +93,14 @@ Checkout
   <div id="comments">
     Delivery Comments
     <br/>
-    <%= text_area_tag :comments, '', :id => "textarea", :cols => "30", :rows => "5" %>
+    <%= text_area_tag :comments, '', :class => "textarea", :cols => "30", :rows => "5" %>
   </div>
   
   <!-- This submit button will collect all info on this page, delivery details, 
   payment details and order items and they will be submitted and saved to orders table. 
   Then summary of this info will be presented on thank you page to simulate some sort 
   of payment action. -->
-  <div id="submitorder">
+  <div class="filledorangebtn">
     <%= submit_tag "Submit Order!" %> 
   </div>
   <% end %>

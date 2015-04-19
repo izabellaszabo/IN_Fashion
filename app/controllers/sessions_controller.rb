@@ -12,17 +12,14 @@ class SessionsController < ApplicationController
       #log_in user
       session[:user_id] = @user.id
       session[:username] = @user.name
-      ###### Could redirect to previous viewed products??????????
-      redirect_to '/home'
-
-    #else
-      #redirect_to "/"
-      # Create an error message.
-      #flash[:danger] = 'Invalid email/password combination'
+      redirect_to '/home', :flash => {:success => "Login successful"}
+    else
+      redirect_to '/home', :flash => {:error => "Login failed, Invalid email/password combination!"}
     end
   end
 
   def destroy
     session.delete(:username)
+    redirect_to '/home'
   end
 end

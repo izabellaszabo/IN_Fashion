@@ -4,25 +4,29 @@
 <% content_for :content do %>
 
 <div id="homecontent">
-
+<div class="flashmsg">
+ <%= flash[:error] %> 
+</div>
 <div class="homeimgtext" >
-<a href="womens"><img src="/assets/site/women_header.jpg" alt="womens" /></a>
+<a href="womens"><img src="/assets/site/women_header.jpg" alt="womens" class="homecontentimg" /></a>
 <h2>Shop Women's &#10147;</h2>
 </div>
 
 <div class="homeimgtext">
-<a href="mens"><img src="/assets/site/mensfashion.jpeg" alt="mens" /></a>
+<a href="mens"><img src="/assets/site/mensfashion.jpeg" alt="mens" class="homecontentimg" /></a>
 <h2>Shop Men's &#10147;</h2>
 </div>
 
 <div class="homeimgtext">
-<a href="sport"><img src="/assets/site/sportswear_header.jpg" alt="Sportswear"/></a>
+<a href="sport"><img src="/assets/site/sportswear_header.jpg" alt="Sportswear" class="homecontentimg" /></a>
 <h2>Shop Sportswear &#10147;</h2>
 </div>
 
-<div id="offers">
-  <h2>Popular this week</h2>
-  <table id="productsTable">
+</div>
+
+ <h2 class="h1fullwidth">Popular this week</h2>
+ <div class="topgradientdiv">
+  <table id="productsTable" >
     <col width="23%" />
     <col width="23%" />
     <col width="23%" />
@@ -34,8 +38,7 @@
   <% end %>
    <td>
     <div class="eachproduct">
-     <%= link_to image_tag(product.image_url, :class => "productsimg"), product %>
-     <h3 class="title"><%= link_to product.Title, product %></h3>
+     <%= render partial: "/products/product", locals: {product: product, index: index} %>
     </div>
    </td>
    <% if index % 4 == 3 %>
@@ -43,7 +46,5 @@
    <% end %>
  <% end %>
  </table>
-</div>
-
 </div>
 <% end %>

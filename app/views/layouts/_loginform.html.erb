@@ -1,0 +1,41 @@
+<div id="modal" class="popupContainer" style="display:none;">
+	<header class="popupHeader">
+		<div class="header_title">Login</div>
+		<div class="modal_close">Close</div>
+	</header>
+	<section class="popupBody">
+		<!-- User Login -->
+		<div class="user_login">
+			<!-- WHY IS THIS LOGIN PATH? TO BE CHECKED FURTHER-->
+			<%= form_for(:session, url: login_path) do |f| %>
+			
+				<table class="logintable">
+				    <tr class="space">
+				      <td>Username</td>
+				      
+				      <td><%= f.text_field :email, :autofocus=>true, :required => true, :placeholder => "(Your Email)"%></td>
+				      
+				    </tr>
+				    <tr class="space">
+				      <td>Password</td>
+				      <td><%= f.password_field :password, :required => true %></td>
+				    </tr>
+				    <tr class="space">
+				      <td><input type="checkbox" name="remmeber" value="remember">Remember Me</td>
+				    </tr>
+				    <tr>
+				      <td><%= f.submit "Submit", class: "btn btn-primary", id: "sendbtn" %></td>
+				      
+				    </tr>
+				</table>
+			
+			<%end%>
+			
+			<p>
+				Don't have an account yet? <%= link_to "Sign up!", new_user_path, :class => "link" %>
+			<br />
+				<a href="#" class="forgot_password">Forgot your password?</a>
+			</p>
+		</div>
+	</section>
+</div>

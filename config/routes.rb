@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get 'order_items/update'
   get 'order_items/destroy'
 
-  #Prodcut Routes
+  #Product Routes
   get 'womens' => 'products#women'
   get 'mens' => 'products#men'
   get 'sport' => 'products#sport'
@@ -41,6 +41,7 @@ Rails.application.routes.draw do
   get 'login'   => 'sessions#new'
   post 'login'   => 'sessions#create'
   get 'logout'  => 'sessions#destroy'
+  get 'loginerror' => 'sessions#error'
   
   #Cart routes
   get 'cartcreate' => 'carts#create'

@@ -1,69 +1,9 @@
 /* Checkout Page */
-#checkoutcont, #cartcont {
-  padding-right: 1%;
-  padding-left: 1%;
-  padding-bottom: 1%;
-  width: 98%;
-  float: left;
-  border-top: solid 1px #000;
-  background: linear-gradient(#fb7142 3%, #ffffff 15%);
-}
 
-#checkouth1, #carth1 {
-  padding-left: 2%;
-  margin-bottom: 5px;
-  margin-top: 0px;
-  padding-top: 1%;
-}
-
-#checkoutcont h2 {
+.topgradientdiv h2 {
   color: #761f31;
   margin-top: 1%;
   text-align: center;
-}
-
-#checkoutform input, #textarea {
-  border: solid 1px #fb7142;
-  outline: none;
-  background: #fff;
-  font-family: 'Cabin', Helvetica, Arial, sans-serif;
-  font-size: 1em;
-  padding: 3px;
-  margin-bottom: 3%;
-}
-
-#textarea {
-  border-radius: 0px;
-}
-
-#checkoutform input:hover {
-  box-shadow: 0px 0px 1px 1px #fb7142;
-}
-
-#submitorder input {
-  margin-top: 3%;
-  text-decoration: none;
-  color: #761f31;
-  border: solid 1px #999;
-  background: #fb7142;
-  text-align: center;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  font-family: 'Lobster', Georgia, Times, serif;
-  margin-right: auto;
-  margin-left: auto;
-  width: 65%;
-}
-
-#submitorder input:hover {
-  cursor: pointer;
-  box-shadow: 0px 0px 2px 1px #fb7142;
-}
-
-#link {
-  color: #000;
-  font-family: 'Lobster', Georgia, Times, serif;
-  color: #761f31;
 }
 
 #subtotallbl {

@@ -6,12 +6,12 @@ Write a Review
 <% end %>
 
 <% content_for :content do %>
-<h1 id="new_reviewh1">Write a Review</h1>
-<div class="newreview">
-  <% if session[:username] %>
+<h1 class="h1fullwidth">Write a Review</h1>
+<div class="topgradientdiv">
   <div id="newreviewform">
+    <% if session[:username] %>
     <h3>New Review for: <%= @reviewingProduct.Title %></h3>
-    <%= form_for(@review) do %>
+    <%= form_for (@review), :html => {class: "form"} do %>
     Your Rating:
     <br/>
     <div id="user_star"></div>
@@ -19,30 +19,31 @@ Write a Review
     <p>
       Summary:
       <br/>
-      <%= text_field_tag :summary, '', :id => "reviewComments"%>
+      <%= text_field_tag :summary, '', :style => "width: 89.6%; margin-bottom: 0px;" %>
     </p>
     <p>
       Comments:
       <br/>
-      <%= text_area_tag :comments, '', :id => "reviewComments", :rows => 7 %>
+      <%= text_area_tag :review, '', :class => "textarea", :rows => 7, :style => "width: 90.2%;" %>
     </p>
     <%= hidden_field_tag :productId, @reviewingProduct.id %>
     <div id="back">
-  		<%= link_to "Back", product_path(:id => @reviewingProduct.id), :id => "backbtn" %>
+  		<%= link_to "Back", product_path(:id => @reviewingProduct.id), :class => "link" %>
   	</div>
   	<div id="newrevbtndiv">
-      <%= submit_tag "Add Review", :id => "addReviewBtn" %>
+      <%= submit_tag "Add Review", :class => "formsubmit" %>
     </div>
   	<% end %>
   </div>
+  	
   <div id="reviewimage">
     <%= image_tag @reviewingProduct.image_url %>
   </div>
   <% else %>
     <p>You have to be logged in to submit a review.</p>
-    <%= link_to "Back", product_path(:id => @reviewingProduct.id), :class => "signup" %>
+    <%= link_to "Back", product_path(:id => @reviewingProduct.id), :class => "link" %>
   <% end %>
-</div>
+  </div>
 
 <script>
   $('#user_star').raty({

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def new
+    @user = User.new
   end
   
   def show
@@ -9,14 +10,26 @@ class UsersController < ApplicationController
   end
   
   def create
-    @user = User.new(user_params)    
-    if @user.save
-      # Handle a successful save and redirect to save page
-      
-      redirect_to "/"
+    billingaddress = params[:bname] + "|" + params[:bstreet] + "|" + params[:bcity] + "|" + params[:bcountry]
+    deliveryaddress = params[:dname] + "|" + params[:dstreet] + "|" + params[:dcity] + "|" + params[:dcountry]
+
+    if params[:password1].eql? params[:password2]
+      @user = User.new(:name => params[:firstname], :lastname => params[:lastname], 
+        :email => params[:username], :password => params[:password1], :password_confirmation => params[:password2],
+        :billing_address => billingaddress, :delivery_address => deliveryaddress)
+      if @user.save()
+        @user = User.find_by(email: params[:username])
+        session[:user_id] = @user.id
+        session[:username] = @user.name
+        redirect_to "/account"
+      else
+        redirect_to new_user_path, :flash => {:error => "Could not save user, please make sure you have a valid email
+          address and that password is longer than 5 characters!"}
+      end 
     else
-      render 'site/about'
+      redirect_to new_user_path, :flash => {:error => "Passwords do not match!"}
     end
+
   end
   
   def change_details
@@ -25,10 +38,23 @@ class UsersController < ApplicationController
   end
   
   def updateAccount
-    if params[:password1].eql? params[:password2]
-      User.where(:id => params[:userId]).update_all(:name => params[:firstname], :lastname => params[:lastname], :password_digest => params[:password1])
+    @user = User.find_by(email: params[:email])
+    if @user.authenticate(params[:passwordold])
+      
+      if (params[:password1].eql? params[:password2]) && !(params[:password1].eql? "")
+         @user.update_attributes(:name => params[:firstname], :lastname => params[:lastname], 
+              :password => params[:password1], :password_confirmation => params[:password2])
+        render 'users/show', :flash => {:success => "Profile Updated"}
+        
+      elsif (params[:password1].eql? "") && (params[:password2].eql? "")
+        @user.update_attributes(:name => params[:firstname], :lastname => params[:lastname])
+        redirect_to '/users/show', :flash => {:success => "Profile Updated!"}, :id => @user.id
+      else 
+        redirect_to '/users/show', :flash => {:error => "Passwords do not match!"}, :id => @user.id
+      end
+    else 
+      redirect_to '/users/show', :flash => {:error => "Update Failed. Original Password is incorrect!"}, :id => @user.id
     end
-    render 'users/show'
   end
   
   def updateBilling
@@ -47,12 +73,8 @@ class UsersController < ApplicationController
   private
   
   #Setting up Strong parameters as this is needed
-  def user_params1
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :billing_address, :delivery_address)
-  end
-  
   def user_params
-      params.require(:user).permit(:name,:email, :password, :password_confirmation)
+      params.require(:user).permit(:userId, :lastname, :name, :email, :password, :password_confirmation, :billing_address, :delivery_address)
   end
 
 end

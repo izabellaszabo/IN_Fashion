@@ -1,23 +1,3 @@
-#new_reviewh1 {
-  color: #761f31;
-  margin-bottom: 3px;
-  padding-left: 2%;
-  margin-top: 1%;
-}
-
-.newreview {
-  padding: 1%;
-  border-top: solid 1px #000;
-  float: left;
-  width: 98%;
-  background: linear-gradient(#fb7142 7%, #ffffff 25%);
-  font-family: 'Cabin', Helvetica, Arial, sans-serif;
-}
-
-.newreview h3 {
-  margin-top: 0px;
-}
-
 #newreviewform {
   width: 80%;
   float: left;
@@ -26,6 +6,7 @@
 #reviewimage {
   width: 20%;
   float: left;
+  padding-top: 2%;
 }
 
 #reviewimage img {
@@ -33,66 +14,15 @@
   border: solid 1px #999;
 }
 
-#newrating {
-  unicode-bidi: bidi-override;
-  direction: rtl;
-  text-align: left;
-}
-
-#reviewComments {
-  border: solid 1px #fb7142;
-  outline: none;
-  background: #fff;
-  font-family: 'Cabin', Helvetica, Arial, sans-serif;
-  font-size: 1em;
-  width: 90%;
-  border-radius: 0px;
-}
-
-#reviewComments:hover {
-  box-shadow: 0px 0px 1px 1px #fb7142;
-}
-
-#addReviewBtn {
-  border: solid 1px #fb7142;
-  outline: none;
-  background: #fff;
-  font-family: 'Cabin', Helvetica, Arial, sans-serif;
-  font-size: 1em;
-}
-
-#addReviewBtn:hover {
-  color: #fb7142;
-  cursor: pointer;
-  box-shadow: 0px 0px 1px 1px #fb7142;
-}
-
 #back {
-  width: 50%;
+  width: 49%;
   float: left;
-}
-
-#backbtn {
-  font-family: 'Lobster', Georgia, Times, serif;
-  color: #000;
-  text-decoration: none;
   padding-left: 1%;
-}
-
-#backbtn:hover {
-  text-decoration: underline;
-  cursor: pointer;
+  padding-top: 0.4%;
 }
 
 #newrevbtndiv {
   width: 40.5%;
   float: left;
   text-align: right;
-}
-
-@media only screen and (max-width: 1000px) {
-  .newreview {
-    background: linear-gradient(to right, #fb7142 5%, #fff 30%);
-  }
-  
 }

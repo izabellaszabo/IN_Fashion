@@ -1,61 +1,10 @@
 /* Account Page*/
-
-#accountcont {
-  padding-right: 1%;
-  padding-left: 1%;
-  padding-bottom: 1%;
-  width: 98%;
-  float: left;
-  border-top: solid 1px #000;
-  background: linear-gradient(#fb7142 7%, #ffffff 30%);
-}
-
-#accountconth1 {
-  padding-left: 2%;
-  margin-bottom: 0px;
-  margin-top: 0px;
-  padding-top: 1%;
-}
-
 #accountcont  h2 {
   color: #761f31;
   margin-top: 1%;
-  text-align: center;
 }
 
-#accountcont a {
-  font-family: 'Lobster', Georgia, Times, serif;
-  color: #000;
-  text-decoration: none;
-}
-
-#accountcont a:hover {
-  text-decoration: underline;
-}
-
-#accountForm {
-  width: 100%;
-}
-
-#accountForm input {
-  border: solid 1px #fb7142;
-  outline: none;
-  background: #fff;
-  font-family: 'Cabin', Helvetica, Arial, sans-serif;
-  font-size: 1em;
-  padding: 3px;
-  margin-bottom: 3%;
-  float: right;
-}
-
-#accountForm input:hover {
-  box-shadow: 0px 0px 1px 1px #fb7142;
-}
-
-@media only screen and (max-width: 1000px) {
-  /* Account Page */
-  #accountcont {
-    background: linear-gradient(to right, #fb7142 5%, #fff 30%);
-  }
-  
+/* New Account*/
+#margintoright {
+  margin-right: 3%;
 }
