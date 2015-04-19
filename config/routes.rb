@@ -67,7 +67,7 @@ Rails.application.routes.draw do
   get 'ordersignoff' => 'admin#ordersignoff'
   get 'viewmessages' => 'admin#viewmessages'
   get 'viewproducts' => 'admin#viewproducts'
-  get 'editproducts' => 'admin#editproducts'
+  get 'editproduct' => 'admin#editproduct'
   
   #get 'carts/show'
   #get 'cart' => 'cart#show'

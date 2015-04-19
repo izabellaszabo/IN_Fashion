@@ -1,14 +1,7 @@
-#unread {
-  padding: 1%;
-  border-bottom: solid 1px #000;
-  float: left;
-  width: 98%;
-}
-
+/* Messages */
 #unreplied {
-  padding: 1%;
   float: left;
-  width: 98%;
+  width: 100%;
 }
 
 .name {
@@ -21,7 +14,72 @@
   float: left;
 }
 
-.action {
+.email {
   width: 20%;
   float: left;
+}
+
+.eachmsg {
+  padding-top: 1%;
+  padding-bottom: 5px;
+  padding-left: 1%;
+  padding-right: 1%;
+  border-bottom: solid 1px #000;
+  float: left;
+  width: 98%
+}
+
+/* Products */
+#currentProducts {
+  float: left;
+  width: 100%;
+  border-bottom: solid 1px #000;
+}
+
+#archivedProducts {
+  float: left;
+  width: 100%;
+  margin-top: 3%;
+}
+
+.adminproducts {
+  padding-top: 1%;
+  padding-bottom: 5px;
+  padding-left: 1%;
+  padding-right: 1%;
+  border-bottom: solid 1px #000;
+  float: left;
+  width: 98%
+}
+
+.adminimg {
+  width: 10%;
+  float: left;
+}
+
+.adminimg img {
+  max-width: 100%;
+  float: left;
+}
+
+.admintitle {
+  width: 73%;
+  float: left;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-top: 5px;
+}
+
+.admintitle h4 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.adminprice {
+  width: 15%;
+  float: left;
+}
+
+.adminprice:before {
+  content: "€";
 }

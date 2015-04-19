@@ -6,21 +6,24 @@ class AdminController < ApplicationController
   end
   
   def viewmessages
-    @unreadmessages = Contact.where(readmsg: false)
     @unrepliedmessages = Contact.where(replied: false)
     render 'admin/viewmessages'
   end
   
   def viewproducts
-    @currentProducts = Product.where(archived: false)
-    @archivedproducts = Product.where(archived: true)
-    render 'admin/viewproducts
-    '
+    @womens = Product.where("archived = 'false' AND Catagory LIKE 'women'")
+    @sport = Product.where("archived = 'false' AND Catagory LIKE 'men'")
+    @mens = Product.where("archived = 'false' AND Catagory LIKE 'sport'")
+    @currentproducts = Product.where(archived: 'false')
+    @cntcurrent = @currentproducts.length
+    @archivedProducts = Product.where(archived: 'true')
+    @cntarchived = @archivedProducts.length
+    render 'admin/viewproducts'
   end
   
-  def editproducts
+  def editproduct
     @product = Product.find_by(id: params[:id])
-    render 'admin/editproducts'
+    render 'admin/editproduct'
   end
-  
+
 end

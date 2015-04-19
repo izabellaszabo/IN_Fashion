@@ -313,7 +313,7 @@ table#productsTable {
 }
 
 #itemaddtocart {
-  width: 25%;
+  width: 35%;
   float: left;
   margin-top: 1%;
 }
@@ -322,7 +322,7 @@ table#productsTable {
   margin: 0px;
 }
 
-#itemaddtocart a {
+#itemaddtocartbtn {
   text-decoration: none;
   width: 100%;
   color: #761f31;
@@ -332,8 +332,10 @@ table#productsTable {
   text-align: center;
   padding-top: 1%;
   padding-bottom: 1%;
+  font-family: 'Lobster', Georgia, Times, serif;
+  font-size: 1.2em;
 }
- 
+
 .dropdown {
   width: 20%;
   border-radius: 5px;

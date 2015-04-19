@@ -45,7 +45,9 @@ Account Details
                     <td><%= text_field_tag :password2, '', :type => "password"  %></td>
                 </tr>
                 <tr>
-                    <td><%= link_to "Cancel", 'account', :view => "view", :class => "link" %></td>
+                    <td>
+                        <%= link_to "Cancel", 'account', :view => "view", :class => "link" %>
+                    </td>
                     <td>
                         <%= hidden_field_tag :email, @user.email %>
                         <%= submit_tag "Save", :class => "formsubmit" %>
