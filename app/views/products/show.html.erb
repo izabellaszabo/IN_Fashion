@@ -67,9 +67,8 @@ Product Details
       <br/>
       <%= @product.features %>
     </div>
-    <%puts "This is product size" + @product.Size.to_s %>
       <div>
-        <% if @product.Size == 'all' %>
+        <% if @product.Colour == 'all' %>
           <%= f.select :Colour, [["Select Color",0],['xs',1],['s',2],['m',3],['l',4],['xl',5]], :required => true  %>
         <% elsif @product.Size == 'shoe' then %>
           <%= f.select :Colour, [["Select Color",0],['4',1],['5',2],['6',3],['7',4],['8',4]], :required => true  %>
@@ -133,71 +132,37 @@ Product Details
 </div>
 
 <div id="reviews" style="display:none;">
-<<<<<<< HEAD
-  <header class="popupHeader" style="height: auto;">
-   <div class="header_title">Reviews</div>
-   <div class="modal_close">Close</div>
-  </header>
-  <section class="reviewshowBody">
-   <div id="viewreviews">
-    <% if @reviews.length != 0 %>
-      <% @reviews.each_with_index do |review, index| %>
-        <% if index % 2 == 0 %>
-          <div id="reviewsWhite">
-        <% else %>
-          <div id="reviewsGrey">
+	<header class="popupHeader" style="height: auto;">
+		<div class="header_title">Reviews</div>
+		<div class="modal_close">Close</div>
+	</header>
+	<section class="reviewshowBody">
+		<div id="viewreviews">
+			<% if @reviews.length != 0 %>
+				<% @reviews.each_with_index do |review, index| %>
+				  <% if index % 2 == 0 %>
+				    <div id="reviewsWhite">
+				  <% else %>
+				    <div id="reviewsGrey">
+				  <% end %>
+          <%= render partial: "review", locals: {review: review, index: index} %>
+          </div>
         <% end %>
-            <%= render partial: "review", locals: {review: review, index: index} %>
-            </div>
-          <% end %>
-      <div id="writereview">
-        Write your own Review <%= link_to "here", new_review_path(:productid => @product.id), {:class => "signup"} %>.
-      </div>
-      <% else %>
-       <div id="noreviews">
-         <p>
-           This product hasn't been reviewed yet.
-         </p>
-         <p>
-          Be the first to review this product <%= link_to "Here", new_review_path(:productid => @product.id), {:class => "signup"} %>!
-         </p>
-       </div>
-     <% end %>
-    </div>
-   </section>
-=======
-		<header class="popupHeader" style="height: auto;">
-			<div class="header_title">Reviews</div>
-			<div class="modal_close">Close</div>
-		</header>
-		<section class="reviewshowBody">
-			<div id="viewreviews">
-				<% if @reviews.length != 0 %>
-  				<% @reviews.each_with_index do |review, index| %>
-  				  <% if index % 2 == 0 %>
-  				    <div id="reviewsWhite">
-  				  <% else %>
-  				    <div id="reviewsGrey">
-  				  <% end %>
-            <%= render partial: "review", locals: {review: review, index: index} %>
-            </div>
-          <% end %>
-				  <div id="writereview">
-				    Write your own Review <%= link_to "here", new_review_path(:productid => @product.id), {:class => "signup"} %>.
-				  </div>
-  		  <% else %>
-  			  <div id="noreviews">
-      			<p>
-      			  This product hasn't been reviewed yet.
-      			</p>
-      			<p>
-      				Be the first to review this product <%= link_to "Here", new_review_path(:productid => @product.id), {:class => "signup"} %>!
-      			</p>
-    			</div>
-  			<% end %>
-  		</div>
-  	</section>
-
+			  <div id="writereview">
+			    Write your own Review <%= link_to "here", new_review_path(:productid => @product.id), {:class => "link"} %>.
+			  </div>
+		  <% else %>
+			  <div id="noreviews">
+    			<p>
+    			  This product hasn't been reviewed yet.
+    			</p>
+    			<p>
+    				Be the first to review this product <%= link_to "Here", new_review_path(:productid => @product.id), {:class => "link"} %>!
+    			</p>
+  			</div>
+			<% end %>
+		</div>
+	</section>
 </div>
 </div>
 	<script type="text/javascript">
@@ -213,4 +178,3 @@ Product Details
 </div>
 
 <% end %>
-<% #end %>

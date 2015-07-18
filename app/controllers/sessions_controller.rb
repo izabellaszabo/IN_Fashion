@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
       #log_in user
       session[:user_id] = @user.id
       session[:username] = @user.name
+      session[:email] = @user.email
       redirect_to '/home', :flash => {:success => "Login successful"}
     else
       redirect_to '/home', :flash => {:error => "Login failed, Invalid email/password combination!"}

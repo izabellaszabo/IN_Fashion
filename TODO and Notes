@@ -2,17 +2,11 @@ Check if cart is empty
 
 Admin User has special functionality
 
-Forgot Password - TEXT MESSAGE
-Email Confirmation?
-
 Welcome page - "welcoming the user, provides user with information on their last visit and what they bought. "
 
 In order history dropdown, to select order
 "Profile page - Purchase history of user is also provided on this page." 
 
-@contact = Contact.find_by(id: message_params)
-@contact.update_attributes(:readmsg => true)
-render '/admin/viewmessages'
 
 ***********************************
 STARTING THE SERVER
