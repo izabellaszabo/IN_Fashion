@@ -45,7 +45,10 @@ Product Details
     <h4 id="itemprice"><%= number_with_precision(@product.price, precision: 2) %></h4>
     <%= f.hidden_field :Total_Price ,:value => @product.price %>
     <%= f.hidden_field :OrderID ,:value => "0" %>
-
+    <%= f.hidden_field :Product_id ,:value => @product.id %>
+    
+    <%puts "THIS IS AT PRODUCT VALUE" + @product.id.to_s %>
+    
     <div id="rating">
       <div id="viewRating"></div>
       <ul id="review">
@@ -66,6 +69,15 @@ Product Details
       <br/>
       <br/>
       <%= @product.features %>
+<<<<<<< HEAD
+<div>
+        <%if @product.Size == 'all' %>
+          <%= f.select(:Colour, [["Select Color",0],['xs',1],['s',2],['m',3],['l',4],['xl',5]]) %>
+        <%elsif @product.Size == 'shoe' then %>
+          <%= f.select :Colour, [["Select Color",0],['4',1],['5',2],['6',3],['7',4],['8',4]] %>
+        <%else%>
+          <%= f.select :Colour, [["Select Color",0],["One Size",1]] %>
+=======
     </div>
       <div>
         <% if @product.Colour == 'all' %>
@@ -74,6 +86,7 @@ Product Details
           <%= f.select :Colour, [["Select Color",0],['4',1],['5',2],['6',3],['7',4],['8',4]], :required => true  %>
         <% else %>
           <%= f.select :Colour, [["Select Color",0],["One Size",1]], :required => true  %>
+>>>>>>> f1bcae6919aef3067e8c48c87441cc37993bdc71
         <% end%>
         
     </div>

@@ -17,7 +17,14 @@ module CartsHelper
 
         puts message.sid
         puts "THIS IS A TEST MESSAGE TO SEE IT ALL WORKS I AM IN THE CARTS HELPER"
+<<<<<<< HEAD
+
+ 
+    
+    
+=======
    
+>>>>>>> f1bcae6919aef3067e8c48c87441cc37993bdc71
     end
 
 end
